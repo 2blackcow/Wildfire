@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Cesium + MAXAR 시계열 화재</title>
+
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Cesium.js"></script>
+    <link href="https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Widgets/widgets.css" rel="stylesheet" />
+
+    <style>
+      html, body, #cesiumContainer {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      #infoPanel {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, 0.75);
+        color: white;
+        padding: 10px 14px;
+        border-radius: 8px;
+        font-family: sans-serif;
+        font-size: 14px;
+        min-width: 200px;
+        pointer-events: none;
+      }
+
+      #windArrow {
+        font-size: 32px;
+        text-align: center;
+        transform-origin: center;
+        transition: transform 0.4s ease;
+        margin-bottom: 8px;
+      }
+
+      #dateLabel {
+        position: absolute;
+        top: 45px;
+        right: 10px;
+        background-color: rgba(0, 123, 255, 0.9);
+        color: white;
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 13px;
+        font-family: sans-serif;
+        z-index: 10;
+      }
+
+      #controlsContainer {
+        position: absolute;
+        top: 70px;
+        right: 10px;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        font-family: sans-serif;
+        gap: 8px;
+      }
+
+      .controls-wrapper {
+        background-color: rgba(0, 0, 0, 0.75);
+        padding: 10px;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        min-width: 280px;
+      }
+
+      .top-row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+      }
+
+      #toggleButton {
+        padding: 6px 12px;
+        font-size: 14px;
+        border: none;
+        border-radius: 4px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.2s;
+        min-width: 90px;
+        white-space: nowrap;
+      }
+
+      #toggleButton:hover {
+        background-color: #0056b3;
+      }
+
+      #timeSlider {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 130px;
+        height: 6px;
+        background: #ddd;
+        border-radius: 4px;
+        outline: none;
+        transition: background 0.3s;
+        flex-shrink: 0;
+      }
+
+      #timeSlider:hover {
+        background: #ccc;
+      }
+
+      #timeSlider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #007bff;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      #timeSlider::-moz-range-thumb {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #007bff;
+        cursor: pointer;
+      }
+
+      #fireDateSelect {
+        padding: 6px;
+        font-size: 14px;
+        border-radius: 4px;
+        border: 1px solid #444;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.9);
+        color: #333;
+      }
+
+      #fireInfo {
+        color: white;
+        font-size: 13px;
+        text-align: center;
+        background-color: rgba(255, 87, 34, 0.8);
+        border-radius: 4px;
+        padding: 5px 8px;
+        margin-top: 2px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      /* 또는 심플하게 화재 정보만 표시하는 버전 */
+      .fire-status {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        color: white;
+        font-size: 13px;
+      }
+
+      .fire-count {
+        background-color: rgba(255, 87, 34, 0.2);
+        border: 1px solid rgba(255, 87, 34, 0.5);
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-weight: 500;
+      }
+
+      .cesium-infoBox {
+        bottom: 20px !important;
+        top: auto !important;
+        right: 20px !important;
+        left: auto !important;
+        max-height: 40vh;
+        z-index: 1000;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="cesiumContainer"></div>
+
+    <div id="infoPanel">
+      <div id="windArrow">↑</div>
+      <div id="weatherInfo">🖱️ 지도에서 위치를 클릭하세요</div>
+    </div>
+
+    <div id="dateLabel">🗓️ 2025-01-08</div>
+
+    <div id="controlsContainer">
+      <div class="controls-wrapper">
+        <div class="top-row">
+          <button id="toggleButton">⏯️ 재생</button>
+          <input type="range" id="timeSlider" min="0" max="7" value="0" step="1" />
+        </div>
+        <select id="fireDateSelect">
+          <option value="0">20250108m-maxar</option>
+          <option value="1">20250109m-maxar</option>
+          <option value="2">20250110n-maxar</option>
+          <option value="3">20250113m-maxar</option>
+          <option value="4">20250114m-maxar</option>
+          <option value="5">20250116m-maxar</option>
+          <option value="6">20250118m-maxar</option>
+          <option value="7">20250120m-maxar</option>
+        </select>
+        <div id="fireInfo">🔥 산불 데이터 로딩 중...</div>
+      </div>
+    </div>
+
+    <script src="/main.js"></script>
+  </body>
+</html>
