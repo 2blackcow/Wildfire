@@ -25,14 +25,19 @@ function updateFiresForDate(selectedDate) {
 
     let color = Cesium.Color.YELLOW.withAlpha(0.7);
     if (fire.confidence === "h") color = Cesium.Color.RED.withAlpha(0.8);
-    else if (fire.confidence === "n") color = Cesium.Color.ORANGE.withAlpha(0.8);
+    else if (fire.confidence === "n")
+      color = Cesium.Color.ORANGE.withAlpha(0.8);
 
     const frp = parseFloat(fire.frp);
     const size = Math.min(Math.max(frp / 8, 8), 20);
 
     const entity = viewer.entities.add({
       id: `fire-${fire.latitude}-${fire.longitude}-${fire.acq_date}`,
-      position: Cesium.Cartesian3.fromDegrees(fire.longitude, fire.latitude, 500),
+      position: Cesium.Cartesian3.fromDegrees(
+        fire.longitude,
+        fire.latitude,
+        500
+      ),
       point: {
         pixelSize: size,
         color: color,
@@ -43,7 +48,13 @@ function updateFiresForDate(selectedDate) {
         <b>관측일자:</b> ${fire.acq_date}<br/>
         <b>밝기 (열 강도):</b> ${fire.brightness}<br/>
         <b>방사 강도 (FRP, MW):</b> ${fire.frp}<br/>
-        <b>화재 신뢰도:</b> ${fire.confidence === "h" ? "높음" : fire.confidence === "n" ? "중간" : "낮음"}<br/>
+        <b>화재 신뢰도:</b> ${
+          fire.confidence === "h"
+            ? "높음"
+            : fire.confidence === "n"
+            ? "중간"
+            : "낮음"
+        }<br/>
         <b>관측 위성:</b> ${fire.satellite || "-"}
       `,
     });
@@ -165,28 +176,41 @@ async function init() {
   }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
 
   const layerIds = [
-    "20250108m-maxar", "20250109m-maxar", "20250110n-maxar", "20250113m-maxar",
-    "20250114m-maxar", "20250116m-maxar", "20250118m-maxar", "20250120m-maxar"
+    "20250108m-maxar",
+    "20250109m-maxar",
+    "20250110n-maxar",
+    "20250113m-maxar",
+    "20250114m-maxar",
+    "20250116m-maxar",
+    "20250118m-maxar",
+    "20250120m-maxar",
   ];
 
   const layerLabels = [
-    "2025-01-08", "2025-01-09", "2025-01-10", "2025-01-13",
-    "2025-01-14", "2025-01-16", "2025-01-18", "2025-01-20"
+    "2025-01-08",
+    "2025-01-09",
+    "2025-01-10",
+    "2025-01-13",
+    "2025-01-14",
+    "2025-01-16",
+    "2025-01-18",
+    "2025-01-20",
   ];
 
   const layerObjects = [];
+
   for (let i = 0; i < layerIds.length; i++) {
-    const imageryLayer = viewer.imageryLayers.addImageryProvider(
-      new Cesium.UrlTemplateImageryProvider({
-        url: `https://stormscdn.ngs.noaa.gov/${layerIds[i]}/{z}/{x}/{y}`,
-        tilingScheme: new Cesium.WebMercatorTilingScheme(),
-        maximumLevel: 19,
-        credit: `NOAA MAXAR ${layerIds[i]}`,
-        show: false,
-        alpha: 0.7,
-      })
-    );
-    layerObjects.push(imageryLayer);
+    const provider = new Cesium.UrlTemplateImageryProvider({
+      url: `https://stormscdn.ngs.noaa.gov/${layerIds[i]}/{z}/{x}/{y}`,
+      tilingScheme: new Cesium.WebMercatorTilingScheme(),
+      maximumLevel: 19,
+      credit: `NOAA MAXAR ${layerIds[i]}`,
+    });
+
+    const layer = viewer.imageryLayers.addImageryProvider(provider);
+    layer.alpha = 0.7;
+    layer.show = false;
+    layerObjects.push(layer);
   }
 
   const select = document.getElementById("fireDateSelect");
@@ -197,9 +221,14 @@ async function init() {
   function updateLayers(index) {
     layerObjects.forEach((layer, idx) => {
       layer.show = idx === index;
+      layer.alpha =
+        idx === index
+          ? idx === 0
+            ? 1.0
+            : 0.7 // 1월 8일은 완전 불투명하게
+          : 0.0; // 다른 레이어는 완전히 숨김
     });
   }
-
   function updateDateLabel(index) {
     dateLabel.textContent = `🗓️ ${layerLabels[index]}`;
   }
