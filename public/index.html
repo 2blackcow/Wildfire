@@ -5,10 +5,15 @@
     <title>Cesium + MAXAR 시계열 화재</title>
 
     <script src="https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Cesium.js"></script>
-    <link href="https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Widgets/widgets.css" rel="stylesheet" />
+    <link
+      href="https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Widgets/widgets.css"
+      rel="stylesheet"
+    />
 
     <style>
-      html, body, #cesiumContainer {
+      html,
+      body,
+      #cesiumContainer {
         margin: 0;
         padding: 0;
         width: 100%;
@@ -182,6 +187,11 @@
         max-height: 40vh;
         z-index: 1000;
       }
+      #weatherInfo {
+        font-size: 14px;
+        line-height: 1.4;
+        white-space: pre-line;
+      }
     </style>
   </head>
 
@@ -199,7 +209,14 @@
       <div class="controls-wrapper">
         <div class="top-row">
           <button id="toggleButton">⏯️ 재생</button>
-          <input type="range" id="timeSlider" min="0" max="7" value="0" step="1" />
+          <input
+            type="range"
+            id="timeSlider"
+            min="0"
+            max="7"
+            value="0"
+            step="1"
+          />
         </div>
         <select id="fireDateSelect">
           <option value="0">20250108m-maxar</option>

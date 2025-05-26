@@ -133,35 +133,70 @@ async function init() {
       },
     });
 
-    weatherInfo.innerHTML = `
-      📍 위도: ${lat.toFixed(4)}<br/>
-      📍 경도: ${lon.toFixed(4)}<br/>
-      <span style="color:gray">🌫️ 공기질 정보를 불러오는 중...</span>
-    `;
+    // 📍 현재 선택된 날짜 index → 실제 날짜로 변환
+    const selectedIndex = parseInt(document.getElementById("timeSlider").value);
+    const selectedDate = dateIndexMap[selectedIndex]; // e.g., "2025-01-08"
 
-    fetch(`/api/air?lat=${lat}&lon=${lon}`)
-      .then((res) => res.json())
-      .then((data) => {
-        const pollution = data.data?.current?.pollution;
-        const weather = data.data?.current?.weather;
-        if (!pollution || !weather) {
-          alert("❌ 공기질 데이터를 불러올 수 없습니다.");
-          return;
-        }
+    // 📆 날짜 범위 계산 (start = D, end = D+1)
+    const start = selectedDate;
+    const end = new Date(new Date(selectedDate).getTime() + 24 * 60 * 60 * 1000)
+      .toISOString()
+      .slice(0, 10);
+
+    // 🌀 날씨 정보 표시 초기화
+    weatherInfo.innerHTML = `
+    📍 위도: ${lat.toFixed(4)}<br/>
+    📍 경도: ${lon.toFixed(4)}<br/>
+    <span style="color:gray">🌫️ 공기질 데이터를 불러오는 중...</span>
+  `;
+
+    // 🔍 AQI 색상 판별 함수
+    function getAqiColor(aqi) {
+      if (aqi <= 50) return "#00e400"; // Green
+      if (aqi <= 100) return "#ffff00"; // Yellow
+      if (aqi <= 150) return "#ff7e00"; // Orange
+      if (aqi <= 200) return "#ff0000"; // Red
+      if (aqi <= 300) return "#8f3f97"; // Purple
+      return "#7e0023"; // Maroon
+    }
+
+    // ✅ 두 API 병렬 호출
+    Promise.all([
+      fetch(
+        `/api/airquality?lat=${lat}&lon=${lon}&start=${start}&end=${end}`
+      ).then((res) => res.json()),
+      fetch(
+        `/api/meteostat?lat=${lat}&lon=${lon}&start=${start}&end=${end}`
+      ).then((res) => res.json()),
+    ])
+      .then(([airData, weatherData]) => {
+        const aqi = airData?.data?.[0]?.aqi ?? null;
+        const ws = weatherData?.data?.[0]?.wspd ?? "-";
+        const wd = weatherData?.data?.[0]?.wdir ?? "-";
+        const temp = weatherData?.data?.[0]?.temp ?? "-";
+        const aqiColor = aqi !== null ? getAqiColor(aqi) : "#aaa";
 
         weatherInfo.innerHTML = `
-          📍 위도: ${lat.toFixed(4)}<br/>
-          📍 경도: ${lon.toFixed(4)}<br/>
-          🌫️ AQI: <b>${pollution.aqius}</b><br/>
-          🌫️ 풍속: ${weather.ws} m/s<br/>
-          🧽 풍향: ${weather.wd}°<br/>
-          🌡️ 온도: ${weather.tp}°C
-        `;
-        windArrow.style.transform = `rotate(${weather.wd}deg)`;
+        📍 위도: ${lat.toFixed(4)}
+        📍 경도: ${lon.toFixed(4)}
+        🌫️ AQI: <b style="color:${aqiColor}">${aqi ?? "데이터 없음"}</b>
+        🌫️ 풍속: ${ws} m/s
+        🧭 풍향: ${wd}°
+        🌡️ 온도: ${temp}°C
+      `;
+
+        // 풍향 반영 회전
+        if (!isNaN(parseFloat(wd))) {
+          windArrow.style.transform = `rotate(${wd}deg)`;
+        }
       })
       .catch((err) => {
-        console.error("❌ API 요청 실패:", err);
-        alert("❌ 공기질 API 요청 실패");
+        console.error("❌ API 실패", err);
+        weatherInfo.innerHTML = `
+        📍 위도: ${lat.toFixed(4)}<br/>
+        📍 경도: ${lon.toFixed(4)}<br/>
+        ❌ 날씨 데이터 불러오기 실패
+      `;
       });
   }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
 
