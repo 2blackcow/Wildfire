@@ -1,7 +1,7 @@
 // api/airquality.js
-import axios from 'axios';
+const axios = require('axios');
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   const { lat, lon, start, end } = req.query;
 
   if (!lat || !lon || !start || !end) {
@@ -20,7 +20,6 @@ export default async function handler(req, res) {
         key: process.env.WEATHERBIT_KEY,
       },
     });
-    //console.log("✅ WEATHERBIT KEY:", process.env.WEATHERBIT_KEY); 
 
     if (!response.data || !response.data.data || response.data.data.length === 0) {
       return res.status(404).json({ error: 'Weatherbit에서 데이터 없음' });
@@ -29,6 +28,6 @@ export default async function handler(req, res) {
     res.status(200).json(response.data);
   } catch (error) {
     console.error('🔥 Weatherbit API 실패:', error.message);
-    res.status(500).json({ error: 'Weatherbit 요청 실패!' });
+    res.status(500).json({ error: 'Weatherbit 요청 실패!', message: error.message });
   }
-}
+};
