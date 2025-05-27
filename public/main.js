@@ -65,17 +65,6 @@ function updateFiresForDate(selectedDate) {
 
   if (fireInfo) {
     fireInfo.textContent = `🔥 ${selectedDate} 화재 지점 ${fireCount}개 시각화됨`;
-    fireInfo.style.position = "absolute";
-    fireInfo.style.top = "140px";
-    fireInfo.style.right = "10px";
-    fireInfo.style.backgroundColor = "rgba(0, 0, 0, 0.75)";
-    fireInfo.style.color = "white";
-    fireInfo.style.padding = "6px 12px";
-    fireInfo.style.borderRadius = "6px";
-    fireInfo.style.fontFamily = "sans-serif";
-    fireInfo.style.fontSize = "13px";
-    fireInfo.style.zIndex = "10";
-    fireInfo.style.pointerEvents = "none";
   }
 }
 
@@ -98,7 +87,7 @@ async function init() {
   }
 
   viewer.camera.flyTo({
-    destination: Cesium.Cartesian3.fromDegrees(-118.35, 34.25, 7000),
+    destination: Cesium.Cartesian3.fromDegrees(-118.60, 34.1, 50000),
   });
 
   const weatherInfo = document.getElementById("weatherInfo");
@@ -145,8 +134,8 @@ async function init() {
 
     // 🌀 날씨 정보 표시 초기화
     weatherInfo.innerHTML = `
-    📍 위도: ${lat.toFixed(4)}<br/>
-    📍 경도: ${lon.toFixed(4)}<br/>
+    📍 위도: ${lat.toFixed(4)}
+    📍 경도: ${lon.toFixed(4)}
     <span style="color:gray">🌫️ 공기질 데이터를 불러오는 중...</span>
   `;
 
