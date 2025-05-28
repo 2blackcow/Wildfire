@@ -1,6 +1,7 @@
 let viewer;
 let fireData = [];
 let fireEntities = [];
+let predictedEntities = []; // 🔥 추가: 예측 마커 전역 변수
 
 // 날짜 인덱스 <-> 실제 날짜 맵핑
 const dateIndexMap = {
@@ -32,7 +33,6 @@ function updateFiresForDate(selectedDate) {
     const frp = parseFloat(fire.frp);
     const size = Math.min(Math.max(frp / 8, 8), 20);
 
-    // 🔥 실제 포인트(마커) 추가
     const entity = viewer.entities.add({
       id: `fire-${fire.latitude}-${fire.longitude}-${fire.acq_date}`,
       position: Cesium.Cartesian3.fromDegrees(fire.longitude, fire.latitude, 500),
@@ -57,8 +57,40 @@ function updateFiresForDate(selectedDate) {
 
   if (fireInfo) {
     fireInfo.textContent = `🔥 ${selectedDate} 화재 지점 ${fireCount}개 시각화됨`;
-    
   }
+}
+
+// 🔥 추가: 예측 결과 JSON 로딩 및 시각화 함수
+function loadPredictedFirePoints() {
+  fetch("predicted_fire_points.json")
+    .then((res) => res.json())
+    .then((data) => {
+      predictedEntities.forEach(e => viewer.entities.remove(e));
+      predictedEntities = [];
+
+      data.forEach((pt) => {
+        const color = Cesium.Color.RED.withAlpha(pt.probability);
+
+        const entity = viewer.entities.add({
+          position: Cesium.Cartesian3.fromDegrees(pt.lon, pt.lat),
+          point: {
+            pixelSize: 10,
+            color: color,
+            outlineColor: Cesium.Color.BLACK,
+            outlineWidth: 1,
+            disableDepthTestDistance: Number.POSITIVE_INFINITY
+          },
+          description: `🔥 <b>예측 확률:</b> ${(pt.probability * 100).toFixed(1)}%`
+        });
+
+        predictedEntities.push(entity);
+      });
+
+      console.log(`✅ 예측 지점 ${data.length}개 로드 완료`);
+    })
+    .catch((err) => {
+      console.error("❌ 예측 데이터 불러오기 실패:", err);
+    });
 }
 
 async function init() {
@@ -147,15 +179,14 @@ async function init() {
       fetch(`/api/meteostat?lat=${lat}&lon=${lon}&start=${start}&end=${end}`).then((res) => res.json()),
     ])
       .then(([airData, weatherData]) => {
-        // 주요 환경 데이터 추출 (주석 포함)
-        const aqi = airData?.data?.[0]?.aqi ?? null;      // 대기질
-        const o3 = airData?.data?.[0]?.o3 ?? "-";         // 오존
-        const ws = weatherData?.data?.[0]?.wspd ?? "-";   // 풍속
-        const wd = weatherData?.data?.[0]?.wdir ?? "-";   // 풍향
-        const temp = weatherData?.data?.[0]?.temp ?? "-"; // 기온
-        const rh = weatherData?.data?.[0]?.rhum ?? "-";   // 습도
-        const prcp = weatherData?.data?.[0]?.prcp ?? "-"; // 강수량
-        const dew = weatherData?.data?.[0]?.dwpt ?? "-";  // 이슬점
+        const aqi = airData?.data?.[0]?.aqi ?? null;
+        const o3 = airData?.data?.[0]?.o3 ?? "-";
+        const ws = weatherData?.data?.[0]?.wspd ?? "-";
+        const wd = weatherData?.data?.[0]?.wdir ?? "-";
+        const temp = weatherData?.data?.[0]?.temp ?? "-";
+        const rh = weatherData?.data?.[0]?.rhum ?? "-";
+        const prcp = weatherData?.data?.[0]?.prcp ?? "-";
+        const dew = weatherData?.data?.[0]?.dwpt ?? "-";
 
         const aqiColor = aqi !== null ? getAqiColor(aqi) : "#aaa";
 
@@ -256,7 +287,6 @@ async function init() {
     updateFiresForDate(dateIndexMap[idx]);
   });
 
-  // 자동 재생 슬라이더
   let currentIndex = 0;
   let isPlaying = false;
   toggleButton.textContent = isPlaying ? "⏸ 일시정지" : "▶ 재생";
@@ -290,6 +320,8 @@ async function init() {
 
   updateLayers(0);
   updateDateLabel(0);
+
+  loadPredictedFirePoints(); // 🔥 예측 데이터 시각화 호출
 }
 
 // 환경설정, 데이터 fetch 및 초기화
