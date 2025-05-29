@@ -1,9 +1,7 @@
-⚙️ 실행 스크립트 & 순서
-1️⃣ 화재 + 기상 데이터 병합
-RapidAPI를 이용하여 위경도+날짜 기반 날씨 정보 수집
+⚙️ 패키지 설치  
+pip install pandas numpy scikit-learn tqdm requests python-dotenv
 
-python scripts/merge_firms_weather.py
-📌 결과: data/merged/fire_weather_merged.csv 생성
+⚙️ 실행 스크립트 & 순서
 
 2️⃣ 학습용 데이터 생성
 라벨링(fire_occurred) 추가 및 화재 없는 샘플 생성
