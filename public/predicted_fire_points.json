@@ -1,0 +1,8828 @@
+[
+  {
+    "lat": 34.31747,
+    "lon": -118.98701,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.68182,
+    "lon": -117.55362,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.03876,
+    "lon": -118.64349,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.2903,
+    "lon": -118.8027,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.21281,
+    "lon": -118.0553,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.8553,
+    "lon": -118.33397,
+    "probability": 0.94,
+    "hit": true
+  },
+  {
+    "lat": 33.61614,
+    "lon": -117.52486,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.81487,
+    "lon": -118.23944,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.06248,
+    "lon": -118.53847,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38714,
+    "lon": -117.7176,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.33566,
+    "lon": -118.51929,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.35112,
+    "lon": -117.65575,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.37723,
+    "lon": -117.65108,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.03728,
+    "lon": -117.55947,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.18839,
+    "lon": -118.11965,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.32624,
+    "lon": -117.75515,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.078,
+    "lon": -118.57996,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.18698,
+    "lon": -118.13747,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.65926,
+    "lon": -117.50076,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.25039,
+    "lon": -117.73199,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.39191,
+    "lon": -117.68468,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15407,
+    "lon": -118.19286,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.71744,
+    "lon": -117.71243,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.3892,
+    "lon": -117.70793,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.21189,
+    "lon": -118.09258,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.35234,
+    "lon": -117.67043,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.27719,
+    "lon": -117.59158,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.66581,
+    "lon": -117.54231,
+    "probability": 0.92,
+    "hit": true
+  },
+  {
+    "lat": 34.1907,
+    "lon": -118.12125,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.71565,
+    "lon": -117.71051,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.0664,
+    "lon": -118.18906,
+    "probability": 0.94,
+    "hit": true
+  },
+  {
+    "lat": 34.37025,
+    "lon": -117.68826,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.0742,
+    "lon": -118.67033,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.20206,
+    "lon": -118.07229,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.93125,
+    "lon": -118.2853,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.2545,
+    "lon": -117.75272,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.11592,
+    "lon": -117.92661,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.66926,
+    "lon": -117.55921,
+    "probability": 0.89,
+    "hit": true
+  },
+  {
+    "lat": 34.2913,
+    "lon": -118.80271,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29784,
+    "lon": -117.76733,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.18394,
+    "lon": -118.02153,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.3373,
+    "lon": -118.52094,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38784,
+    "lon": -117.72977,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.32455,
+    "lon": -117.64524,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.37049,
+    "lon": -117.6942,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.18759,
+    "lon": -118.13241,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.61815,
+    "lon": -117.50511,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04639,
+    "lon": -118.62417,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.32795,
+    "lon": -117.64259,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33795,
+    "lon": -118.52172,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.28903,
+    "lon": -117.72223,
+    "probability": 0.95,
+    "hit": true
+  },
+  {
+    "lat": 34.10711,
+    "lon": -118.54449,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 33.71456,
+    "lon": -117.71569,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.6146,
+    "lon": -117.8222,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38548,
+    "lon": -117.68893,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.71446,
+    "lon": -117.71364,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.15632,
+    "lon": -118.19427,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.21003,
+    "lon": -118.08356,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33516,
+    "lon": -118.52034,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.85546,
+    "lon": -118.33274,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.25005,
+    "lon": -117.7664,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.25488,
+    "lon": -117.72328,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.3834,
+    "lon": -117.66879,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.24275,
+    "lon": -117.65395,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.32119,
+    "lon": -118.51025,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.05336,
+    "lon": -118.5214,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.30365,
+    "lon": -117.77298,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.251643586007376,
+    "lon": -118.86204534840844,
+    "probability": 1.0,
+    "hit": false
+  },
+  {
+    "lat": 34.03581,
+    "lon": -118.10666,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.3009,
+    "lon": -117.68262,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29876,
+    "lon": -118.99587,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.34096,
+    "lon": -117.65202,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.11436,
+    "lon": -117.92617,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.62312,
+    "lon": -117.52203,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.03898,
+    "lon": -118.69302,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.11958,
+    "lon": -118.51934,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.10961,
+    "lon": -118.53851,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38923,
+    "lon": -117.66506,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.27969,
+    "lon": -117.56004,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.34869,
+    "lon": -117.63345,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.07307,
+    "lon": -118.62028,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33055,
+    "lon": -117.6923,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.33709,
+    "lon": -118.51984,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.17367,
+    "lon": -118.07698,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38972,
+    "lon": -117.68733,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.16549,
+    "lon": -118.09013,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.37029,
+    "lon": -117.67132,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.23486,
+    "lon": -118.07948,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.905,
+    "lon": -118.40556,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.08461,
+    "lon": -118.59483,
+    "probability": 0.85,
+    "hit": true
+  },
+  {
+    "lat": 34.15376,
+    "lon": -118.19453,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04948,
+    "lon": -118.5342,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.71579,
+    "lon": -117.52362,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.15297,
+    "lon": -118.19541,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38573,
+    "lon": -117.7065,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.20928,
+    "lon": -118.06955,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.39857,
+    "lon": -117.6873,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.3363,
+    "lon": -118.5182,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.43173970638954,
+    "lon": -118.3479465113737,
+    "probability": 1.0,
+    "hit": false
+  },
+  {
+    "lat": 34.227,
+    "lon": -118.08643,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15399,
+    "lon": -118.19395,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.72173,
+    "lon": -117.53976,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.12634,
+    "lon": -118.51404,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.03743,
+    "lon": -118.50542,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.22966,
+    "lon": -117.66727,
+    "probability": 0.39,
+    "hit": true
+  },
+  {
+    "lat": 34.18515,
+    "lon": -118.15267,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.42936,
+    "lon": -118.64464,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.22094,
+    "lon": -117.69823,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.27292,
+    "lon": -117.77656,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.03624,
+    "lon": -118.54479,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.14828,
+    "lon": -118.72166,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.21011,
+    "lon": -118.10239,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.40157,
+    "lon": -117.67954,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.21624,
+    "lon": -118.14196,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.37699,
+    "lon": -117.70812,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.03503,
+    "lon": -118.10696,
+    "probability": 0.94,
+    "hit": true
+  },
+  {
+    "lat": 34.32324,
+    "lon": -118.52889,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.10934,
+    "lon": -118.52184,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.37936,
+    "lon": -117.7028,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 33.70018,
+    "lon": -117.54024,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.07386,
+    "lon": -118.58398,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.6784,
+    "lon": -117.56879,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.29051,
+    "lon": -118.80345,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 33.67959,
+    "lon": -117.52642,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.08121,
+    "lon": -118.58327,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.34066,
+    "lon": -117.71113,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.08026,
+    "lon": -118.56274,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.70815,
+    "lon": -117.56044,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.77676,
+    "lon": -118.21889,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.35051,
+    "lon": -117.67057,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.26624,
+    "lon": -117.65329,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.31842,
+    "lon": -118.51056,
+    "probability": 0.96,
+    "hit": true
+  },
+  {
+    "lat": 34.29443,
+    "lon": -117.78067,
+    "probability": 0.94,
+    "hit": true
+  },
+  {
+    "lat": 34.03474,
+    "lon": -118.53613,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.37294,
+    "lon": -117.67731,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.43128,
+    "lon": -118.64649,
+    "probability": 0.94,
+    "hit": true
+  },
+  {
+    "lat": 34.28062,
+    "lon": -117.78233,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29507,
+    "lon": -117.74711,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.25829,
+    "lon": -117.7718,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.37302,
+    "lon": -117.72077,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.2602,
+    "lon": -117.64825,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.85204,
+    "lon": -118.33308,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29228,
+    "lon": -118.80215,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.37107,
+    "lon": -117.64832,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.68605,
+    "lon": -117.5367,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.25771,
+    "lon": -117.66289,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.43142,
+    "lon": -118.64397,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.31009,
+    "lon": -117.67574,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.30226,
+    "lon": -118.9746,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.85168,
+    "lon": -118.33308,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.18985,
+    "lon": -118.05141,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.3195,
+    "lon": -118.51276,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.66096,
+    "lon": -117.54486,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.90574,
+    "lon": -118.40525,
+    "probability": 0.96,
+    "hit": true
+  },
+  {
+    "lat": 33.85467,
+    "lon": -118.33405,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.48104,
+    "lon": -118.89172,
+    "probability": 0.95,
+    "hit": true
+  },
+  {
+    "lat": 33.66162,
+    "lon": -117.52104,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04171,
+    "lon": -118.56258,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.71256,
+    "lon": -117.54688,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.3216,
+    "lon": -118.5126,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.10576,
+    "lon": -118.53712,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.31436,
+    "lon": -117.77299,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38179,
+    "lon": -117.74593,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.61228,
+    "lon": -117.82329,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.2736,
+    "lon": -117.697,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.88974,
+    "lon": -118.18642,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.22371,
+    "lon": -118.064,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.40315,
+    "lon": -117.6675,
+    "probability": 0.3,
+    "hit": true
+  },
+  {
+    "lat": 34.32637,
+    "lon": -118.52845,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.36382,
+    "lon": -117.6506,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.19362,
+    "lon": -118.14401,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.26451,
+    "lon": -117.65661,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.28101,
+    "lon": -117.58804,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.70362,
+    "lon": -117.50366,
+    "probability": 0.96,
+    "hit": true
+  },
+  {
+    "lat": 34.27652,
+    "lon": -117.61111,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.34163,
+    "lon": -118.96515,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.25051,
+    "lon": -117.66333,
+    "probability": 0.36,
+    "hit": true
+  },
+  {
+    "lat": 34.32609,
+    "lon": -118.94218,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.69629,
+    "lon": -117.53895,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.35164,
+    "lon": -117.70797,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.30404,
+    "lon": -117.6471,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.24517,
+    "lon": -117.73061,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.05926,
+    "lon": -118.67686,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.31316,
+    "lon": -118.96918,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29776,
+    "lon": -117.58609,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.15563,
+    "lon": -118.19547,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.05009,
+    "lon": -118.64568,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04301,
+    "lon": -118.62473,
+    "probability": 0.92,
+    "hit": true
+  },
+  {
+    "lat": 33.85415,
+    "lon": -118.33386,
+    "probability": 0.96,
+    "hit": true
+  },
+  {
+    "lat": 34.26799,
+    "lon": -117.78731,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.62521,
+    "lon": -117.52668,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.10699,
+    "lon": -118.5452,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.30203,
+    "lon": -117.67764,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.07906,
+    "lon": -118.51333,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.37007,
+    "lon": -117.64434,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.09416,
+    "lon": -118.51801,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.24433,
+    "lon": -118.38187,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.43267,
+    "lon": -118.64633,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29105,
+    "lon": -118.80337,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 33.69756,
+    "lon": -117.56186,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.35328,
+    "lon": -117.6742,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.28199,
+    "lon": -117.59743,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29536,
+    "lon": -118.80745,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.21567,
+    "lon": -118.1468,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.36312,
+    "lon": -117.65364,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15528,
+    "lon": -118.19151,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.25425,
+    "lon": -117.66451,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.43055,
+    "lon": -118.64222,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.34923,
+    "lon": -118.99914,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.15564,
+    "lon": -118.19219,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04916,
+    "lon": -118.68375,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.35284,
+    "lon": -118.95522,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.62841,
+    "lon": -117.53358,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38981,
+    "lon": -117.74843,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.65976,
+    "lon": -117.52096,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.31345,
+    "lon": -118.99046,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04197,
+    "lon": -118.68119,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.61483,
+    "lon": -117.82484,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.35982,
+    "lon": -117.7567,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33026,
+    "lon": -118.48691,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.65433,
+    "lon": -117.53233,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38233,
+    "lon": -117.68633,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.29759,
+    "lon": -117.76598,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.38379,
+    "lon": -117.69855,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.28134,
+    "lon": -117.57681,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.36748,
+    "lon": -117.72034,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38952,
+    "lon": -117.73769,
+    "probability": 0.95,
+    "hit": true
+  },
+  {
+    "lat": 34.38341,
+    "lon": -117.69468,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.08957,
+    "lon": -118.54327,
+    "probability": 0.95,
+    "hit": true
+  },
+  {
+    "lat": 33.71467,
+    "lon": -117.71271,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.67351,
+    "lon": -117.57081,
+    "probability": 0.96,
+    "hit": true
+  },
+  {
+    "lat": 34.04077,
+    "lon": -117.82422,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.18094,
+    "lon": -118.12585,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.03141,
+    "lon": -118.65874,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.35444,
+    "lon": -117.64372,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.17804,
+    "lon": -118.02544,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.06739,
+    "lon": -118.6166,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.64725,
+    "lon": -117.53209,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.09114,
+    "lon": -118.50327,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.37107,
+    "lon": -117.73458,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.11913,
+    "lon": -118.54057,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.39253,
+    "lon": -117.68096,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.90652,
+    "lon": -118.40475,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.90926,
+    "lon": -118.41185,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.81974,
+    "lon": -118.2439,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.63872,
+    "lon": -117.52973,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.24402,
+    "lon": -117.70845,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.90762,
+    "lon": -118.40298,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.34441,
+    "lon": -117.6374,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.27542,
+    "lon": -117.56586,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29241,
+    "lon": -118.80354,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.71632,
+    "lon": -117.71248,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.6862,
+    "lon": -117.50616,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15227,
+    "lon": -118.19556,
+    "probability": 0.36,
+    "hit": true
+  },
+  {
+    "lat": 34.04333,
+    "lon": -118.68548,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.24419,
+    "lon": -118.38184,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.67279,
+    "lon": -117.50357,
+    "probability": 0.94,
+    "hit": true
+  },
+  {
+    "lat": 33.6151,
+    "lon": -117.82354,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38326,
+    "lon": -117.69466,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.17655,
+    "lon": -118.05343,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.38211,
+    "lon": -117.67049,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.31273,
+    "lon": -117.77791,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33646,
+    "lon": -118.51823,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.81591,
+    "lon": -118.23666,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.65374,
+    "lon": -117.50741,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.68997,
+    "lon": -117.52208,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.03953,
+    "lon": -118.65659,
+    "probability": 0.32,
+    "hit": true
+  },
+  {
+    "lat": 33.66806,
+    "lon": -117.5653,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.2706,
+    "lon": -117.76839,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.32436,
+    "lon": -117.64547,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.26689,
+    "lon": -117.78465,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33461,
+    "lon": -118.51856,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.29536,
+    "lon": -117.61021,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.21928,
+    "lon": -118.14771,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.07688,
+    "lon": -118.55074,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.05643,
+    "lon": -118.66234,
+    "probability": 0.29,
+    "hit": true
+  },
+  {
+    "lat": 34.32095,
+    "lon": -118.50954,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15334,
+    "lon": -118.19339,
+    "probability": 0.96,
+    "hit": true
+  },
+  {
+    "lat": 33.6435,
+    "lon": -117.51474,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.30238213474226,
+    "lon": -118.46982852684854,
+    "probability": 0.82,
+    "hit": false
+  },
+  {
+    "lat": 34.15444,
+    "lon": -118.19259,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.27321,
+    "lon": -117.67088,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.07271,
+    "lon": -117.78504,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.81413,
+    "lon": -118.23824,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.34581,
+    "lon": -117.75388,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29337,
+    "lon": -118.80289,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.34402,
+    "lon": -117.63654,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38785,
+    "lon": -117.71338,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.19967,
+    "lon": -118.15547,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.43035,
+    "lon": -118.64545,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.06039,
+    "lon": -118.68112,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.63065,
+    "lon": -117.52764,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 33.66858,
+    "lon": -117.57227,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.81653,
+    "lon": -118.24416,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.37476,
+    "lon": -117.73937,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.18759,
+    "lon": -118.14969,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.31713,
+    "lon": -117.7726,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.05481,
+    "lon": -118.72215,
+    "probability": 0.38,
+    "hit": true
+  },
+  {
+    "lat": 33.64029,
+    "lon": -117.54406,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.3208,
+    "lon": -118.5096,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.43228,
+    "lon": -118.64703,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.24514,
+    "lon": -117.7449,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.70106,
+    "lon": -117.53555,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.39763,
+    "lon": -117.69233,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.07694,
+    "lon": -118.55084,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.64781,
+    "lon": -117.56872,
+    "probability": 0.95,
+    "hit": true
+  },
+  {
+    "lat": 33.79754,
+    "lon": -118.28532,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.33684,
+    "lon": -118.51963,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04216,
+    "lon": -117.81983,
+    "probability": 0.9,
+    "hit": true
+  },
+  {
+    "lat": 34.08099,
+    "lon": -118.58537,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.12333,
+    "lon": -118.55598,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.32478,
+    "lon": -117.62258,
+    "probability": 0.94,
+    "hit": true
+  },
+  {
+    "lat": 33.91169,
+    "lon": -118.182,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.25618,
+    "lon": -117.67636,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.71484,
+    "lon": -117.71058,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.64634,
+    "lon": -117.52711,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.65051,
+    "lon": -117.54305,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.21149,
+    "lon": -118.05494,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.20856,
+    "lon": -118.05086,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.71816,
+    "lon": -117.71036,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.33537,
+    "lon": -117.76331,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.28396,
+    "lon": -117.76705,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.61488,
+    "lon": -117.82237,
+    "probability": 0.96,
+    "hit": true
+  },
+  {
+    "lat": 34.38821,
+    "lon": -117.75681,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.25455,
+    "lon": -117.67244,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.36372,
+    "lon": -117.68393,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.69444,
+    "lon": -117.51495,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.27803,
+    "lon": -117.59687,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.30854,
+    "lon": -117.76923,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.26217,
+    "lon": -117.76376,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.08182,
+    "lon": -118.58794,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.81401,
+    "lon": -118.23711,
+    "probability": 0.94,
+    "hit": true
+  },
+  {
+    "lat": 34.33451,
+    "lon": -118.52121,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.34607,
+    "lon": -117.66938,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.03579,
+    "lon": -118.10793,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.20122,
+    "lon": -118.14668,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.36523,
+    "lon": -117.67854,
+    "probability": 0.93,
+    "hit": true
+  },
+  {
+    "lat": 33.66774,
+    "lon": -117.50439,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15462,
+    "lon": -118.19529,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29498,
+    "lon": -118.80193,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.35872,
+    "lon": -117.67902,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29618,
+    "lon": -117.61098,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.85326,
+    "lon": -118.33195,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04714,
+    "lon": -118.62845,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.28394,
+    "lon": -117.76975,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.30404,
+    "lon": -117.6473,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.22345,
+    "lon": -117.68633,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.42909,
+    "lon": -118.64777,
+    "probability": 0.96,
+    "hit": true
+  },
+  {
+    "lat": 34.09213,
+    "lon": -118.54756,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04278,
+    "lon": -118.52416,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.3204,
+    "lon": -118.51018,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.34999,
+    "lon": -117.6544,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33844,
+    "lon": -117.64004,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.10801,
+    "lon": -118.51582,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.68667,
+    "lon": -117.55687,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.20621,
+    "lon": -118.05606,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.43085,
+    "lon": -118.64466,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.36648,
+    "lon": -117.75831,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.61433,
+    "lon": -117.82378,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.20391,
+    "lon": -118.15118,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.82192,
+    "lon": -118.24508,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.20666,
+    "lon": -118.0646,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.67266,
+    "lon": -117.50317,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.20224,
+    "lon": -118.05264,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.35125,
+    "lon": -117.65554,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.31252,
+    "lon": -117.76855,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.27136,
+    "lon": -117.65274,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04763,
+    "lon": -118.54367,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38096,
+    "lon": -117.73082,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.71626,
+    "lon": -117.71329,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.85402,
+    "lon": -118.33296,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.11348,
+    "lon": -118.54453,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.18856,
+    "lon": -118.06098,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.17836,
+    "lon": -118.0437,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.34097,
+    "lon": -117.64807,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.06998,
+    "lon": -118.61145,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15242,
+    "lon": -118.19237,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.05269,
+    "lon": -118.66315,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33477,
+    "lon": -118.52,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.1808,
+    "lon": -118.11681,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.06723,
+    "lon": -118.57559,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 33.82046,
+    "lon": -118.2487,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.34647,
+    "lon": -117.66869,
+    "probability": 0.91,
+    "hit": true
+  },
+  {
+    "lat": 33.63815,
+    "lon": -117.52666,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.7017,
+    "lon": -117.54392,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.2929,
+    "lon": -118.80354,
+    "probability": 0.42,
+    "hit": true
+  },
+  {
+    "lat": 34.0651,
+    "lon": -118.60348,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.34597,
+    "lon": -117.6292,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.26654,
+    "lon": -117.64455,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.25525,
+    "lon": -117.68252,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.1994,
+    "lon": -118.06497,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.05542,
+    "lon": -118.62811,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38622,
+    "lon": -117.73428,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33428,
+    "lon": -118.51781,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33312,
+    "lon": -118.51638,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.39008,
+    "lon": -117.72984,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33491,
+    "lon": -118.52408,
+    "probability": 0.95,
+    "hit": true
+  },
+  {
+    "lat": 33.77491,
+    "lon": -118.28739,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.32487,
+    "lon": -117.65408,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.3278,
+    "lon": -117.62122,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33687,
+    "lon": -118.51978,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.07037,
+    "lon": -118.63376,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.66093,
+    "lon": -117.5032,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.26666,
+    "lon": -117.64501,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.10818,
+    "lon": -118.50054,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.24289,
+    "lon": -118.38058,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.26876,
+    "lon": -117.78168,
+    "probability": 0.85,
+    "hit": true
+  },
+  {
+    "lat": 33.70629,
+    "lon": -117.53654,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29824,
+    "lon": -118.9781,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29226,
+    "lon": -118.80327,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.71585,
+    "lon": -117.71426,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.71571,
+    "lon": -117.71208,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.71447,
+    "lon": -117.71044,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.07506,
+    "lon": -118.57419,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.71712,
+    "lon": -117.71253,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.30563,
+    "lon": -117.67973,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15432,
+    "lon": -118.19344,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.29088,
+    "lon": -118.98083,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.65891,
+    "lon": -117.53304,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.10632,
+    "lon": -118.55494,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38818,
+    "lon": -117.72359,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.32201,
+    "lon": -117.77873,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 33.61505,
+    "lon": -117.82301,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 33.81998,
+    "lon": -118.24544,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.2884,
+    "lon": -117.60508,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.15332,
+    "lon": -118.19444,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.29272,
+    "lon": -118.80128,
+    "probability": 0.95,
+    "hit": true
+  },
+  {
+    "lat": 34.38766,
+    "lon": -117.69736,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29062,
+    "lon": -118.80174,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.29292,
+    "lon": -118.80576,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.431,
+    "lon": -118.64637,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.37833,
+    "lon": -117.73186,
+    "probability": 0.93,
+    "hit": true
+  },
+  {
+    "lat": 34.08348,
+    "lon": -118.57362,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.6738,
+    "lon": -117.57874,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.3928,
+    "lon": -117.70754,
+    "probability": 0.91,
+    "hit": true
+  },
+  {
+    "lat": 34.08131,
+    "lon": -118.59316,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.28003,
+    "lon": -117.69162,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.43174,
+    "lon": -118.64309,
+    "probability": 0.92,
+    "hit": true
+  },
+  {
+    "lat": 33.85589,
+    "lon": -118.33549,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.2484,
+    "lon": -117.6477,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33801,
+    "lon": -117.65337,
+    "probability": 0.96,
+    "hit": true
+  },
+  {
+    "lat": 34.480991203616064,
+    "lon": -119.07613423213694,
+    "probability": 1.0,
+    "hit": false
+  },
+  {
+    "lat": 33.70208,
+    "lon": -117.56706,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.2923,
+    "lon": -118.80223,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29903,
+    "lon": -117.64419,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.61441,
+    "lon": -117.82567,
+    "probability": 0.95,
+    "hit": true
+  },
+  {
+    "lat": 34.29189,
+    "lon": -118.80468,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.39577,
+    "lon": -117.74519,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.61241,
+    "lon": -117.82804,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04934,
+    "lon": -118.64124,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.66029,
+    "lon": -117.53619,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15258,
+    "lon": -118.19794,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.06382,
+    "lon": -118.68962,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.24869,
+    "lon": -117.64574,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.03814,
+    "lon": -118.61668,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15353,
+    "lon": -118.19446,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.0713,
+    "lon": -118.60166,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38304,
+    "lon": -117.65248,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.03851,
+    "lon": -118.59853,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15392,
+    "lon": -118.19141,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04109,
+    "lon": -117.81967,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.32159,
+    "lon": -118.51167,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.71651,
+    "lon": -117.71189,
+    "probability": 0.94,
+    "hit": true
+  },
+  {
+    "lat": 34.38586,
+    "lon": -117.744,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33361,
+    "lon": -118.52086,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.26804,
+    "lon": -117.79256,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.81327,
+    "lon": -118.2422,
+    "probability": 0.95,
+    "hit": true
+  },
+  {
+    "lat": 34.15388,
+    "lon": -118.19147,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29325,
+    "lon": -117.67382,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.36331,
+    "lon": -117.65919,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.34416,
+    "lon": -117.68134,
+    "probability": 0.96,
+    "hit": true
+  },
+  {
+    "lat": 34.0834,
+    "lon": -118.59325,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.23513,
+    "lon": -118.09389,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.27115,
+    "lon": -117.74509,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.84915,
+    "lon": -118.33355,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.43011,
+    "lon": -118.64566,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.15559,
+    "lon": -118.19264,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.85335,
+    "lon": -118.33375,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.35865,
+    "lon": -117.72072,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.71675,
+    "lon": -117.71165,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.33558,
+    "lon": -118.52126,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.28802,
+    "lon": -117.60297,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.09728,
+    "lon": -118.50308,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.38839,
+    "lon": -117.73731,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.03927,
+    "lon": -117.8247,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.3368,
+    "lon": -118.52202,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.11074,
+    "lon": -118.49836,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.21573,
+    "lon": -118.05711,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.3646,
+    "lon": -117.66017,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.26147,
+    "lon": -117.67775,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04539,
+    "lon": -118.54736,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.03179,
+    "lon": -118.64066,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.28006,
+    "lon": -117.72677,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.1549,
+    "lon": -118.19145,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.05666,
+    "lon": -118.55524,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.28727,
+    "lon": -117.61208,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.43189,
+    "lon": -118.64779,
+    "probability": 0.91,
+    "hit": true
+  },
+  {
+    "lat": 34.42927,
+    "lon": -118.64539,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.28967,
+    "lon": -117.70308,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.07806,
+    "lon": -117.50047,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.43134,
+    "lon": -118.6459,
+    "probability": 0.91,
+    "hit": true
+  },
+  {
+    "lat": 34.3438,
+    "lon": -117.6458,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.66772,
+    "lon": -117.56592,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.43064,
+    "lon": -118.64685,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.31701,
+    "lon": -118.99667,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.07489,
+    "lon": -118.54412,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.03609,
+    "lon": -118.10475,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.81998,
+    "lon": -118.2428,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.33297,
+    "lon": -117.69629,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 33.85281,
+    "lon": -118.33523,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15408,
+    "lon": -118.19142,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.31935,
+    "lon": -118.51281,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38483,
+    "lon": -117.73492,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15496,
+    "lon": -118.19406,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.71103,
+    "lon": -117.52686,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.42927,
+    "lon": -118.6448,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.42294,
+    "lon": -117.6695,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.36305,
+    "lon": -117.65976,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 33.61547,
+    "lon": -117.82493,
+    "probability": 0.96,
+    "hit": true
+  },
+  {
+    "lat": 34.37833,
+    "lon": -117.6833,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38692,
+    "lon": -117.72623,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.0355,
+    "lon": -118.10535,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.26655,
+    "lon": -117.68274,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.36323,
+    "lon": -117.73821,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.43127,
+    "lon": -118.64677,
+    "probability": 0.96,
+    "hit": true
+  },
+  {
+    "lat": 34.11985,
+    "lon": -118.52848,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.28596,
+    "lon": -117.71002,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.0853,
+    "lon": -118.58967,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15203,
+    "lon": -118.19544,
+    "probability": 0.94,
+    "hit": true
+  },
+  {
+    "lat": 34.3906,
+    "lon": -117.75593,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.04317,
+    "lon": -117.82365,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.13329,
+    "lon": -118.53374,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.06351,
+    "lon": -118.52681,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04813,
+    "lon": -118.67731,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.17554,
+    "lon": -118.67773,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.30655,
+    "lon": -117.66159,
+    "probability": 0.96,
+    "hit": true
+  },
+  {
+    "lat": 34.35381,
+    "lon": -118.99921,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.37561,
+    "lon": -117.7439,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29569,
+    "lon": -117.5922,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.30804,
+    "lon": -117.64661,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.2552,
+    "lon": -117.74312,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04549,
+    "lon": -118.54196,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.08929,
+    "lon": -118.58622,
+    "probability": 0.93,
+    "hit": true
+  },
+  {
+    "lat": 34.33427,
+    "lon": -118.52093,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.20451,
+    "lon": -118.14621,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.43005,
+    "lon": -118.64404,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.04026,
+    "lon": -117.82399,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.12721,
+    "lon": -118.53783,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.39273,
+    "lon": -117.75323,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15499,
+    "lon": -118.19211,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38259,
+    "lon": -117.70859,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.336,
+    "lon": -118.51964,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.39154,
+    "lon": -117.69147,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.31921,
+    "lon": -117.66862,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.32117,
+    "lon": -118.51266,
+    "probability": 0.95,
+    "hit": true
+  },
+  {
+    "lat": 34.18396,
+    "lon": -118.13168,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.63099,
+    "lon": -117.53564,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 33.90904,
+    "lon": -118.40942,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.30167,
+    "lon": -117.64581,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.43167,
+    "lon": -118.64294,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04786,
+    "lon": -118.6327,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.71561,
+    "lon": -117.71114,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.3656,
+    "lon": -117.73149,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.32022,
+    "lon": -118.51131,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.61612,
+    "lon": -117.82385,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.61369,
+    "lon": -117.82299,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.43261,
+    "lon": -118.64547,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.67908,
+    "lon": -117.52028,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.27343,
+    "lon": -117.66513,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.47232,
+    "lon": -118.76064,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15523,
+    "lon": -118.1951,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15196,
+    "lon": -118.19009,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.85632,
+    "lon": -118.33974,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.39487,
+    "lon": -117.69957,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.03711,
+    "lon": -118.10586,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.21431,
+    "lon": -118.07016,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.05687,
+    "lon": -118.63651,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.12113,
+    "lon": -118.52464,
+    "probability": 0.93,
+    "hit": true
+  },
+  {
+    "lat": 34.07387,
+    "lon": -118.55401,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.1534,
+    "lon": -118.19816,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.62186,
+    "lon": -117.50401,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.22562,
+    "lon": -117.72659,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.28732,
+    "lon": -117.7256,
+    "probability": 0.88,
+    "hit": true
+  },
+  {
+    "lat": 33.673,
+    "lon": -117.56395,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.24566,
+    "lon": -117.73714,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.06771,
+    "lon": -118.67673,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.43543,
+    "lon": -118.23724,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.08989,
+    "lon": -118.5424,
+    "probability": 0.84,
+    "hit": true
+  },
+  {
+    "lat": 34.29296,
+    "lon": -118.80392,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.11649,
+    "lon": -118.53095,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.7372,
+    "lon": -118.27357,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.85349,
+    "lon": -118.33535,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.1237,
+    "lon": -118.50672,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.1918,
+    "lon": -118.15912,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.08191,
+    "lon": -117.50401,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.36849,
+    "lon": -117.73125,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33706,
+    "lon": -118.52013,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.11363,
+    "lon": -118.53555,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.66966,
+    "lon": -117.5279,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29559,
+    "lon": -118.80442,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.11699,
+    "lon": -118.55408,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.28386,
+    "lon": -117.5983,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.28484,
+    "lon": -117.59231,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.32546,
+    "lon": -117.75924,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.79332,
+    "lon": -118.35025,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.64168,
+    "lon": -117.53776,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.33694,
+    "lon": -118.52271,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29298,
+    "lon": -118.80058,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.68353,
+    "lon": -117.5034,
+    "probability": 0.36,
+    "hit": true
+  },
+  {
+    "lat": 33.7168,
+    "lon": -117.71465,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.61337,
+    "lon": -117.82204,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.71768,
+    "lon": -117.71146,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38418,
+    "lon": -117.73495,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.40129,
+    "lon": -117.66006,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04092,
+    "lon": -117.82465,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.11767,
+    "lon": -118.54955,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.6131,
+    "lon": -117.82391,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.06056,
+    "lon": -118.67571,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.18451,
+    "lon": -118.12722,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.23271,
+    "lon": -117.74656,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33332,
+    "lon": -118.51977,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.36818,
+    "lon": -117.7553,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.28608,
+    "lon": -117.58209,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.10818,
+    "lon": -118.50023,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.07212,
+    "lon": -118.53522,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.28559,
+    "lon": -117.59008,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04776,
+    "lon": -118.54655,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04656,
+    "lon": -118.55751,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.33284944862367,
+    "lon": -117.84626353741756,
+    "probability": 1.0,
+    "hit": false
+  },
+  {
+    "lat": 33.69024,
+    "lon": -117.57081,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.32582,
+    "lon": -117.65132,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.0533,
+    "lon": -118.55596,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.32151,
+    "lon": -118.51087,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.06647,
+    "lon": -118.57128,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.33513,
+    "lon": -118.52098,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33635,
+    "lon": -118.52024,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.4026,
+    "lon": -117.65276,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.38769,
+    "lon": -117.67099,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.0685,
+    "lon": -118.6431,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.82049,
+    "lon": -118.24368,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.64471,
+    "lon": -117.52995,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.03568,
+    "lon": -118.10671,
+    "probability": 0.86,
+    "hit": true
+  },
+  {
+    "lat": 34.11324,
+    "lon": -118.52034,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.21742,
+    "lon": -118.05803,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.46722,
+    "lon": -118.76656,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.26404,
+    "lon": -117.78451,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.26396,
+    "lon": -117.66596,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.28168,
+    "lon": -117.77817,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38232,
+    "lon": -117.71742,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.27154,
+    "lon": -117.76424,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15308,
+    "lon": -118.19517,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33339,
+    "lon": -118.99506,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33585,
+    "lon": -118.51855,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.03991,
+    "lon": -117.8247,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.66525,
+    "lon": -117.5353,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.31886,
+    "lon": -117.78402,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29171,
+    "lon": -117.77582,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.38775,
+    "lon": -117.72235,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.22963,
+    "lon": -118.09124,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.24221,
+    "lon": -118.3832,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.29184,
+    "lon": -118.80423,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15281,
+    "lon": -118.19603,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.25567,
+    "lon": -117.76237,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.43241,
+    "lon": -118.64625,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.27844,
+    "lon": -117.5849,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.20627,
+    "lon": -118.12065,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.71451,
+    "lon": -117.71018,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.09359,
+    "lon": -118.54259,
+    "probability": 0.9,
+    "hit": true
+  },
+  {
+    "lat": 34.17736,
+    "lon": -118.05794,
+    "probability": 0.78,
+    "hit": true
+  },
+  {
+    "lat": 34.28801,
+    "lon": -117.57485,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33781,
+    "lon": -118.5219,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.07049,
+    "lon": -118.53415,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.65366,
+    "lon": -117.50481,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 33.66644,
+    "lon": -117.55013,
+    "probability": 0.37,
+    "hit": true
+  },
+  {
+    "lat": 33.80601,
+    "lon": -118.24632,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.25343,
+    "lon": -117.64312,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.37742,
+    "lon": -117.71488,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15233,
+    "lon": -118.19493,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33671,
+    "lon": -118.51752,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.05951,
+    "lon": -118.63156,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.10734,
+    "lon": -118.53816,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.27614,
+    "lon": -117.60104,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.1529,
+    "lon": -118.19389,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.71035,
+    "lon": -117.52569,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04454,
+    "lon": -118.70777,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.37835,
+    "lon": -117.65553,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.47131,
+    "lon": -118.77295,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.26557,
+    "lon": -117.65238,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29467,
+    "lon": -117.58939,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.43011,
+    "lon": -118.64606,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.18693,
+    "lon": -118.05188,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.82109,
+    "lon": -118.24478,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33776,
+    "lon": -118.52437,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29395,
+    "lon": -118.80271,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.66577,
+    "lon": -117.5582,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.36438,
+    "lon": -117.65456,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.69046,
+    "lon": -117.54523,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.28014,
+    "lon": -117.77499,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.61502,
+    "lon": -117.82106,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.7944,
+    "lon": -118.34969,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.23294,
+    "lon": -118.11341,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.36154,
+    "lon": -117.68566,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.31044,
+    "lon": -117.75207,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33528,
+    "lon": -118.51649,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.40983,
+    "lon": -117.65063,
+    "probability": 0.93,
+    "hit": true
+  },
+  {
+    "lat": 34.43088,
+    "lon": -118.64343,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.3352,
+    "lon": -118.51846,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.67027,
+    "lon": -117.53526,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.31929,
+    "lon": -117.68264,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.08759,
+    "lon": -118.53127,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.2074,
+    "lon": -118.06464,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.25774,
+    "lon": -117.67056,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.03938,
+    "lon": -117.82246,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29029,
+    "lon": -118.8008,
+    "probability": 0.3,
+    "hit": true
+  },
+  {
+    "lat": 33.69285,
+    "lon": -117.55341,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.31053,
+    "lon": -117.65566,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38826,
+    "lon": -117.6576,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.24889,
+    "lon": -117.729,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.07282,
+    "lon": -118.59821,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.37831,
+    "lon": -117.71519,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04598,
+    "lon": -118.64203,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.71763,
+    "lon": -117.70979,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33744,
+    "lon": -118.5211,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.28292,
+    "lon": -117.57088,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.17971,
+    "lon": -118.13603,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.31713,
+    "lon": -117.65998,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.11397,
+    "lon": -118.49878,
+    "probability": 0.82,
+    "hit": true
+  },
+  {
+    "lat": 34.11451,
+    "lon": -118.52877,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.69978,
+    "lon": -117.51895,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.06607,
+    "lon": -118.66856,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.61276,
+    "lon": -117.82333,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.60373,
+    "lon": -117.51688,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.39853,
+    "lon": -117.64906,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33802,
+    "lon": -118.52184,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.1828,
+    "lon": -118.1104,
+    "probability": 0.94,
+    "hit": true
+  },
+  {
+    "lat": 34.04634,
+    "lon": -118.52486,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33415,
+    "lon": -118.51873,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 33.7173,
+    "lon": -117.7123,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33388,
+    "lon": -118.52303,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.32469,
+    "lon": -118.52815,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.08114,
+    "lon": -117.50096,
+    "probability": 0.9,
+    "hit": true
+  },
+  {
+    "lat": 34.10848,
+    "lon": -118.50076,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.4008357402276,
+    "lon": -118.62651874616216,
+    "probability": 0.98,
+    "hit": false
+  },
+  {
+    "lat": 34.29575,
+    "lon": -117.79607,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.42967,
+    "lon": -118.64698,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.36631,
+    "lon": -117.70564,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.04195,
+    "lon": -117.82098,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.11488,
+    "lon": -117.92445,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29295,
+    "lon": -117.5893,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.30379,
+    "lon": -117.65054,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.79329,
+    "lon": -118.34827,
+    "probability": 0.95,
+    "hit": true
+  },
+  {
+    "lat": 33.61161,
+    "lon": -117.52399,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.67191,
+    "lon": -117.54929,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15398,
+    "lon": -118.19976,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 33.71748,
+    "lon": -117.71048,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.28063,
+    "lon": -117.59703,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.12183,
+    "lon": -118.55468,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.34501,
+    "lon": -117.63284,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.29285,
+    "lon": -118.80691,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29431,
+    "lon": -117.57183,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.10054,
+    "lon": -118.50914,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.65603,
+    "lon": -117.53705,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.31493,
+    "lon": -117.6599,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.11384,
+    "lon": -117.92648,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.31969,
+    "lon": -118.51146,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.1104,
+    "lon": -118.54073,
+    "probability": 0.86,
+    "hit": true
+  },
+  {
+    "lat": 34.24995,
+    "lon": -117.64255,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.19545,
+    "lon": -118.12891,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.27765,
+    "lon": -117.58657,
+    "probability": 0.9,
+    "hit": true
+  },
+  {
+    "lat": 34.1516,
+    "lon": -118.1928,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15517,
+    "lon": -118.1948,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.21644,
+    "lon": -117.67488,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29061,
+    "lon": -118.80038,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.05801,
+    "lon": -118.6683,
+    "probability": 0.95,
+    "hit": true
+  },
+  {
+    "lat": 33.60823,
+    "lon": -117.51791,
+    "probability": 0.92,
+    "hit": true
+  },
+  {
+    "lat": 34.31876,
+    "lon": -118.51279,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.30214,
+    "lon": -117.66575,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 33.70546,
+    "lon": -117.52745,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.29108,
+    "lon": -118.80091,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.41912,
+    "lon": -117.66605,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29276,
+    "lon": -118.79993,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.85307,
+    "lon": -118.33357,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 33.77829,
+    "lon": -118.23837,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.7186,
+    "lon": -117.56521,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.15449,
+    "lon": -118.19123,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.32951,
+    "lon": -118.48258,
+    "probability": 0.92,
+    "hit": true
+  },
+  {
+    "lat": 33.64006,
+    "lon": -117.53452,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.11649,
+    "lon": -118.54527,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.36102,
+    "lon": -117.65174,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15155,
+    "lon": -118.19062,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 33.77906,
+    "lon": -118.24048,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.03686,
+    "lon": -118.10561,
+    "probability": 0.33,
+    "hit": true
+  },
+  {
+    "lat": 34.20212,
+    "lon": -118.12777,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.28899,
+    "lon": -117.59421,
+    "probability": 0.96,
+    "hit": true
+  },
+  {
+    "lat": 34.20158,
+    "lon": -118.09428,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.82,
+    "lon": -118.24437,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15486,
+    "lon": -118.19215,
+    "probability": 0.95,
+    "hit": true
+  },
+  {
+    "lat": 34.39859,
+    "lon": -117.68671,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33548,
+    "lon": -118.99881,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.16706,
+    "lon": -118.09908,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.19543,
+    "lon": -118.1598,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.26036,
+    "lon": -117.65172,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.30404,
+    "lon": -117.76385,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29473,
+    "lon": -118.99935,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.19316,
+    "lon": -118.13918,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.4795,
+    "lon": -118.89233,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.19379,
+    "lon": -118.14369,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33534,
+    "lon": -118.52016,
+    "probability": 0.96,
+    "hit": true
+  },
+  {
+    "lat": 34.37716,
+    "lon": -117.64681,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.03671,
+    "lon": -117.55759,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.29399,
+    "lon": -117.59497,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.7939,
+    "lon": -118.34827,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.2994,
+    "lon": -117.65482,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.7149,
+    "lon": -117.71288,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.41745,
+    "lon": -117.66361,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.05505,
+    "lon": -118.64607,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.31377,
+    "lon": -117.66074,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.71638,
+    "lon": -117.71478,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.3355,
+    "lon": -118.51963,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.27352,
+    "lon": -117.56548,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.28432,
+    "lon": -117.77885,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.24444,
+    "lon": -117.77032,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.4332,
+    "lon": -118.64629,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33691,
+    "lon": -118.51939,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.4292,
+    "lon": -118.64549,
+    "probability": 0.95,
+    "hit": true
+  },
+  {
+    "lat": 34.37945,
+    "lon": -117.70391,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38772,
+    "lon": -117.74127,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.2499,
+    "lon": -117.64038,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38644,
+    "lon": -117.76199,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.08868,
+    "lon": -118.55231,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33088,
+    "lon": -117.63847,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.79316,
+    "lon": -118.23602,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.23595,
+    "lon": -117.74445,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.047,
+    "lon": -118.57999,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.03557,
+    "lon": -118.10828,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.32511,
+    "lon": -117.63819,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15155,
+    "lon": -118.19875,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.17631,
+    "lon": -118.07187,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.13174,
+    "lon": -118.54099,
+    "probability": 0.9,
+    "hit": true
+  },
+  {
+    "lat": 34.15286,
+    "lon": -118.19339,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33475,
+    "lon": -117.66532,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.35831,
+    "lon": -117.66798,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29581,
+    "lon": -117.6005,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.03407,
+    "lon": -118.50623,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33533,
+    "lon": -118.52266,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.34502,
+    "lon": -117.63169,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.11463,
+    "lon": -117.92483,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.15473,
+    "lon": -118.19489,
+    "probability": 0.95,
+    "hit": true
+  },
+  {
+    "lat": 34.093,
+    "lon": -118.53819,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15649,
+    "lon": -118.19698,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29884,
+    "lon": -117.6628,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.43197,
+    "lon": -118.64399,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.30862,
+    "lon": -117.66987,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.31688,
+    "lon": -117.77452,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.25087,
+    "lon": -117.74137,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.32338,
+    "lon": -117.64053,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.31251,
+    "lon": -118.9975,
+    "probability": 0.95,
+    "hit": true
+  },
+  {
+    "lat": 34.19553,
+    "lon": -118.05592,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.24317,
+    "lon": -118.38082,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33421,
+    "lon": -118.52304,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29451,
+    "lon": -117.68327,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.33394,
+    "lon": -118.52032,
+    "probability": 0.95,
+    "hit": true
+  },
+  {
+    "lat": 34.2257,
+    "lon": -118.0947,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.2637,
+    "lon": -117.77784,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04557,
+    "lon": -118.66794,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.71479,
+    "lon": -117.71013,
+    "probability": 0.92,
+    "hit": true
+  },
+  {
+    "lat": 33.66133,
+    "lon": -117.54211,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33492,
+    "lon": -118.51878,
+    "probability": 0.93,
+    "hit": true
+  },
+  {
+    "lat": 33.62351,
+    "lon": -117.51273,
+    "probability": 0.93,
+    "hit": true
+  },
+  {
+    "lat": 34.32402,
+    "lon": -117.7769,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04076,
+    "lon": -118.61167,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.30636,
+    "lon": -117.69009,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29065,
+    "lon": -118.80173,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.05702,
+    "lon": -118.73187,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 33.98731,
+    "lon": -118.24342,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.39118221437393,
+    "lon": -117.73997526427452,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33363,
+    "lon": -118.51907,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.18876,
+    "lon": -118.02941,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.32439,
+    "lon": -118.52584,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.62251,
+    "lon": -117.53883,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.71128,
+    "lon": -117.55268,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15417,
+    "lon": -118.19693,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.2165,
+    "lon": -118.08849,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.21614,
+    "lon": -118.0965,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.34818,
+    "lon": -117.75143,
+    "probability": 0.36,
+    "hit": true
+  },
+  {
+    "lat": 34.0471,
+    "lon": -118.66882,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.11451,
+    "lon": -118.51056,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.08007,
+    "lon": -118.50881,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.42939,
+    "lon": -118.64395,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.66211,
+    "lon": -117.55878,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.02844,
+    "lon": -118.64148,
+    "probability": 0.92,
+    "hit": true
+  },
+  {
+    "lat": 34.05623,
+    "lon": -118.7048,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.2907,
+    "lon": -118.80264,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.77711,
+    "lon": -118.23946,
+    "probability": 0.46,
+    "hit": true
+  },
+  {
+    "lat": 33.7178,
+    "lon": -117.56136,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.82059,
+    "lon": -118.24305,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38003,
+    "lon": -117.72698,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29039,
+    "lon": -118.8019,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.62429,
+    "lon": -117.52481,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.03761,
+    "lon": -118.10636,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.04567,
+    "lon": -118.51244,
+    "probability": 0.95,
+    "hit": true
+  },
+  {
+    "lat": 34.09073,
+    "lon": -118.54775,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.05236,
+    "lon": -118.5059,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.11537,
+    "lon": -118.52568,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.07811,
+    "lon": -118.51911,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33342,
+    "lon": -117.68191,
+    "probability": 0.95,
+    "hit": true
+  },
+  {
+    "lat": 34.34469,
+    "lon": -117.66148,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.33178,
+    "lon": -118.51697,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.20796,
+    "lon": -118.07797,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.293,
+    "lon": -117.71637,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.34639,
+    "lon": -117.70253,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.24277,
+    "lon": -118.38244,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 33.60622,
+    "lon": -117.50568,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.11391,
+    "lon": -117.9273,
+    "probability": 0.94,
+    "hit": true
+  },
+  {
+    "lat": 34.43,
+    "lon": -118.64748,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.2466,
+    "lon": -117.7606,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.82028,
+    "lon": -118.24593,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.03501,
+    "lon": -118.10664,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.18636,
+    "lon": -118.14256,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15506,
+    "lon": -118.19238,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.05294,
+    "lon": -118.6762,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.07818,
+    "lon": -117.50025,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.27794,
+    "lon": -117.58953,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.0357,
+    "lon": -118.10546,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.10279,
+    "lon": -118.56209,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.61556,
+    "lon": -117.82254,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.16681,
+    "lon": -118.05742,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33403,
+    "lon": -118.51979,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.4101,
+    "lon": -117.67923,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.037,
+    "lon": -118.5898,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.133,
+    "lon": -118.52869,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.08545,
+    "lon": -118.5397,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33584,
+    "lon": -118.93564,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33515,
+    "lon": -118.51978,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.21725,
+    "lon": -117.72267,
+    "probability": 0.32,
+    "hit": true
+  },
+  {
+    "lat": 34.08468,
+    "lon": -118.53524,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.204,
+    "lon": -118.14141,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.20789,
+    "lon": -118.0564,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.39477,
+    "lon": -117.69861,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.09932,
+    "lon": -118.53237,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.85265,
+    "lon": -118.33144,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38245,
+    "lon": -117.74836,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.3261,
+    "lon": -117.68851,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.41655,
+    "lon": -117.67519,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.28759,
+    "lon": -117.59948,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.28279,
+    "lon": -117.61666,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.28279,
+    "lon": -117.77608,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.17128,
+    "lon": -118.06361,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.38419,
+    "lon": -117.68327,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29141,
+    "lon": -118.9986,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.43033,
+    "lon": -118.64634,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.0596,
+    "lon": -118.53192,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.12808,
+    "lon": -118.52755,
+    "probability": 0.95,
+    "hit": true
+  },
+  {
+    "lat": 34.29071,
+    "lon": -117.60387,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29195,
+    "lon": -118.80177,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.69091,
+    "lon": -117.5343,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.43015,
+    "lon": -118.64644,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.21067,
+    "lon": -117.70081,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.32022,
+    "lon": -118.51123,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.69646,
+    "lon": -117.55194,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.18419,
+    "lon": -118.11597,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.10653,
+    "lon": -118.4797,
+    "probability": 0.92,
+    "hit": true
+  },
+  {
+    "lat": 33.80511,
+    "lon": -118.24437,
+    "probability": 0.96,
+    "hit": true
+  },
+  {
+    "lat": 33.66423,
+    "lon": -117.5095,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.66132068630895,
+    "lon": -117.57657008522354,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.67809,
+    "lon": -117.56956,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.7032,
+    "lon": -117.54649,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.38343,
+    "lon": -117.69846,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.48777,
+    "lon": -117.95824,
+    "probability": 0.96,
+    "hit": true
+  },
+  {
+    "lat": 34.32082,
+    "lon": -118.51132,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.160870997312664,
+    "lon": -117.48846588252808,
+    "probability": 1.0,
+    "hit": false
+  },
+  {
+    "lat": 34.40842,
+    "lon": -117.6694,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.28854,
+    "lon": -117.6043,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.42853,
+    "lon": -118.64665,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.042,
+    "lon": -118.53146,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.34215,
+    "lon": -118.97097,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.42979,
+    "lon": -118.64566,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.36275,
+    "lon": -117.68013,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.05622,
+    "lon": -118.53268,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.06972,
+    "lon": -118.68867,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.31974,
+    "lon": -118.5111,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.69932,
+    "lon": -117.51304,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.34157,
+    "lon": -117.64886,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.32366,
+    "lon": -117.77108,
+    "probability": 0.96,
+    "hit": true
+  },
+  {
+    "lat": 34.04308,
+    "lon": -118.51762,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.2615,
+    "lon": -117.75738,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38206,
+    "lon": -117.71954,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33654,
+    "lon": -118.51728,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.4001,
+    "lon": -117.68277,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.61238,
+    "lon": -117.82101,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.43156,
+    "lon": -118.64678,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 33.64613,
+    "lon": -117.53098,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15251,
+    "lon": -118.1948,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.92521,
+    "lon": -118.42958,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.29263,
+    "lon": -118.80347,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.04055,
+    "lon": -117.82336,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.27265,
+    "lon": -117.72211,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.24852,
+    "lon": -117.68766,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.11072,
+    "lon": -118.53273,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.27192,
+    "lon": -117.77246,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.04777,
+    "lon": -118.52812,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.61233,
+    "lon": -117.82337,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.29385,
+    "lon": -117.61658,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.36066,
+    "lon": -117.68205,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.25566,
+    "lon": -117.73415,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.43219,
+    "lon": -118.64761,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.43181,
+    "lon": -118.646,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.27338,
+    "lon": -117.75611,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.61424,
+    "lon": -117.82512,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.13905,
+    "lon": -118.5272,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.26502,
+    "lon": -117.65539,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33418,
+    "lon": -118.51942,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.35143,
+    "lon": -117.66032,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.15368,
+    "lon": -118.19142,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.3781,
+    "lon": -117.69107,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.37992,
+    "lon": -117.68367,
+    "probability": 0.96,
+    "hit": true
+  },
+  {
+    "lat": 34.29465,
+    "lon": -117.59611,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.34792,
+    "lon": -117.74442,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.24357,
+    "lon": -118.38175,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.07875,
+    "lon": -118.54136,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.6876,
+    "lon": -117.55708,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.26453,
+    "lon": -117.66145,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.05589,
+    "lon": -118.56045,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.2911,
+    "lon": -118.80371,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 33.64551,
+    "lon": -117.53153,
+    "probability": 0.94,
+    "hit": true
+  },
+  {
+    "lat": 33.65972,
+    "lon": -117.52914,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.03496,
+    "lon": -118.10806,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33815,
+    "lon": -117.63544,
+    "probability": 0.95,
+    "hit": true
+  },
+  {
+    "lat": 34.36177,
+    "lon": -117.67622,
+    "probability": 0.87,
+    "hit": true
+  },
+  {
+    "lat": 34.35044,
+    "lon": -117.72865,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.61489,
+    "lon": -117.82307,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.30236,
+    "lon": -118.78786,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.15274,
+    "lon": -118.19432,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.3026,
+    "lon": -117.78104,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.34112,
+    "lon": -118.48911,
+    "probability": 0.41,
+    "hit": true
+  },
+  {
+    "lat": 33.7916,
+    "lon": -118.34953,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.31898,
+    "lon": -118.51236,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.20274,
+    "lon": -118.13229,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.3361,
+    "lon": -118.51732,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.28102,
+    "lon": -117.78022,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.20597,
+    "lon": -118.13434,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.25159,
+    "lon": -117.68981,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.27258,
+    "lon": -117.59265,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.13291,
+    "lon": -118.54526,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.39344,
+    "lon": -117.68537,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.4056,
+    "lon": -117.68419,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.27567,
+    "lon": -117.58833,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.63425,
+    "lon": -117.52454,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.66275,
+    "lon": -117.5667,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.03869,
+    "lon": -118.62357,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.32873,
+    "lon": -117.62333,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.33418,
+    "lon": -118.51975,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.29139,
+    "lon": -118.80435,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 33.61341,
+    "lon": -117.8251,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.04601,
+    "lon": -118.54282,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.61372,
+    "lon": -117.82024,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.28282,
+    "lon": -117.61469,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29322,
+    "lon": -118.80236,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.26064,
+    "lon": -117.6503,
+    "probability": 0.96,
+    "hit": true
+  },
+  {
+    "lat": 34.05334,
+    "lon": -118.69633,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29152,
+    "lon": -118.80551,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.30141,
+    "lon": -117.77571,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15444,
+    "lon": -118.19572,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.65786,
+    "lon": -117.56127,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.32827,
+    "lon": -117.76849,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.2686,
+    "lon": -117.72514,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.24789,
+    "lon": -117.7303,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.32005,
+    "lon": -118.51094,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.03886,
+    "lon": -118.66149,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.11435,
+    "lon": -118.55777,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.24386,
+    "lon": -118.38073,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.90811,
+    "lon": -118.40958,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.24567,
+    "lon": -117.7223,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.61562,
+    "lon": -117.82272,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.31571,
+    "lon": -117.67364,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15236751484832,
+    "lon": -118.06023325505508,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.8213,
+    "lon": -118.24369,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.31571,
+    "lon": -117.76813,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.31918,
+    "lon": -118.51154,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.06614,
+    "lon": -118.69813,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33669,
+    "lon": -118.52103,
+    "probability": 0.93,
+    "hit": true
+  },
+  {
+    "lat": 34.3504,
+    "lon": -117.66254,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.32069,
+    "lon": -118.51369,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.38476,
+    "lon": -117.75171,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.27159,
+    "lon": -117.60419,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29082,
+    "lon": -118.80263,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.24562,
+    "lon": -118.38166,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.06974,
+    "lon": -118.55795,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33515,
+    "lon": -118.52184,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.28941,
+    "lon": -117.72138,
+    "probability": 0.89,
+    "hit": true
+  },
+  {
+    "lat": 34.31914,
+    "lon": -118.51333,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.90888,
+    "lon": -118.41003,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.28626,
+    "lon": -117.76909,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 33.82128,
+    "lon": -118.24456,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.30367,
+    "lon": -117.77481,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.4004,
+    "lon": -117.68134,
+    "probability": 0.93,
+    "hit": true
+  },
+  {
+    "lat": 34.41632,
+    "lon": -117.66841,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.06489,
+    "lon": -118.69355,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.67736,
+    "lon": -117.55496,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.24991,
+    "lon": -117.64781,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.82587,
+    "lon": -118.24194,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.19,
+    "lon": -118.14327,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33574,
+    "lon": -118.51791,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.28609,
+    "lon": -117.78255,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.37117,
+    "lon": -117.65981,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15429,
+    "lon": -118.19268,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.2683,
+    "lon": -117.77799,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.26664,
+    "lon": -117.72881,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.03864,
+    "lon": -118.53225,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.81377,
+    "lon": -118.24187,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.62556,
+    "lon": -117.52007,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.34198,
+    "lon": -117.64424,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.05278,
+    "lon": -118.63303,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.69527,
+    "lon": -117.53967,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.27682,
+    "lon": -117.7618,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.32025,
+    "lon": -117.65827,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.0398,
+    "lon": -117.8227,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.21387,
+    "lon": -118.06185,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.62864,
+    "lon": -117.52849,
+    "probability": 0.96,
+    "hit": true
+  },
+  {
+    "lat": 33.70643,
+    "lon": -117.56402,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.23224,
+    "lon": -118.07457,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.04268,
+    "lon": -118.55423,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38207,
+    "lon": -117.6806,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.06744,
+    "lon": -118.55001,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.18298673910344,
+    "lon": -118.42556459643326,
+    "probability": 1.0,
+    "hit": false
+  },
+  {
+    "lat": 33.85289,
+    "lon": -118.33428,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.36968,
+    "lon": -117.65279,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.33773,
+    "lon": -118.52041,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.72827,
+    "lon": -117.5328,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.26947,
+    "lon": -117.65564,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.21466,
+    "lon": -117.76059,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.3609,
+    "lon": -117.7271,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.32617,
+    "lon": -117.6211,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.30278,
+    "lon": -118.9924,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.4036,
+    "lon": -117.68186,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.05272,
+    "lon": -118.5483,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.20422,
+    "lon": -118.08923,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.23093,
+    "lon": -118.08293,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.12743,
+    "lon": -118.5481,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.21049,
+    "lon": -118.1245,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.36518,
+    "lon": -117.66821,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.15462,
+    "lon": -118.19238,
+    "probability": 0.96,
+    "hit": true
+  },
+  {
+    "lat": 34.05157,
+    "lon": -118.65428,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29923262754122,
+    "lon": -117.54329752968523,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.67524,
+    "lon": -117.52663,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.10798,
+    "lon": -118.52269,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 33.627,
+    "lon": -117.53993,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33142,
+    "lon": -118.95964,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.05838,
+    "lon": -118.50493,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.21543,
+    "lon": -118.14794,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.06527,
+    "lon": -118.54434,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.22306,
+    "lon": -118.08989,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.82043,
+    "lon": -118.24687,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.42849,
+    "lon": -118.64504,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.37941,
+    "lon": -117.64471,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.09476,
+    "lon": -118.55251,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38092,
+    "lon": -117.66197,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.66344,
+    "lon": -117.5339,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.07383,
+    "lon": -118.68372,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.41436,
+    "lon": -117.668,
+    "probability": 0.81,
+    "hit": true
+  },
+  {
+    "lat": 34.06654,
+    "lon": -118.54547,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.64739,
+    "lon": -117.53328,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.67346,
+    "lon": -117.50279,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.77558,
+    "lon": -118.21806,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.6622,
+    "lon": -117.52272,
+    "probability": 0.92,
+    "hit": true
+  },
+  {
+    "lat": 34.24199,
+    "lon": -118.37983,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15607,
+    "lon": -118.1965,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.61474,
+    "lon": -117.82067,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.12662,
+    "lon": -118.51892,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.381,
+    "lon": -117.71324,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.35817,
+    "lon": -117.64982,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.68711,
+    "lon": -117.55071,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.61248,
+    "lon": -117.82496,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.06965,
+    "lon": -118.62957,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.37541,
+    "lon": -117.69785,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04244,
+    "lon": -117.82295,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.43092,
+    "lon": -118.64518,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38993,
+    "lon": -117.67788,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.06036,
+    "lon": -118.53632,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.19599,
+    "lon": -118.12257,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.20994,
+    "lon": -118.06532,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38793,
+    "lon": -117.73246,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04993,
+    "lon": -118.55676,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.37744,
+    "lon": -117.652,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29144,
+    "lon": -118.80218,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.10962,
+    "lon": -118.50579,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.13597,
+    "lon": -118.53353,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.81903,
+    "lon": -118.23899,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04206,
+    "lon": -117.82166,
+    "probability": 0.96,
+    "hit": true
+  },
+  {
+    "lat": 33.95644,
+    "lon": -117.66859,
+    "probability": 0.32,
+    "hit": true
+  },
+  {
+    "lat": 34.03664,
+    "lon": -118.10332,
+    "probability": 0.91,
+    "hit": true
+  },
+  {
+    "lat": 34.04297,
+    "lon": -118.6651,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.62398,
+    "lon": -117.53086,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.35107,
+    "lon": -117.65075,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04971,
+    "lon": -118.66374,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.43356,
+    "lon": -118.64801,
+    "probability": 0.95,
+    "hit": true
+  },
+  {
+    "lat": 34.06266,
+    "lon": -118.66277,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.81981,
+    "lon": -118.24593,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.34952,
+    "lon": -117.6413,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.06251,
+    "lon": -118.50852,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.11576,
+    "lon": -118.52264,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.64385,
+    "lon": -117.50957,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.43193,
+    "lon": -118.64725,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.15509,
+    "lon": -118.19323,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.22649,
+    "lon": -118.59914,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.32622,
+    "lon": -117.634,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.32273,
+    "lon": -117.66084,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 33.71559,
+    "lon": -117.71018,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.85496,
+    "lon": -118.3314,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.32579,
+    "lon": -118.52582,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15385,
+    "lon": -118.19219,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 33.64405,
+    "lon": -117.52155,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.3195,
+    "lon": -118.51061,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 33.71865,
+    "lon": -117.71177,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.09167,
+    "lon": -118.55772,
+    "probability": 0.6,
+    "hit": true
+  },
+  {
+    "lat": 33.82164,
+    "lon": -118.24814,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.65576,
+    "lon": -117.55028,
+    "probability": 0.94,
+    "hit": true
+  },
+  {
+    "lat": 34.34492,
+    "lon": -117.63142,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04766,
+    "lon": -118.56494,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15303,
+    "lon": -118.19488,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.2962,
+    "lon": -117.78007,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.34984,
+    "lon": -117.6497,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.1203,
+    "lon": -118.51008,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.42849,
+    "lon": -118.6457,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.10827,
+    "lon": -118.52608,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.21342,
+    "lon": -118.08277,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.29296,
+    "lon": -117.61568,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.5033363304889,
+    "lon": -117.62193603864868,
+    "probability": 1.0,
+    "hit": false
+  },
+  {
+    "lat": 34.32558,
+    "lon": -117.67405,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33757,
+    "lon": -118.52053,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 33.64303,
+    "lon": -117.50888,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38091,
+    "lon": -117.7432,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.35536,
+    "lon": -117.67245,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.19278,
+    "lon": -118.06478,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.03725,
+    "lon": -117.89312,
+    "probability": 0.94,
+    "hit": true
+  },
+  {
+    "lat": 34.08623,
+    "lon": -118.51291,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38659,
+    "lon": -117.71996,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.43077,
+    "lon": -118.64632,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33569,
+    "lon": -118.52093,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.37807,
+    "lon": -117.68819,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.64978,
+    "lon": -117.53046,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.42842,
+    "lon": -118.64483,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33588,
+    "lon": -118.52101,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.2985,
+    "lon": -117.59566,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.0888,
+    "lon": -118.53882,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.35015,
+    "lon": -117.65915,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.61422,
+    "lon": -117.82375,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.31813,
+    "lon": -117.66444,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.85229,
+    "lon": -118.33174,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.03922,
+    "lon": -118.73571,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.0808,
+    "lon": -117.50069,
+    "probability": 0.94,
+    "hit": true
+  },
+  {
+    "lat": 34.39148,
+    "lon": -117.71423,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.03771,
+    "lon": -118.10693,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.34538,
+    "lon": -117.66523,
+    "probability": 0.95,
+    "hit": true
+  },
+  {
+    "lat": 34.15417,
+    "lon": -118.19156,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33462,
+    "lon": -118.52043,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.27104,
+    "lon": -117.58014,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.37152,
+    "lon": -117.70905,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.68795,
+    "lon": -117.56123,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.43109,
+    "lon": -118.64632,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.09467,
+    "lon": -118.52342,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.26543,
+    "lon": -117.64828,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.66137,
+    "lon": -117.50731,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.8221,
+    "lon": -118.24532,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.43238,
+    "lon": -118.64851,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.35464,
+    "lon": -117.74734,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.61237,
+    "lon": -117.82171,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15418,
+    "lon": -118.19757,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.06621,
+    "lon": -118.67988,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38533,
+    "lon": -117.7101,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.06139,
+    "lon": -118.62231,
+    "probability": 0.35,
+    "hit": true
+  },
+  {
+    "lat": 34.40042,
+    "lon": -118.99897,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.31358,
+    "lon": -117.65934,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33621,
+    "lon": -118.52349,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.6485,
+    "lon": -117.51453,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.70757,
+    "lon": -117.55738,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.32198,
+    "lon": -118.51189,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.03894,
+    "lon": -118.65207,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.06434,
+    "lon": -118.59913,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29338,
+    "lon": -118.8005,
+    "probability": 0.39,
+    "hit": true
+  },
+  {
+    "lat": 34.12173,
+    "lon": -118.50216,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.36399,
+    "lon": -117.70654,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.3357,
+    "lon": -118.51932,
+    "probability": 0.93,
+    "hit": true
+  },
+  {
+    "lat": 34.33824,
+    "lon": -117.62695,
+    "probability": 0.95,
+    "hit": true
+  },
+  {
+    "lat": 34.2863,
+    "lon": -117.74085,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.06736,
+    "lon": -118.67815,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.05798,
+    "lon": -118.67205,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.03556,
+    "lon": -118.10571,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.37093,
+    "lon": -117.65352,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.26712,
+    "lon": -117.75328,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.08099,
+    "lon": -118.5555,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.39676,
+    "lon": -117.66371,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.64874,
+    "lon": -117.52718,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.32113,
+    "lon": -118.51241,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.39213,
+    "lon": -117.6905,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.20269,
+    "lon": -118.13054,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.64599,
+    "lon": -117.54814,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.04114,
+    "lon": -117.81926,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.19117,
+    "lon": -118.05576,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33694,
+    "lon": -118.52072,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29537,
+    "lon": -118.8047,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15381,
+    "lon": -118.19399,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33476,
+    "lon": -118.51826,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38572,
+    "lon": -117.72606,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.31964,
+    "lon": -118.51379,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.65863,
+    "lon": -117.57401,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.71646,
+    "lon": -117.71324,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.77843,
+    "lon": -118.23882,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.0672,
+    "lon": -118.68359,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.70009,
+    "lon": -117.53924,
+    "probability": 0.94,
+    "hit": true
+  },
+  {
+    "lat": 34.26806,
+    "lon": -117.78233,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.65299,
+    "lon": -117.50801,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.08199,
+    "lon": -118.64029,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.15629,
+    "lon": -118.19584,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 33.8218,
+    "lon": -118.24519,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.34968,
+    "lon": -117.64469,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.43148,
+    "lon": -118.64399,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.70059,
+    "lon": -117.52947,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.24464,
+    "lon": -118.38115,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.85432,
+    "lon": -118.3374,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.24477,
+    "lon": -118.38158,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.33486,
+    "lon": -118.51846,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.38686,
+    "lon": -117.66769,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04323,
+    "lon": -118.68587,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.31915,
+    "lon": -118.51305,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29226,
+    "lon": -117.7354,
+    "probability": 0.74,
+    "hit": true
+  },
+  {
+    "lat": 34.29078,
+    "lon": -118.80131,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.26667,
+    "lon": -117.77666,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15369,
+    "lon": -118.19254,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.31823,
+    "lon": -117.78358,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.08529,
+    "lon": -118.51678,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.28051,
+    "lon": -117.6069,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.07901,
+    "lon": -118.52278,
+    "probability": 0.91,
+    "hit": true
+  },
+  {
+    "lat": 33.77897,
+    "lon": -118.23633,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38019,
+    "lon": -117.72309,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38318,
+    "lon": -117.70184,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.04305,
+    "lon": -118.68029,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.31747,
+    "lon": -117.77605,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.61546,
+    "lon": -117.82487,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.77768,
+    "lon": -118.23865,
+    "probability": 0.31,
+    "hit": true
+  },
+  {
+    "lat": 34.06067,
+    "lon": -118.51807,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.66886,
+    "lon": -117.57999,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.10395,
+    "lon": -118.54042,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.0424,
+    "lon": -118.51908,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.05515,
+    "lon": -118.54651,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.36243,
+    "lon": -117.70039,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.05941,
+    "lon": -118.59093,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.79248,
+    "lon": -118.34883,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.37189,
+    "lon": -117.67316,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.24347,
+    "lon": -118.38089,
+    "probability": 0.95,
+    "hit": true
+  },
+  {
+    "lat": 34.11528,
+    "lon": -117.92438,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.43168,
+    "lon": -118.64423,
+    "probability": 0.96,
+    "hit": true
+  },
+  {
+    "lat": 34.0776,
+    "lon": -118.69194,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29271,
+    "lon": -117.5862,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.27578,
+    "lon": -117.6099,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.29298,
+    "lon": -118.80431,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.27184,
+    "lon": -117.67557,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.4626,
+    "lon": -118.7636,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.05164,
+    "lon": -118.50652,
+    "probability": 0.94,
+    "hit": true
+  },
+  {
+    "lat": 34.2748,
+    "lon": -117.60591,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.65014,
+    "lon": -117.50639,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.36872,
+    "lon": -117.74452,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.23183,
+    "lon": -118.08943,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.77928,
+    "lon": -118.24037,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.17002,
+    "lon": -118.09831,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15477,
+    "lon": -118.19286,
+    "probability": 0.95,
+    "hit": true
+  },
+  {
+    "lat": 34.33895,
+    "lon": -118.94093,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.2215,
+    "lon": -118.12886,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.11015,
+    "lon": -118.53614,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.09068,
+    "lon": -118.50211,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.15366,
+    "lon": -118.19448,
+    "probability": 0.9,
+    "hit": true
+  },
+  {
+    "lat": 34.1533,
+    "lon": -118.1937,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.32067,
+    "lon": -118.51147,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.3344,
+    "lon": -118.4906,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.3364,
+    "lon": -118.51936,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.04565,
+    "lon": -118.61983,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.24799,
+    "lon": -117.75437,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.66849,
+    "lon": -117.5034,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.09183,
+    "lon": -118.52938,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.0657,
+    "lon": -118.56689,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.11091,
+    "lon": -118.54977,
+    "probability": 0.35,
+    "hit": true
+  },
+  {
+    "lat": 33.77704,
+    "lon": -118.23708,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.34502,
+    "lon": -117.66477,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.42905,
+    "lon": -118.64233,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.37824,
+    "lon": -117.71989,
+    "probability": 0.96,
+    "hit": true
+  },
+  {
+    "lat": 34.43286,
+    "lon": -118.64679,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.06276,
+    "lon": -118.54034,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04107,
+    "lon": -118.56178,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.34073,
+    "lon": -117.65165,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.27839,
+    "lon": -117.77828,
+    "probability": 0.87,
+    "hit": true
+  },
+  {
+    "lat": 34.32161,
+    "lon": -118.5118,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.09015,
+    "lon": -118.51651,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.40778,
+    "lon": -117.66423,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29201,
+    "lon": -118.80257,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.39745,
+    "lon": -117.65803,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 33.71628,
+    "lon": -117.71661,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.19542,
+    "lon": -118.05967,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.07008,
+    "lon": -118.59904,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.35162,
+    "lon": -117.66542,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.22985,
+    "lon": -117.72968,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.85357,
+    "lon": -118.33342,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.85264,
+    "lon": -118.3316,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.24293,
+    "lon": -118.38293,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.03463,
+    "lon": -118.69971,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29134,
+    "lon": -118.80219,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.71853,
+    "lon": -117.71301,
+    "probability": 0.94,
+    "hit": true
+  },
+  {
+    "lat": 34.0789,
+    "lon": -117.5043,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.07725,
+    "lon": -118.50635,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.03973,
+    "lon": -118.73199,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.30331,
+    "lon": -117.64372,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38426,
+    "lon": -117.65762,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.22123,
+    "lon": -118.12364,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.11105,
+    "lon": -118.55431,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.03175,
+    "lon": -118.51881,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.30636,
+    "lon": -117.68267,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29599,
+    "lon": -117.66304,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.62261,
+    "lon": -117.52929,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.22311,
+    "lon": -117.76593,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29319,
+    "lon": -117.5924,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.26852,
+    "lon": -117.73592,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.33521,
+    "lon": -118.52041,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.28322,
+    "lon": -117.5946,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.07247,
+    "lon": -118.62524,
+    "probability": 0.77,
+    "hit": true
+  },
+  {
+    "lat": 33.82245,
+    "lon": -118.25053,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.29683,
+    "lon": -117.57967,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.39696,
+    "lon": -117.68056,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.32841,
+    "lon": -117.76398,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.4324,
+    "lon": -118.64566,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 33.85318,
+    "lon": -118.33127,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.0689,
+    "lon": -118.62529,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.82046,
+    "lon": -118.24504,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.04174,
+    "lon": -117.8241,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.35425,
+    "lon": -117.67814,
+    "probability": 0.27,
+    "hit": true
+  },
+  {
+    "lat": 34.32846,
+    "lon": -117.63998,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.15697,
+    "lon": -118.19833,
+    "probability": 0.87,
+    "hit": true
+  },
+  {
+    "lat": 34.10358,
+    "lon": -118.5229,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.32097,
+    "lon": -118.50968,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.28177,
+    "lon": -117.59084,
+    "probability": 0.97,
+    "hit": true
+  },
+  {
+    "lat": 34.27266,
+    "lon": -117.74962,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.31902,
+    "lon": -118.51229,
+    "probability": 0.96,
+    "hit": true
+  },
+  {
+    "lat": 34.2912,
+    "lon": -118.80331,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.36805,
+    "lon": -117.68998,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.20088,
+    "lon": -118.14545,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.43124,
+    "lon": -118.64542,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.32536,
+    "lon": -118.52877,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.71447,
+    "lon": -117.71047,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.11718,
+    "lon": -117.92416,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.2923,
+    "lon": -118.80672,
+    "probability": 0.91,
+    "hit": true
+  },
+  {
+    "lat": 34.26841,
+    "lon": -117.77801,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.37766,
+    "lon": -117.73911,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.0705,
+    "lon": -118.7026,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.08104,
+    "lon": -117.50304,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.19302,
+    "lon": -118.14903,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.23056,
+    "lon": -117.74054,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.39074,
+    "lon": -117.65487,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.37273,
+    "lon": -117.64661,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.434321786339105,
+    "lon": -117.89819833509956,
+    "probability": 1.0,
+    "hit": false
+  },
+  {
+    "lat": 34.4325,
+    "lon": -118.64748,
+    "probability": 0.96,
+    "hit": true
+  },
+  {
+    "lat": 34.07431,
+    "lon": -118.67686,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 33.85529,
+    "lon": -118.33376,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.07603,
+    "lon": -118.64615,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 33.85361,
+    "lon": -118.33848,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.08071,
+    "lon": -118.64697,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.19283,
+    "lon": -118.10486,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.3845,
+    "lon": -117.67761,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.16785,
+    "lon": -118.10356,
+    "probability": 0.99,
+    "hit": true
+  },
+  {
+    "lat": 34.39365,
+    "lon": -117.68901,
+    "probability": 0.94,
+    "hit": true
+  },
+  {
+    "lat": 34.15314,
+    "lon": -118.19112,
+    "probability": 0.98,
+    "hit": true
+  },
+  {
+    "lat": 34.25168,
+    "lon": -117.74314,
+    "probability": 1.0,
+    "hit": true
+  },
+  {
+    "lat": 34.38715,
+    "lon": -117.73219,
+    "probability": 0.92,
+    "hit": true
+  },
+  {
+    "lat": 34.0449,
+    "lon": -118.61546,
+    "probability": 1.0,
+    "hit": true
+  }
+]
