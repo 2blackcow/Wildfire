@@ -1,5 +1,5 @@
 ⚙️ 패키지 설치  
-pip install pandas numpy scikit-learn tqdm requests python-dotenv
+pip install pandas numpy scikit-learn tqdm requests python-dotenv haversine
 
 ⚙️ 실행 스크립트 & 순서
 

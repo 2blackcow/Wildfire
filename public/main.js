@@ -69,7 +69,9 @@ function loadPredictedFirePoints() {
       predictedEntities = [];
 
       data.forEach((pt) => {
-        const color = Cesium.Color.RED.withAlpha(pt.probability);
+        const color = pt.hit
+          ? Cesium.Color.LIME.withAlpha(pt.probability)
+          : Cesium.Color.GRAY.withAlpha(0.3);
 
         const entity = viewer.entities.add({
           position: Cesium.Cartesian3.fromDegrees(pt.lon, pt.lat),
@@ -80,7 +82,10 @@ function loadPredictedFirePoints() {
             outlineWidth: 1,
             disableDepthTestDistance: Number.POSITIVE_INFINITY
           },
-          description: `🔥 <b>예측 확률:</b> ${(pt.probability * 100).toFixed(1)}%`
+          description: `
+            🔥 <b>예측 확률:</b> ${(pt.probability * 100).toFixed(1)}%<br/>
+            🎯 <b>실제 화재 근접:</b> ${pt.hit ? "✅" : "❌"}
+          `
         });
 
         predictedEntities.push(entity);

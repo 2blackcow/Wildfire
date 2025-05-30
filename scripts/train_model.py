@@ -1,7 +1,8 @@
+#train_model.py
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, confusion_matrix
+from sklearn.metrics import accuracy_score, confusion_matrix, precision_score, recall_score, f1_score
 from tqdm import tqdm
 import json
 import shutil
@@ -31,6 +32,9 @@ y_pred = model.predict(X_test)
 probas = model.predict_proba(X_test)[:, 1]
 
 print("✅ 정확도:", accuracy_score(y_test, y_pred))
+print("✅ 정밀도 (Precision):", precision_score(y_test, y_pred))
+print("✅ 재현율 (Recall):", recall_score(y_test, y_pred))
+print("✅ F1 점수:", f1_score(y_test, y_pred))
 print("✅ 혼동 행렬:\n", confusion_matrix(y_test, y_pred))
 
 # 📦 결과 조합
