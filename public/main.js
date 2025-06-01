@@ -143,7 +143,7 @@ function loadPredictedFirePoints() {
         const { lat, lon } = gridIdToLatLon(pt.grid_id);
 
         // 확률에 따라 점의 색/투명도/크기 조정 (원하면 커스터마이즈)
-        const color = Cesium.Color.RED.withAlpha(Math.max(0.4, pt.probability));
+        const color = Cesium.Color.CHARTREUSE.withAlpha(Math.max(0.4, pt.probability));
         const size = 5 + 5 * pt.probability;
 
         const entity = viewer.entities.add({
@@ -195,7 +195,6 @@ async function init() {
   drawAllGridLines();
   loadPredictedFireGrid();
 
-  // ... (이하 원래 코드 유지) ...
 }
 
 
