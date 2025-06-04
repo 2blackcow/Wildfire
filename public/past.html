@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Cesium + MAXAR 시계열 화재</title>
+
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Cesium.js"></script>
+    <link
+      href="https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Widgets/widgets.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      html,
+      body,
+      #cesiumContainer {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      #infoPanel {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, 0.75);
+        color: white;
+        padding: 10px 14px;
+        border-radius: 8px;
+        font-family: sans-serif;
+        font-size: 14px;
+        min-width: 200px;
+        pointer-events: none;
+      }
+
+      #windArrow {
+        font-size: 32px;
+        text-align: center;
+        transform-origin: center;
+        transition: transform 0.4s ease;
+        margin-bottom: 8px;
+      }
+
+      #dateLabel {
+        position: absolute;
+        bottom: 180px;
+        left: 10px;
+        background-color: rgba(0, 123, 255, 0.9);
+        color: white;
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 14px;
+        font-family: sans-serif;
+        z-index: 10;
+        font-weight: 500;
+      }
+
+      #controlsContainer {
+        position: absolute;
+        bottom: 30px;
+        left: 10px;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-family: sans-serif;
+        gap: 8px;
+      }
+
+      .controls-wrapper {
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 12px;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        min-width: 280px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .top-row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+      }
+
+      #toggleButton {
+        padding: 8px 16px;
+        font-size: 14px;
+        font-weight: 500;
+        border: none;
+        border-radius: 6px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        transition: all 0.2s;
+        min-width: 80px;
+        white-space: nowrap;
+      }
+
+      #toggleButton:hover {
+        background-color: #0056b3;
+        transform: translateY(-1px);
+      }
+
+      #timeSlider {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 140px;
+        height: 8px;
+        background: #444;
+        border-radius: 4px;
+        outline: none;
+        transition: background 0.3s;
+        flex-shrink: 0;
+      }
+
+      #timeSlider:hover {
+        background: #555;
+      }
+
+      #timeSlider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #007bff;
+        cursor: pointer;
+        transition: all 0.3s;
+        border: 2px solid white;
+      }
+
+      #timeSlider::-webkit-slider-thumb:hover {
+        background: #0056b3;
+        transform: scale(1.1);
+      }
+
+      #timeSlider::-moz-range-thumb {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #007bff;
+        cursor: pointer;
+        border: 2px solid white;
+      }
+
+      #fireDateSelect {
+        padding: 8px 12px;
+        font-size: 14px;
+        border-radius: 6px;
+        border: 1px solid #555;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.95);
+        color: #333;
+        font-family: sans-serif;
+      }
+
+      #fireDateSelect:focus {
+        outline: none;
+        border-color: #007bff;
+        box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+      }
+
+      #fireInfo {
+        color: white;
+        font-size: 13px;
+        text-align: center;
+        background-color: rgba(255, 87, 34, 0.9);
+        border-radius: 6px;
+        padding: 6px 10px;
+        margin-top: 4px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        border: 1px solid rgba(255, 87, 34, 0.5);
+        font-weight: 500;
+      }
+
+      .cesium-infoBox {
+        bottom: 20px !important;
+        top: auto !important;
+        right: 20px !important;
+        left: auto !important;
+        max-height: 40vh;
+        z-index: 1000;
+      }
+
+      #weatherInfo {
+        font-size: 14px;
+        line-height: 1.4;
+        white-space: pre-line;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="cesiumContainer"></div>
+    <!-- 🔄 페이지 간 이동 버튼 -->
+    <div
+      style="
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 999;
+        background: rgba(0, 0, 0, 0.65);
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-family: sans-serif;
+        font-size: 14px;
+      "
+    >
+      <a
+        href="index.html"
+        style="color: white; text-decoration: none; margin: 0 12px"
+        >🏠 메인</a
+      >
+      <a
+        href="present.html"
+        style="color: white; text-decoration: none; margin: 0 12px"
+        >📍 현재</a
+      >
+      <a
+        href="future.html"
+        style="color: white; text-decoration: none; margin: 0 12px"
+        >📡 미래</a
+      >
+    </div>
+
+    <div id="infoPanel">
+      <div id="windArrow">↑</div>
+      <div id="weatherInfo">🖱️ 지도에서 위치를 클릭하세요</div>
+    </div>
+
+    <div id="dateLabel">🗓️ 2025-01-08</div>
+
+    <div id="controlsContainer">
+      <div class="controls-wrapper">
+        <div class="top-row">
+          <button id="toggleButton">▶ 재생</button>
+          <input
+            type="range"
+            id="timeSlider"
+            min="0"
+            max="7"
+            value="0"
+            step="1"
+          />
+        </div>
+        <select id="fireDateSelect">
+          <option value="0">20250108m-maxar</option>
+          <option value="1">20250109m-maxar</option>
+          <option value="2">20250110n-maxar</option>
+          <option value="3">20250113m-maxar</option>
+          <option value="4">20250114m-maxar</option>
+          <option value="5">20250116m-maxar</option>
+          <option value="6">20250118m-maxar</option>
+          <option value="7">20250120m-maxar</option>
+        </select>
+        <div id="fireInfo">🔥 산불 데이터 로딩 중...</div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
