@@ -9,6 +9,7 @@
       href="https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Widgets/widgets.css"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6.5.0/turf.min.js"></script>
 
     <style>
       html,
@@ -234,6 +235,52 @@
         <div id="fireInfo">🔥 산불 데이터 로딩 중...</div>
       </div>
     </div>
+
+    <div style="position: absolute; top: 60px; right: 30px; z-index: 1000;">
+      <button id="toggleActualBtn">🔥 관측 화점 OFF</button>
+      <button id="togglePredBtn">🤖 AI 예측 화점 OFF</button>
+    </div>
+
+  <!-- 관측·예측 화점 범례 (좌측 중앙, 미니멀/수정본) -->
+  <div id="fire-legend" style="
+    position: absolute;
+    right: 18px; top: 38%; z-index: 99;
+    background: rgba(30,30,30,0.83); color: #fff;
+    border-radius: 8px; padding: 8px 11px;
+    font-size: 12px; box-shadow: 1px 2px 8px #0002;
+    pointer-events: none; user-select: none;">
+    <b style="font-size:13px;">🔥 관측·예측 화점 범례</b>
+    <hr style="border: none; border-top: 1px solid #444; margin: 4px 0 8px 0;">
+
+    <!-- 관측 화점 -->
+    <div style="margin-bottom:5px;">
+      <span style="font-size:10px;opacity:.85">관측 화점 (실제 위성)</span>
+      <br>
+      <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#ff0000;margin-right:3px;vertical-align:middle;"></span>
+      높음
+      <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#ff9800;margin-left:11px;margin-right:3px;vertical-align:middle;"></span>
+      중간
+      <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#ffff00;border:1px solid #888;margin-left:11px;margin-right:3px;vertical-align:middle;"></span>
+      낮음
+      <br>
+      <svg width="70" height="13" style="vertical-align:middle;margin-top:1px;">
+        <circle cx="9" cy="7" r="4" fill="#bbb" stroke="#fff" stroke-width="0.5"/>
+        <text x="16" y="11" fill="#fff" font-size="7">FRP↓</text>
+        <circle cx="54" cy="7" r="7" fill="#bbb" stroke="#fff" stroke-width="0.5"/>
+        <text x="62" y="11" fill="#fff" font-size="7">FRP↑</text>
+      </svg>
+      <div style="font-size:9px;color:#bbb;margin-top:3px;">* 점 크기: FRP(방사 강도) 비례</div>
+    </div>
+
+    <!-- 예측 화점 -->
+    <div style="margin-top:7px;">
+      <span style="font-size:11px;opacity:.85">AI 예측 화점</span>
+      <br>
+      <span style="display:inline-block;width:14px;height:14px;border-radius:50%;background:chartreuse;margin-right:5px;vertical-align:middle;border:1px solid #888;"></span>
+      예측 화점
+      <div style="font-size:10px;color:#bbb;margin-top:1px;">* 확률 높을수록 투명도 감소 (진해짐)</div>
+    </div>
+  </div>
 
     <script src="/main.js"></script>
   </body>
