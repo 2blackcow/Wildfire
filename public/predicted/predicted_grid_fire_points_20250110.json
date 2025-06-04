@@ -1,0 +1,518 @@
+[
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.96
+  },
+  {
+    "grid_id": "l_18_7",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_16_9",
+    "probability": 1.0
+  },
+  {
+    "grid_id": "l_16_9",
+    "probability": 0.97
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 1.0
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.97
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.97
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.97
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_14_17",
+    "probability": 1.0
+  },
+  {
+    "grid_id": "l_14_17",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.97
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.97
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_14_17",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_14_17",
+    "probability": 1.0
+  },
+  {
+    "grid_id": "l_14_17",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.96
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.95
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_14_17",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.97
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_14_16",
+    "probability": 1.0
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.97
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_14_17",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_14_16",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_13_18",
+    "probability": 1.0
+  },
+  {
+    "grid_id": "l_13_18",
+    "probability": 1.0
+  },
+  {
+    "grid_id": "l_13_16",
+    "probability": 1.0
+  },
+  {
+    "grid_id": "l_13_6",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_13_6",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_13_6",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_12_5",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.95
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.97
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.97
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.97
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.95
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.96
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.96
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.97
+  },
+  {
+    "grid_id": "l_12_8",
+    "probability": 0.93
+  },
+  {
+    "grid_id": "l_12_8",
+    "probability": 0.92
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.95
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.94
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.97
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_12_8",
+    "probability": 0.93
+  },
+  {
+    "grid_id": "l_11_9",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_12_8",
+    "probability": 0.97
+  },
+  {
+    "grid_id": "l_11_9",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_11_9",
+    "probability": 0.97
+  },
+  {
+    "grid_id": "l_11_9",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_11_9",
+    "probability": 1.0
+  },
+  {
+    "grid_id": "l_11_8",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_11_7",
+    "probability": 0.97
+  },
+  {
+    "grid_id": "l_11_8",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_11_8",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_11_8",
+    "probability": 1.0
+  },
+  {
+    "grid_id": "l_11_8",
+    "probability": 1.0
+  },
+  {
+    "grid_id": "l_11_6",
+    "probability": 1.0
+  },
+  {
+    "grid_id": "l_11_6",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_11_6",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_11_6",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_11_6",
+    "probability": 1.0
+  },
+  {
+    "grid_id": "l_8_11",
+    "probability": 1.0
+  },
+  {
+    "grid_id": "l_7_13",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_6_15",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_6_15",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_5_15",
+    "probability": 1.0
+  },
+  {
+    "grid_id": "l_4_25",
+    "probability": 1.0
+  },
+  {
+    "grid_id": "l_2_23",
+    "probability": 1.0
+  },
+  {
+    "grid_id": "l_11_8",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_11_6",
+    "probability": 1.0
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.95
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.97
+  },
+  {
+    "grid_id": "l_12_8",
+    "probability": 0.9
+  },
+  {
+    "grid_id": "l_11_6",
+    "probability": 1.0
+  },
+  {
+    "grid_id": "l_11_6",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.95
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.95
+  },
+  {
+    "grid_id": "l_11_8",
+    "probability": 1.0
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.95
+  },
+  {
+    "grid_id": "l_12_8",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_12_8",
+    "probability": 0.89
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_12_8",
+    "probability": 0.9
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.95
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.95
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_12_9",
+    "probability": 0.98
+  },
+  {
+    "grid_id": "l_14_18",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_15_3",
+    "probability": 0.97
+  },
+  {
+    "grid_id": "l_15_20",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_13_18",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_10_11",
+    "probability": 0.98
+  }
+]

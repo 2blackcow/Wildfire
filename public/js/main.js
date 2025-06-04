@@ -2,6 +2,32 @@ let viewer;
 let fireData = [];
 let fireEntities = [];
 let predictedEntities = []; // 🔥 추가: 예측 마커 전역 변수
+let landGeoJson = null;
+
+// --- GeoJSON 파일 불러오기
+fetch("land.geojson")
+  .then(res => res.json())
+  .then(data => {
+    landGeoJson = data;
+  });
+
+// 실제 산불 토글
+let isActualVisible = true;
+document.getElementById("toggleActualBtn").addEventListener("click", () => {
+  isActualVisible = !isActualVisible;
+  fireEntities.forEach(e => e.show = isActualVisible);
+  document.getElementById("toggleActualBtn").textContent =
+    isActualVisible ? "🔥 관측 화점 OFF" : "🔥 관측 화점 ON";
+});
+
+// 예측 마커 토글
+let isPredVisible = true;
+document.getElementById("togglePredBtn").addEventListener("click", () => {
+  isPredVisible = !isPredVisible;
+  predictedEntities.forEach(e => e.show = isPredVisible);
+  document.getElementById("togglePredBtn").textContent =
+    isPredVisible ? "🤖 AI 예측 화점 OFF" : "🤖 AI 예측 화점 ON";
+});
 
 // 날짜 인덱스 <-> 실제 날짜 맵핑
 const dateIndexMap = {
@@ -33,9 +59,14 @@ function updateFiresForDate(selectedDate) {
     const frp = parseFloat(fire.frp);
     const size = Math.min(Math.max(frp / 8, 8), 20);
 
+    // ✅ 모든 날짜에 대해 약간의 무작위 오프셋 적용
+    const lat = fire.latitude + (Math.random() - 0.5) * 0.015;
+    const lon = fire.longitude + (Math.random() - 0.5) * 0.015;
+    const height = 10;
+
     const entity = viewer.entities.add({
-      id: `fire-${fire.latitude}-${fire.longitude}-${fire.acq_date}`,
-      position: Cesium.Cartesian3.fromDegrees(fire.longitude, fire.latitude, 500),
+      id: `fire-${lat}-${lon}-${fire.acq_date}`,
+      position: Cesium.Cartesian3.fromDegrees(lon, lat, height),
       point: {
         pixelSize: size,
         color: color,
@@ -46,7 +77,9 @@ function updateFiresForDate(selectedDate) {
         <b>관측일자:</b> ${fire.acq_date}<br/>
         <b>밝기 (열 강도):</b> ${fire.brightness}<br/>
         <b>방사 강도 (FRP, MW):</b> ${fire.frp}<br/>
-        <b>화재 신뢰도:</b> ${fire.confidence === "h" ? "높음" : fire.confidence === "n" ? "중간" : "낮음"}<br/>
+        <b>화재 신뢰도:</b> ${
+          fire.confidence === "h" ? "높음" : fire.confidence === "n" ? "중간" : "낮음"
+        }<br/>
         <b>관측 위성:</b> ${fire.satellite || "-"}
       `,
     });
@@ -60,33 +93,101 @@ function updateFiresForDate(selectedDate) {
   }
 }
 
-// 🔥 추가: 예측 결과 JSON 로딩 및 시각화 함수
-function loadPredictedFirePoints() {
-  fetch("predicted_fire_points.json")
-    .then((res) => res.json())
+
+// --- [1] 격자 설정 ---
+const min_lat = 33.5;
+const min_lon = -119.0;
+const max_lat = 34.5;   // 원하는 영역 최대값으로 조정
+const max_lon = -117.8; // 원하는 영역 최대값으로 조정
+const cell_size = 0.05;
+
+// --- [2] 전체 격자 그리기 (투명, 연한 선) ---
+function drawAllGridLines() {
+  const lat_cells = Math.ceil((max_lat - min_lat) / cell_size);
+  const lon_cells = Math.ceil((max_lon - min_lon) / cell_size);
+
+  for (let i = 0; i < lat_cells; i++) {
+    for (let j = 0; j < lon_cells; j++) {
+      const minLat = min_lat + i * cell_size;
+      const minLon = min_lon + j * cell_size;
+      const maxLat = minLat + cell_size;
+      const maxLon = minLon + cell_size;
+
+      viewer.entities.add({
+        polyline: {
+          positions: Cesium.Cartesian3.fromDegreesArray([
+            minLon, minLat, maxLon, minLat,
+            maxLon, minLat, maxLon, maxLat,
+            maxLon, maxLat, minLon, maxLat,
+            minLon, maxLat, minLon, minLat,
+          ]),
+          width: 1.5, // 선 두께를 더 굵게
+          material: Cesium.Color.WHITE.withAlpha(0.8), // 더 진한 흰색 계열
+          clampToGround: true,
+        }
+      });
+    }
+  }
+}
+
+// --- [3] 예측 격자 Polygon 채우기 ---
+function gridIdToLatLon(grid_id) {
+  const parts = grid_id.split("_");
+  const lat_idx = parseInt(parts[1]);
+  const lon_idx = parseInt(parts[2]);
+
+  const lat = min_lat + (lat_idx + 0.5) * cell_size;
+  const lon = min_lon + (lon_idx + 0.5) * cell_size;
+  return { lat, lon };
+}
+
+// === [3] turf.js 기반 육지/바다 마스킹 ===
+function isLand(lat, lon) {
+  if (!landGeoJson) return true; // GeoJSON 준비 전엔 그냥 통과
+  const pt = turf.point([lon, lat]);
+  for (const feature of landGeoJson.features) {
+    if (turf.booleanPointInPolygon(pt, feature)) return true;
+  }
+  return false;
+}
+
+function loadPredictedFirePointsForDate(dateStr) {
+  const fileName = `predicted/predicted_grid_fire_points_${dateStr.replaceAll("-", "")}.json`;
+
+  fetch(fileName)
+    .then((res) => {
+      if (!res.ok) throw new Error(`JSON 불러오기 실패: ${fileName}`);
+      return res.json();
+    })
     .then((data) => {
       predictedEntities.forEach(e => viewer.entities.remove(e));
       predictedEntities = [];
 
       data.forEach((pt) => {
-        const color = Cesium.Color.RED.withAlpha(pt.probability);
+        const { lat, lon } = gridIdToLatLon(pt.grid_id);
+        if (!isLand(lat, lon)) {
+        console.log("🌊 바다에서 컷:", lat, lon, pt.grid_id);
+        return;
+      }
+        const color = Cesium.Color.CHARTREUSE.withAlpha(Math.max(0.4, pt.probability));
+        const size = 5 + 5 * pt.probability;
 
         const entity = viewer.entities.add({
-          position: Cesium.Cartesian3.fromDegrees(pt.lon, pt.lat),
+          position: Cesium.Cartesian3.fromDegrees(lon, lat),
           point: {
-            pixelSize: 10,
+            pixelSize: size,
             color: color,
             outlineColor: Cesium.Color.BLACK,
             outlineWidth: 1,
-            disableDepthTestDistance: Number.POSITIVE_INFINITY
+            disableDepthTestDistance: Number.POSITIVE_INFINITY,
           },
-          description: `🔥 <b>예측 확률:</b> ${(pt.probability * 100).toFixed(1)}%`
+          description: `🔥 <b>격자번호:</b> ${pt.grid_id}<br/>🎯 <b>예측 확률:</b> ${(pt.probability * 100).toFixed(1)}%`
         });
 
         predictedEntities.push(entity);
       });
 
-      console.log(`✅ 예측 지점 ${data.length}개 로드 완료`);
+      console.log(`✅ 예측 확률 마커 ${data.length}개 표시`);
     })
     .catch((err) => {
       console.error("❌ 예측 데이터 불러오기 실패:", err);
@@ -102,9 +203,10 @@ async function init() {
     animation: false,
   });
 
-  // 대기(Atmosphere) 효과 켜기
+  // 대기 효과
   viewer.scene.skyAtmosphere.show = true;
 
+  // 3D 타일셋 로딩
   try {
     const tileset = await Cesium.createGooglePhotorealistic3DTileset();
     viewer.scene.primitives.add(tileset);
@@ -112,6 +214,7 @@ async function init() {
     console.error("🧨 3D 타일셋 생성 실패", error);
   }
 
+  // 초기 카메라 위치
   viewer.camera.flyTo({
     destination: Cesium.Cartesian3.fromDegrees(-118.60, 34.1, 50000),
   });
@@ -277,6 +380,7 @@ async function init() {
     updateLayers(idx);
     updateDateLabel(idx);
     updateFiresForDate(dateIndexMap[idx]);
+    loadPredictedFirePointsForDate(dateIndexMap[idx]);  // 🔥 예측 JSON 날짜별 로딩
   });
 
   slider.addEventListener("input", () => {
@@ -285,6 +389,7 @@ async function init() {
     updateLayers(idx);
     updateDateLabel(idx);
     updateFiresForDate(dateIndexMap[idx]);
+    loadPredictedFirePointsForDate(dateIndexMap[idx]);  // 🔥 예측 JSON 날짜별 로딩
   });
 
   let currentIndex = 0;
@@ -309,6 +414,7 @@ async function init() {
       updateLayers(currentIndex);
       updateDateLabel(currentIndex);
       updateFiresForDate(dateIndexMap[currentIndex]);
+      loadPredictedFirePointsForDate(dateIndexMap[currentIndex]);
     }, 2000);
   }
 
@@ -318,10 +424,13 @@ async function init() {
     if (isPlaying) startAutoSlider();
   });
 
-  updateLayers(0);
-  updateDateLabel(0);
-
-  loadPredictedFirePoints(); // 🔥 예측 데이터 시각화 호출
+// ✅ 모든 layerObjects 초기화 끝난 뒤에만 아래 호출!
+  const idx = 0;
+  updateLayers(idx);
+  updateDateLabel(idx);
+  updateFiresForDate(dateIndexMap[idx]);
+  loadPredictedFirePointsForDate(dateIndexMap[idx]);
+  drawAllGridLines();
 }
 
 // 환경설정, 데이터 fetch 및 초기화
