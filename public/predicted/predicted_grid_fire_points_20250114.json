@@ -1,0 +1,54 @@
+[
+  {
+    "grid_id": "l_18_7",
+    "probability": 0.94
+  },
+  {
+    "grid_id": "l_16_9",
+    "probability": 1.0
+  },
+  {
+    "grid_id": "l_14_12",
+    "probability": 0.91
+  },
+  {
+    "grid_id": "l_13_16",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_8_11",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_8_11",
+    "probability": 1.0
+  },
+  {
+    "grid_id": "l_7_13",
+    "probability": 0.97
+  },
+  {
+    "grid_id": "l_6_15",
+    "probability": 1.0
+  },
+  {
+    "grid_id": "l_4_25",
+    "probability": 0.99
+  },
+  {
+    "grid_id": "l_5_15",
+    "probability": 1.0
+  },
+  {
+    "grid_id": "l_5_13",
+    "probability": 0.95
+  },
+  {
+    "grid_id": "l_2_23",
+    "probability": 0.96
+  },
+  {
+    "grid_id": "l_-2_22",
+    "probability": 0.34
+  }
+]

@@ -2,6 +2,15 @@ let viewer;
 let fireData = [];
 let fireEntities = [];
 let predictedEntities = []; // 🔥 추가: 예측 마커 전역 변수
+let landGeoJson = null;
+
+// --- GeoJSON 파일 불러오기
+fetch("land.geojson")
+  .then(res => res.json())
+  .then(data => {
+    landGeoJson = data;
+  });
+
 // 실제 산불 토글
 let isActualVisible = true;
 document.getElementById("toggleActualBtn").addEventListener("click", () => {
@@ -132,17 +141,34 @@ function gridIdToLatLon(grid_id) {
   return { lat, lon };
 }
 
-function loadPredictedFirePoints() {
-  fetch("predicted_grid_fire_points.json")
-    .then((res) => res.json())
+// === [3] turf.js 기반 육지/바다 마스킹 ===
+function isLand(lat, lon) {
+  if (!landGeoJson) return true; // GeoJSON 준비 전엔 그냥 통과
+  const pt = turf.point([lon, lat]);
+  for (const feature of landGeoJson.features) {
+    if (turf.booleanPointInPolygon(pt, feature)) return true;
+  }
+  return false;
+}
+
+function loadPredictedFirePointsForDate(dateStr) {
+  const fileName = `predicted/predicted_grid_fire_points_${dateStr.replaceAll("-", "")}.json`;
+
+  fetch(fileName)
+    .then((res) => {
+      if (!res.ok) throw new Error(`JSON 불러오기 실패: ${fileName}`);
+      return res.json();
+    })
     .then((data) => {
       predictedEntities.forEach(e => viewer.entities.remove(e));
       predictedEntities = [];
 
       data.forEach((pt) => {
         const { lat, lon } = gridIdToLatLon(pt.grid_id);
-
-        // 확률에 따라 점의 색/투명도/크기 조정 (원하면 커스터마이즈)
+        if (!isLand(lat, lon)) {
+        console.log("🌊 바다에서 컷:", lat, lon, pt.grid_id);
+        return;
+      }
         const color = Cesium.Color.CHARTREUSE.withAlpha(Math.max(0.4, pt.probability));
         const size = 5 + 5 * pt.probability;
 
@@ -168,7 +194,6 @@ function loadPredictedFirePoints() {
     });
 }
 
-// --- [4] init에서 두 함수 호출 ---
 async function init() {
   viewer = new Cesium.Viewer("cesiumContainer", {
     geocoder: true,
@@ -178,8 +203,10 @@ async function init() {
     animation: false,
   });
 
+  // 대기 효과
   viewer.scene.skyAtmosphere.show = true;
 
+  // 3D 타일셋 로딩
   try {
     const tileset = await Cesium.createGooglePhotorealistic3DTileset();
     viewer.scene.primitives.add(tileset);
@@ -187,36 +214,7 @@ async function init() {
     console.error("🧨 3D 타일셋 생성 실패", error);
   }
 
-  viewer.camera.flyTo({
-    destination: Cesium.Cartesian3.fromDegrees(-118.60, 34.1, 50000),
-  });
-
-  // --- [여기서 전체 격자 & 예측 polygon 호출!] ---
-  drawAllGridLines();
-  loadPredictedFireGrid();
-
-}
-
-
-async function init() {
-  viewer = new Cesium.Viewer("cesiumContainer", {
-    geocoder: true,
-    baseLayerPicker: true,
-    sceneModePicker: true,
-    timeline: false,
-    animation: false,
-  });
-
-  // 대기(Atmosphere) 효과 켜기
-  viewer.scene.skyAtmosphere.show = true;
-
-  try {
-    const tileset = await Cesium.createGooglePhotorealistic3DTileset();
-    viewer.scene.primitives.add(tileset);
-  } catch (error) {
-    console.error("🧨 3D 타일셋 생성 실패", error);
-  }
-
+  // 초기 카메라 위치
   viewer.camera.flyTo({
     destination: Cesium.Cartesian3.fromDegrees(-118.60, 34.1, 50000),
   });
@@ -382,6 +380,7 @@ async function init() {
     updateLayers(idx);
     updateDateLabel(idx);
     updateFiresForDate(dateIndexMap[idx]);
+    loadPredictedFirePointsForDate(dateIndexMap[idx]);  // 🔥 예측 JSON 날짜별 로딩
   });
 
   slider.addEventListener("input", () => {
@@ -390,6 +389,7 @@ async function init() {
     updateLayers(idx);
     updateDateLabel(idx);
     updateFiresForDate(dateIndexMap[idx]);
+    loadPredictedFirePointsForDate(dateIndexMap[idx]);  // 🔥 예측 JSON 날짜별 로딩
   });
 
   let currentIndex = 0;
@@ -414,6 +414,7 @@ async function init() {
       updateLayers(currentIndex);
       updateDateLabel(currentIndex);
       updateFiresForDate(dateIndexMap[currentIndex]);
+      loadPredictedFirePointsForDate(dateIndexMap[currentIndex]);
     }, 2000);
   }
 
@@ -423,11 +424,13 @@ async function init() {
     if (isPlaying) startAutoSlider();
   });
 
-  updateLayers(0);
-  updateDateLabel(0);
-
+// ✅ 모든 layerObjects 초기화 끝난 뒤에만 아래 호출!
+  const idx = 0;
+  updateLayers(idx);
+  updateDateLabel(idx);
+  updateFiresForDate(dateIndexMap[idx]);
+  loadPredictedFirePointsForDate(dateIndexMap[idx]);
   drawAllGridLines();
-  loadPredictedFirePoints();   // 🔥 예측 데이터 시각화 호출
 }
 
 // 환경설정, 데이터 fetch 및 초기화

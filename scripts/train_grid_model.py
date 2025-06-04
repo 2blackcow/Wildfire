@@ -1,68 +1,72 @@
 import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
 import json
 import shutil
 from tqdm import tqdm
+from datetime import datetime, timedelta
+from sklearn.ensemble import RandomForestClassifier
 
-# 격자 인코딩 데이터 로딩
-df_encoded = pd.read_csv("data/grid_encoded_train_data.csv")
-# 원본 격자 ID 데이터 로딩
+# ====== 날짜 리스트 (여기서 예측할 날짜들만 골라!)
+date_list = [
+    "2025-01-08",
+    "2025-01-09",
+    "2025-01-10",
+    "2025-01-13",
+    "2025-01-14",
+    "2025-01-16",
+    "2025-01-18",
+    "2025-01-20",
+]
+
+DATE_FMT = "%Y-%m-%d"
+
+# ====== 데이터 로드 (파일명은 네 기존 프로젝트에 맞게 고쳐!)
 df_original = pd.read_csv("data/train_fire_data_grid.csv")
+df_encoded = pd.read_csv("data/grid_encoded_train_data.csv")
 
-features = ['grid_id_encoded', 'temp', 'wspd', 'rhum', 'brightness', 'frp', 'confidence']
-X = df_encoded[features]
-y = df_encoded['fire_occurred']
+# 날짜 정보 붙이기
+df_original["acq_date"] = pd.to_datetime(df_original["date"])
+df_encoded["acq_date"] = pd.to_datetime(df_original["date"])  # 인덱스 기준으로 붙임
 
-# 데이터 분할
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+conf_map = {"l": 0, "n": 1, "h": 2}
+df_encoded["confidence"] = df_encoded["confidence"].map(conf_map).fillna(1)
 
-# 결측값 제거
-X_train = X_train.dropna()
-y_train = y_train.loc[X_train.index]
+features = ["grid_id_encoded", "temp", "wspd", "rhum", "brightness", "frp", "confidence"]
 
-X_test = X_test.dropna()
-y_test = y_test.loc[X_test.index]
+for TARGET_DATE in date_list:
+    print(f"\n🚀 [{TARGET_DATE}] 예측 시작!")
 
-# 문자형 confidence 숫자로 변환
-if X_train['confidence'].dtype == object:
-    confidence_map = {'l': 0, 'n': 1, 'h': 2}
-    X_train['confidence'] = X_train['confidence'].map(confidence_map).fillna(1)
-    X_test['confidence'] = X_test['confidence'].map(confidence_map).fillna(1)
+    cutoff = (datetime.strptime(TARGET_DATE, DATE_FMT) - timedelta(days=1)).strftime(DATE_FMT)
 
-# 모델 학습
-model = RandomForestClassifier()
-model.fit(X_train, y_train)
+    # 날짜별 train, test 분리
+    train_df = df_encoded[df_encoded["acq_date"] <= cutoff].copy()
+    test_df = df_encoded[df_encoded["acq_date"] == TARGET_DATE].copy()
+    X_train = train_df[features].dropna()
+    y_train = train_df.loc[X_train.index, "fire_occurred"]
+    X_test = test_df[features].dropna()
 
-# 예측
-y_pred = model.predict(X_test)
-probas = model.predict_proba(X_test)[:, 1]
+    if X_test.empty:
+        print(f"😅 {TARGET_DATE} 테스트 데이터 없음! (스킵)")
+        continue
 
-# 평가 지표 출력
-print("✅ 정확도:", accuracy_score(y_test, y_pred))
-print("✅ 정밀도 (Precision):", precision_score(y_test, y_pred))
-print("✅ 재현율 (Recall):", recall_score(y_test, y_pred))
-print("✅ F1 점수:", f1_score(y_test, y_pred))
-print("✅ 혼동 행렬:\n", confusion_matrix(y_test, y_pred))
+    # 학습 & 예측
+    model = RandomForestClassifier()
+    model.fit(X_train, y_train)
+    probas = model.predict_proba(X_test)[:, 1]
 
-# 결과 JSON 생성
-X_test = X_test.copy()
-X_test['probability'] = probas
+    # 결과 JSON 저장
+    X_test = X_test.copy()
+    X_test["probability"] = probas
+    X_test["grid_id"] = df_original.loc[X_test.index, "grid_id"].values
 
-# 원본 grid_id를 JSON에 저장
-X_test['grid_id'] = df_original.iloc[X_test.index]['grid_id'].values
+    results = [
+        {"grid_id": row["grid_id"], "probability": round(row["probability"], 2)}
+        for _, row in tqdm(X_test.iterrows(), total=len(X_test), desc=f"[{TARGET_DATE}] JSON 변환 중")
+    ]
 
-res = []
-for _, row in tqdm(X_test.iterrows(), total=len(X_test), desc="🚀 JSON 변환 중"):
-    res.append({
-        "grid_id": row['grid_id'],  # 문자열 원본 grid_id
-        "probability": round(row['probability'], 2)
-    })
+    date_tag = TARGET_DATE.replace("-", "")
+    save_path = f"public/predicted/predicted_grid_fire_points_{date_tag}.json"
 
-with open("data/predicted_grid_fire_points.json", "w") as f:
-    json.dump(res, f, indent=2)
+    with open(save_path, "w") as f:
+        json.dump(results, f, indent=2)
 
-shutil.copy("data/predicted_grid_fire_points.json", "public/predicted_grid_fire_points.json")
-
-print("✅ 격자 기반 예측 결과 저장 완료 🔥")
+    print(f"✅ [{TARGET_DATE}] 예측 결과 저장 완료 → {save_path}")

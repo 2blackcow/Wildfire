@@ -9,6 +9,7 @@
       href="https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Widgets/widgets.css"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6.5.0/turf.min.js"></script>
 
     <style>
       html,
@@ -253,7 +254,7 @@
 
     <!-- 관측 화점 -->
     <div style="margin-bottom:5px;">
-      <span style="font-size:11px;opacity:.85">관측 화점 (실제 위성)</span>
+      <span style="font-size:10px;opacity:.85">관측 화점 (실제 위성)</span>
       <br>
       <span style="display:inline-block;width:12px;height:12px;border-radius:50%;background:#ff0000;margin-right:3px;vertical-align:middle;"></span>
       높음
@@ -264,11 +265,11 @@
       <br>
       <svg width="70" height="13" style="vertical-align:middle;margin-top:1px;">
         <circle cx="9" cy="7" r="4" fill="#bbb" stroke="#fff" stroke-width="0.5"/>
-        <text x="16" y="11" fill="#fff" font-size="9">FRP↓</text>
+        <text x="16" y="11" fill="#fff" font-size="7">FRP↓</text>
         <circle cx="54" cy="7" r="7" fill="#bbb" stroke="#fff" stroke-width="0.5"/>
-        <text x="62" y="11" fill="#fff" font-size="9">FRP↑</text>
+        <text x="62" y="11" fill="#fff" font-size="7">FRP↑</text>
       </svg>
-      <div style="font-size:10px;color:#bbb;margin-top:1px;">* 점 크기: FRP(방사 강도) 비례</div>
+      <div style="font-size:9px;color:#bbb;margin-top:3px;">* 점 크기: FRP(방사 강도) 비례</div>
     </div>
 
     <!-- 예측 화점 -->
