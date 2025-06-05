@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>🔥 MAXAR + 산불 시각화 (2025-01-10)</title>
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Cesium.js"></script>
+    <link
+      href="https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Widgets/widgets.css"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body,
+      #cesiumContainer {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      /* 간단한 날짜 정보 패널 */
+      #simpleDateInfo {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 12px 16px;
+        border-radius: 8px;
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        z-index: 1000;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        border-left: 4px solid #ff4757;
+      }
+
+      .date-text {
+        color: #ffd700;
+        margin-bottom: 4px;
+      }
+
+      .status-text {
+        color: #ff4757;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="cesiumContainer"></div>
+
+    <!-- 간단한 날짜/상태 정보 -->
+    <div id="simpleDateInfo">
+      <div class="date-text">📅 2025-01-10</div>
+      <div class="status-text">🔥 빠른 확산</div>
+    </div>
+
+    <script type="module" src="./js/test_0110.js"></script>
+
+    <!-- 🔁 날짜 이동 버튼 -->
+    <div style="
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 24px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      z-index: 1000;
+      align-items: center;
+    ">
+      <a href="test_0109.html" style="color: white; text-decoration: none;">⬅ 이전</a>
+      <a href="past_index.html" style="color: #00e0ff; text-decoration: none;">전체보기</a>
+      <a href="test_0113.html" style="color: white; text-decoration: none;">다음 ➡</a>
+    </div>
+  </body>
+</html>

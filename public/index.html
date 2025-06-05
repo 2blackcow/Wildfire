@@ -1,21 +1,77 @@
+<!DOCTYPE html>
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <title>🔥 산불 예측 시스템</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DisasterMesh</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1 style="text-align: center">🔥 산불 예측 시스템</h1>
-    <div
-      style="
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-      "
-    >
-      <a href="past.html">과거 (LA 화재 시나리오)</a>
-      <a href="present.html">현재 (한국 실시간 정보)</a>
-      <a href="future.html">미래 (예측 기반 시뮬레이션)</a>
+    <div class="container">
+      <header id="header">
+        <div class="logo-container">
+          <h1 class="logo">
+            <img src="logo_w.png" alt="DisasterMesh 로고" />
+          </h1>
+          <div class="project-name">
+            <p class="ko-name">3D재난예측망</p>
+            <p class="en-name">DisasterMesh</p>
+          </div>
+        </div>
+      </header>
+
+      <div class="main-links">
+        <div class="section" id="page1" onclick="location.href='past_index.html'">
+          <div class="photo-credit">사진 : Maxar</div>
+          <div class="section-text">
+            <div>
+              <span>2025.01</span>
+              <span class="date-en">Jan 2025</span>
+            </div>
+            <h2>LA 대형 산불 시나리오</h2>
+            <h3>실제 사례 기반<br>3D 시뮬레이션</h3>
+            <p>
+              LA Major Wildfire Scenario <br />
+              3D Simulation Based on Real Incident Data
+            </p>
+            <span class="btn-go">[ go ]</span>
+          </div>
+        </div>
+
+        <div class="section" id="page2" onclick="location.href='present.html'">
+          <div class="photo-credit">사진 : 연합뉴스</div>
+          <div class="section-text">
+            <div>
+              <span class="date">2025.03</span>
+              <span class="date-en">Mar 2025</span>
+            </div>
+            <h2>대한민국 경북 산불 시나리오</h2>
+            <h3>과거 데이터 기반<br>3D 시뮬레이션</h3>
+            <p>
+              Gyeongbuk Wildfire Scenario, South Korea <br />
+              3D Simulation Based on Historical Data
+            </p>
+            <span class="btn-go">[ go ]</span>
+          </div>
+        </div>
+
+        <div class="section" id="page3" onclick="location.href='future.html'">
+          <div class="photo-credit">사진 : NASA</div>
+          <div class="section-text">
+            <div>
+              <span>FUTURE</span>
+              <span class="date-en">Post-2025</span>
+            </div>
+            <h2>대한민국 미래 재난 예측망</h2>
+            <h3>실시간 예측 기반<br>3D 시뮬레이션</h3>
+            <p>
+              South Korea’s Future Disaster Prediction Network <br />
+              Real-Time Prediction-Based 3D Simulation
+            </p>
+            <span class="btn-go">[ go ]</span>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

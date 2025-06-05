@@ -1,0 +1,336 @@
+/* 기본 리셋 및 설정 */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  font-family: 'Noto Sans KR', sans-serif;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+body {
+  line-height: 1.6;
+  font-size: 15px;
+  color: #000200;
+}
+/* a 태그 스타일 제거 (사용 안함) */
+ol,
+ul,
+li {
+  list-style: none;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+img {
+  vertical-align: top;
+}
+
+/* 전체 레이아웃 */
+.container {
+  height: 100vh; /* 화면 전체 높이 */
+  display: flex;
+  flex-direction: column;
+}
+
+/* 헤더 영역 */
+#header {
+  padding: 8px 24px;
+  background: #000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 로고, 프로젝트명 */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  margin-right: 12px;
+}
+
+.project-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  line-height: 1.2;
+}
+
+.project-name .ko-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #fff;
+}
+
+.project-name .en-name {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: #888;
+}
+
+/* 메인 링크 영역 (PC 기준 가로 3분할) */
+.main-links {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+.section {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: all 0.9s ease;
+  color: #fff;
+  min-height: 150px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* 개별 섹션 이미지 */
+#page1 {
+  background-image: url('la_img.jpg');
+}
+
+#page2 {
+  background-image: url('kr_bf.jpg');
+}
+
+#page3 {
+  background-image: url('kr_af.jpg');
+}
+
+/* hover시 확대 효과 */
+.section:hover {
+  flex: 1.5;
+}
+
+/* 어두운 오버레이 */
+.section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 100%);
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+
+/* hover 시 오버레이 효과 */
+.section:hover::after {
+  opacity: 0.6;
+  filter: brightness(1.1);
+}
+
+/* 텍스트 영역 */
+.section-text {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  text-align: center;
+  color: #fff;
+  opacity: 0.8;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-text:hover {
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+.section-text span {
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-text .date-en {
+  color: #dddddd;
+  font-weight: 300;
+  margin-left: 0.3rem;
+}
+
+.section-text h2 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0 0.3rem;
+  font-weight: 600;
+}
+
+.section-text h3 {
+  font-size: 1.1rem;
+  line-height: 1.4rem;
+  font-weight: 500;
+}
+
+.section-text .btn-go {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.section-text p {
+  font-family: Times New Roman;
+  font-size: 0.8rem;
+  line-height: 1.1rem;
+  font-weight: 300;
+  margin: 1rem;
+  color: #adadad;
+}
+
+/* 사진 출처 */
+.photo-credit {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 0.7rem;
+  color: #e0e0e0;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-weight: 300;
+  z-index: 1;
+}
+
+/* ✅ 반응형: 화면 너비가 768px 이하일 때 세로 3분할로 전환 */
+@media (max-width: 768px) {
+  .main-links {
+    flex-direction: column;
+    height: calc(100vh - 80px);
+  }
+
+  .section {
+    flex: 1;
+    font-size: 1.2rem;
+    min-height: unset;
+    padding: 20px 0;
+  }
+
+  .section-text h2 {
+    font-size: 1rem;
+  }
+
+  .section-text h3 {
+    font-size: 0.9 rem;
+  }
+
+  .section-text p {
+    font-size: 0.6rem;
+    margin: 0.5rem 0;
+    line-height: 1.4;
+  }
+
+  .logo-container {
+    gap: 8px;
+  }
+
+  .logo img {
+    margin-right: 0;
+    margin-bottom: 4px;
+  }
+}
