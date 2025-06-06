@@ -213,5 +213,28 @@
     "instrument": null,
     "nasa_distance_km": null,
     "nasa_match_threshold": null
+  },
+  {
+    "frfr_lctn_xcrd": "127.29080324989347",
+    "frfr_prgrs_stcd_str": "진화중",
+    "frfr_info_id": "386624",
+    "frfr_prgrs_stcd": "02",
+    "frfr_lctn_ycrd": "37.74842971252957",
+    "frfr_sttmn_addr": "경기도 남양주시 수동면",
+    "frfr_step_issu_cd": "초기대응",
+    "frfr_sttmn_dt": "20250606",
+    "frfr_frng_dtm": "2025-06-06 17:51",
+    "temp": null,
+    "wspd": null,
+    "wdir": null,
+    "precip": null,
+    "rhum": null,
+    "brightness": 345.45,
+    "frp": 11.55,
+    "confidence": "n",
+    "satellite": "N",
+    "instrument": "VIIRS",
+    "nasa_distance_km": 41.67,
+    "nasa_match_threshold": 50.0
   }
 ]

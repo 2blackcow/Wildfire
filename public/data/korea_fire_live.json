@@ -105,5 +105,16 @@
     "frfr_step_issu_cd": "초기대응",
     "frfr_sttmn_dt": "20250601",
     "frfr_frng_dtm": "2025-06-01 08:52"
+  },
+  {
+    "frfr_lctn_xcrd": "127.29080324989347",
+    "frfr_prgrs_stcd_str": "진화중",
+    "frfr_info_id": "386624",
+    "frfr_prgrs_stcd": "02",
+    "frfr_lctn_ycrd": "37.74842971252957",
+    "frfr_sttmn_addr": "경기도 남양주시 수동면",
+    "frfr_step_issu_cd": "초기대응",
+    "frfr_sttmn_dt": "20250606",
+    "frfr_frng_dtm": "2025-06-06 17:51"
   }
 ]
