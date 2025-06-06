@@ -166,5 +166,22 @@
     "wdir": null,
     "precip": null,
     "rhum": null
+  },
+  {
+    "frfr_lctn_xcrd": "127.031026355842",
+    "frfr_prgrs_stcd_str": "진화완료",
+    "potfr_end_dtm": "2025-06-06 18:58",
+    "frfr_info_id": "386405",
+    "frfr_prgrs_stcd": "03",
+    "frfr_lctn_ycrd": "37.732233563552704",
+    "frfr_sttmn_addr": "경기도 의정부시 의정부동",
+    "frfr_step_issu_cd": "초기대응",
+    "frfr_sttmn_dt": "20250606",
+    "frfr_frng_dtm": "2025-06-06 18:40",
+    "temp": null,
+    "wspd": null,
+    "wdir": null,
+    "precip": null,
+    "rhum": null
   }
 ]
