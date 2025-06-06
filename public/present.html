@@ -42,22 +42,26 @@
       ~
       <input type="date" id="endDate" /><br />
 
-      <b>🧯 대응단계:</b><br />
-      <select id="levelFilter">
-        <option value="전체">전체</option>
-        <option value="초기대응">초기대응</option>
-        <option value="1단계">1단계</option>
-        <option value="2단계">2단계</option>
-        <option value="3단계">3단계</option></select
-      ><br />
+      <div id="levelFilterDiv" style="margin-top: 8px;">
+        <b>🧯 대응단계:</b><br />
+        <select id="levelFilter">
+          <option value="전체">전체</option>
+          <option value="초기대응">초기대응</option>
+          <option value="1단계">1단계</option>
+          <option value="2단계">2단계</option>
+          <option value="3단계">3단계</option>
+        </select><br />
+      </div>
 
-      <b>🔥 진행상태:</b><br />
-      <select id="statusFilter">
-        <option value="전체">전체</option>
-        <option value="진화완료">진화완료</option>
-        <option value="진화중">진화중</option>
-        <option value="조사중">조사중</option></select
-      ><br />
+      <div id="statusFilterDiv" style="margin-top: 8px;">
+        <b>🔥 진행상태:</b><br />
+        <select id="statusFilter">
+          <option value="전체">전체</option>
+          <option value="진화완료">진화완료</option>
+          <option value="진화중">진화중</option>
+          <option value="조사중">조사중</option>
+        </select><br />
+      </div>
 
       <div id="fireCount" style="margin-top: 6px; font-weight: bold"></div>
     </div>
@@ -80,10 +84,37 @@
       "
     >
       🔥
-      <b
+      <b id="pageDescription"
         >현재 페이지는 오늘 기준 최근 7일 간의 국내 산불 발생 정보를
         시각화합니다.</b
       >
+    </div>
+
+    <div
+      style="
+        position: absolute;
+        top: 80px;
+        right: 12px;
+        z-index: 9999;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 13px;
+        color: white;
+      "
+    >
+      <button
+        id="toggleViewBtn"
+        style="
+          color: #00e0ff;
+          background: none;
+          border: none;
+          font-weight: bold;
+          cursor: pointer;
+        "
+      >
+        🌏 LA 보기 ON
+      </button>
     </div>
 
     <!-- 🗺️ 지도 -->
