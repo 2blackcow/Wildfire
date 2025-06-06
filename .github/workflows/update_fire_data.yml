@@ -30,7 +30,7 @@ jobs:
           python fetch_forest_data.py
           python augment_weather.py
           python fetch_firms_data.py
-          python augment_firms_improved.py
+          python augment_firms.py
           
       - name: 📤 Commit & Push updated JSON
         run: |
