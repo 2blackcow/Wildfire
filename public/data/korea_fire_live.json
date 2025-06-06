@@ -8,12 +8,7 @@
     "frfr_sttmn_addr": "경기도 포천시 소흘읍",
     "frfr_step_issu_cd": "초기대응",
     "frfr_sttmn_dt": "20250606",
-    "frfr_frng_dtm": "2025-06-06 15:32",
-    "temp": null,
-    "wspd": null,
-    "wdir": null,
-    "precip": null,
-    "rhum": null
+    "frfr_frng_dtm": "2025-06-06 15:32"
   },
   {
     "frfr_lctn_xcrd": "127.39564925959894",
@@ -25,12 +20,7 @@
     "frfr_sttmn_addr": "전북특별자치도 진안군 백운면",
     "frfr_step_issu_cd": "초기대응",
     "frfr_sttmn_dt": "20250605",
-    "frfr_frng_dtm": "2025-06-05 13:26",
-    "temp": 21.1,
-    "wspd": 5.7,
-    "wdir": 212.0,
-    "precip": 0,
-    "rhum": 49
+    "frfr_frng_dtm": "2025-06-05 13:26"
   },
   {
     "frfr_lctn_xcrd": "126.92683121370563",
@@ -42,12 +32,7 @@
     "frfr_sttmn_addr": "전라남도 장흥군 관산읍",
     "frfr_step_issu_cd": "초기대응",
     "frfr_sttmn_dt": "20250605",
-    "frfr_frng_dtm": "2025-06-05 11:32",
-    "temp": 20.9,
-    "wspd": 5.5,
-    "wdir": 211.0,
-    "precip": 0,
-    "rhum": 51
+    "frfr_frng_dtm": "2025-06-05 11:32"
   },
   {
     "frfr_lctn_xcrd": "127.00407390736504",
@@ -59,12 +44,7 @@
     "frfr_sttmn_addr": "서울특별시 용산구 한남동",
     "frfr_step_issu_cd": "초기대응",
     "frfr_sttmn_dt": "20250604",
-    "frfr_frng_dtm": "2025-06-04 22:25",
-    "temp": 20.1,
-    "wspd": 17.2,
-    "wdir": 263.0,
-    "precip": 0,
-    "rhum": 62
+    "frfr_frng_dtm": "2025-06-04 22:25"
   },
   {
     "frfr_lctn_xcrd": "127.03061444091098",
@@ -76,12 +56,7 @@
     "frfr_sttmn_addr": "충청남도 공주시 사곡면",
     "frfr_step_issu_cd": "초기대응",
     "frfr_sttmn_dt": "20250604",
-    "frfr_frng_dtm": "2025-06-04 18:29",
-    "temp": 20.0,
-    "wspd": 11.1,
-    "wdir": 239.0,
-    "precip": 0,
-    "rhum": 54
+    "frfr_frng_dtm": "2025-06-04 18:29"
   },
   {
     "frfr_lctn_xcrd": "127.0175870078916",
@@ -93,12 +68,7 @@
     "frfr_sttmn_addr": "전북특별자치도 김제시 금산면",
     "frfr_step_issu_cd": "초기대응",
     "frfr_sttmn_dt": "20250604",
-    "frfr_frng_dtm": "2025-06-04 17:24",
-    "temp": 19.5,
-    "wspd": 10.6,
-    "wdir": 228.0,
-    "precip": 0,
-    "rhum": 61
+    "frfr_frng_dtm": "2025-06-04 17:24"
   },
   {
     "frfr_lctn_xcrd": "128.33788964052874",
@@ -110,12 +80,7 @@
     "frfr_sttmn_addr": "경상남도 진주시 이반성면",
     "frfr_step_issu_cd": "초기대응",
     "frfr_sttmn_dt": "20250604",
-    "frfr_frng_dtm": "2025-06-04 17:23",
-    "temp": 19.5,
-    "wspd": 17.1,
-    "wdir": 239.0,
-    "precip": 0,
-    "rhum": 39
+    "frfr_frng_dtm": "2025-06-04 17:23"
   },
   {
     "frfr_lctn_xcrd": "127.88856083018736",
@@ -127,12 +92,7 @@
     "frfr_sttmn_addr": "경상남도 하동군 금남면",
     "frfr_step_issu_cd": "초기대응",
     "frfr_sttmn_dt": "20250604",
-    "frfr_frng_dtm": "2025-06-04 17:02",
-    "temp": 19.5,
-    "wspd": 17.1,
-    "wdir": 239.0,
-    "precip": 0,
-    "rhum": 44
+    "frfr_frng_dtm": "2025-06-04 17:02"
   },
   {
     "frfr_lctn_xcrd": "130.84032497258696",
@@ -144,11 +104,6 @@
     "frfr_sttmn_addr": "경상북도 울릉군 서면",
     "frfr_step_issu_cd": "초기대응",
     "frfr_sttmn_dt": "20250601",
-    "frfr_frng_dtm": "2025-06-01 08:52",
-    "temp": 15.4,
-    "wspd": 13.1,
-    "wdir": 339.0,
-    "precip": 4.8,
-    "rhum": 81
+    "frfr_frng_dtm": "2025-06-01 08:52"
   }
 ]

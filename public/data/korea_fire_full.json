@@ -13,7 +13,14 @@
     "wspd": null,
     "wdir": null,
     "precip": null,
-    "rhum": null
+    "rhum": null,
+    "brightness": 345.45,
+    "frp": 11.55,
+    "confidence": "n",
+    "satellite": "N",
+    "instrument": "VIIRS",
+    "nasa_distance_km": 28.43,
+    "nasa_match_threshold": 50.0
   },
   {
     "frfr_lctn_xcrd": "127.39564925959894",
@@ -30,7 +37,14 @@
     "wspd": 5.7,
     "wdir": 212.0,
     "precip": 0,
-    "rhum": 49
+    "rhum": 49,
+    "brightness": null,
+    "frp": null,
+    "confidence": null,
+    "satellite": null,
+    "instrument": null,
+    "nasa_distance_km": null,
+    "nasa_match_threshold": null
   },
   {
     "frfr_lctn_xcrd": "126.92683121370563",
@@ -47,7 +61,14 @@
     "wspd": 5.5,
     "wdir": 211.0,
     "precip": 0,
-    "rhum": 51
+    "rhum": 51,
+    "brightness": null,
+    "frp": null,
+    "confidence": null,
+    "satellite": null,
+    "instrument": null,
+    "nasa_distance_km": null,
+    "nasa_match_threshold": null
   },
   {
     "frfr_lctn_xcrd": "127.00407390736504",
@@ -64,7 +85,14 @@
     "wspd": 17.2,
     "wdir": 263.0,
     "precip": 0,
-    "rhum": 62
+    "rhum": 62,
+    "brightness": 345.45,
+    "frp": 11.55,
+    "confidence": "n",
+    "satellite": "N",
+    "instrument": "VIIRS",
+    "nasa_distance_km": 25.13,
+    "nasa_match_threshold": 50.0
   },
   {
     "frfr_lctn_xcrd": "127.03061444091098",
@@ -81,7 +109,14 @@
     "wspd": 11.1,
     "wdir": 239.0,
     "precip": 0,
-    "rhum": 54
+    "rhum": 54,
+    "brightness": 339.11,
+    "frp": 5.99,
+    "confidence": "n",
+    "satellite": "N",
+    "instrument": "VIIRS",
+    "nasa_distance_km": 30.68,
+    "nasa_match_threshold": 50.0
   },
   {
     "frfr_lctn_xcrd": "127.0175870078916",
@@ -98,7 +133,14 @@
     "wspd": 10.6,
     "wdir": 228.0,
     "precip": 0,
-    "rhum": 61
+    "rhum": 61,
+    "brightness": 335.55,
+    "frp": 1.79,
+    "confidence": "n",
+    "satellite": "N",
+    "instrument": "VIIRS",
+    "nasa_distance_km": 19.13,
+    "nasa_match_threshold": 20.0
   },
   {
     "frfr_lctn_xcrd": "128.33788964052874",
@@ -115,7 +157,14 @@
     "wspd": 17.1,
     "wdir": 239.0,
     "precip": 0,
-    "rhum": 39
+    "rhum": 39,
+    "brightness": 309.42,
+    "frp": 1.26,
+    "confidence": "n",
+    "satellite": "N",
+    "instrument": "VIIRS",
+    "nasa_distance_km": 24.68,
+    "nasa_match_threshold": 50.0
   },
   {
     "frfr_lctn_xcrd": "127.88856083018736",
@@ -132,7 +181,14 @@
     "wspd": 17.1,
     "wdir": 239.0,
     "precip": 0,
-    "rhum": 44
+    "rhum": 44,
+    "brightness": 303.84,
+    "frp": 0.92,
+    "confidence": "n",
+    "satellite": "N",
+    "instrument": "VIIRS",
+    "nasa_distance_km": 11.53,
+    "nasa_match_threshold": 20.0
   },
   {
     "frfr_lctn_xcrd": "130.84032497258696",
@@ -149,6 +205,13 @@
     "wspd": 13.1,
     "wdir": 339.0,
     "precip": 4.8,
-    "rhum": 81
+    "rhum": 81,
+    "brightness": null,
+    "frp": null,
+    "confidence": null,
+    "satellite": null,
+    "instrument": null,
+    "nasa_distance_km": null,
+    "nasa_match_threshold": null
   }
 ]

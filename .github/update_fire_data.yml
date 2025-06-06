@@ -1,0 +1,44 @@
+name: 🔄 Update Korea Fire Data (Daily)
+
+on:
+  schedule:
+    - cron: "0 16 * * *"  # 매일 01:00 KST (한국시간은 UTC+9)
+  workflow_dispatch:      # 수동 실행 버튼도 지원
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./wildfire
+
+    steps:
+      - name: ✅ Checkout repository
+        uses: actions/checkout@v3
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: 🔧 Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: 🧪 Run full fire data pipeline
+        env:
+          METEOSTAT_KEY: ${{ secrets.METEOSTAT_KEY }}
+          WEATHERBIT_KEY: ${{ secrets.WEATHERBIT_KEY }}
+          FIRMS_KEY: ${{ secrets.FIRMS_KEY }}
+        run: |
+          python crawling/fetch_forest_data.py
+          python crawling/augment_weather.py
+          python crawling/fetch_firms_data.py
+          python crawling/augment_firms_improved.py
+
+      - name: 📤 Commit & Push updated JSON
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add public/data/korea_fire_*.json
+          git commit -m "🔥 자동 업데이트: latest korea_fire_full.json" || echo "No changes to commit"
+          git push
