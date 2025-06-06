@@ -13,7 +13,6 @@ load_dotenv(dotenv_path)
 METEOSTAT_API_KEY = os.getenv("METEOSTAT_KEY")
 WEATHERBIT_API_KEY = os.getenv("WEATHERBIT_KEY")
 
-# API 키 확인
 if not METEOSTAT_API_KEY or not WEATHERBIT_API_KEY:
     print("❌ API 키가 제대로 로드되지 않았습니다.")
     exit(1)
@@ -46,7 +45,6 @@ def get_meteostat(lat, lon, date_str):
         return { "temp": None, "wspd": None, "wdir": None }
 
 def get_weatherbit(lat, lon, date_str):
-    # end_date를 start_date 다음 날로 설정 (API 요구사항)
     start_date = datetime.strptime(date_str, "%Y-%m-%d")
     end_date = start_date + timedelta(days=1)
     end_date_str = end_date.strftime("%Y-%m-%d")
@@ -84,15 +82,23 @@ def augment_weather():
     with open(input_path, "r", encoding="utf-8") as f:
         fires = json.load(f)
 
-    # 날짜 계산
+    # 기존 결합된 데이터 로드
+    if os.path.exists(output_path):
+        with open(output_path, "r", encoding="utf-8") as f:
+            existing_data = json.load(f)
+        existing_map = {d["frfr_info_id"]: d for d in existing_data}
+    else:
+        existing_map = {}
+
     today = datetime.now().strftime("%Y-%m-%d")
-    
     print(f"🔥 화재 데이터 {len(fires)}개 처리 시작...")
     print(f"📅 오늘({today}) 이전 날짜만 기상 데이터 수집")
-    
+
     enriched = []
     api_calls = 0
     skipped = 0
+    cache_meteostat = {}
+    cache_weatherbit = {}
 
     for i, fire in enumerate(fires, 1):
         fire_id = fire.get('frfr_info_id')
@@ -102,12 +108,17 @@ def augment_weather():
 
         print(f"[{i}/{len(fires)}] {fire_id} - {date}", end=" ")
 
+        if fire_id in existing_map:
+            print("🛑 기존 항목 있음 → 건너뜀")
+            enriched.append(existing_map[fire_id])
+            skipped += 1
+            continue
+
         if not (lat and lon and date):
             print("❌ 필수 데이터 누락")
             skipped += 1
             continue
 
-        # 오늘 이후 날짜는 건너뛰기
         if date >= today:
             print("⏭️ 미래 날짜")
             fire.update({"temp": None, "wspd": None, "wdir": None, "precip": None, "rhum": None})
@@ -115,22 +126,29 @@ def augment_weather():
             skipped += 1
             continue
 
-        # 기상 데이터 수집
+        key = (lat, lon, date)
         print("🌤️ 수집중...", end="")
-        weather1 = get_meteostat(lat, lon, date)
-        weather2 = get_weatherbit(lat, lon, date)
-        
+
+        if key in cache_meteostat:
+            weather1 = cache_meteostat[key]
+        else:
+            weather1 = get_meteostat(lat, lon, date)
+            cache_meteostat[key] = weather1
+
+        if key in cache_weatherbit:
+            weather2 = cache_weatherbit[key]
+        else:
+            weather2 = get_weatherbit(lat, lon, date)
+            cache_weatherbit[key] = weather2
+
         fire.update(weather1)
         fire.update(weather2)
         enriched.append(fire)
-        
+
         api_calls += 1
         print(" ✅ 완료")
-        
-        # API 제한 대응
         time.sleep(1)
 
-    # 결과 저장
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(enriched, f, ensure_ascii=False, indent=2)
 
