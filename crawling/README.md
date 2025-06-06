@@ -9,20 +9,26 @@
 
 ```
 crawling/
-├── fetch_forest_data.py           # 산림청 산불발생정보 크롤링
-├── augment_weather.py             # Meteostat, Weatherbit 기상 정보 병합
-├── fetch_firms_data.py           # NASA FIRMS 위성 화재 데이터 다운로드
-├── augment_firms_improved.py     # NASA + 화재 데이터 최종 병합 (매칭 최적화)
-├── README.md                      # ← 본 문서
+├── fetch_forest_data.py                    # 산림청 산불발생정보 크롤링 (실시간)
+├── augment_weather.py                      # Meteostat, Weatherbit 기상 정보 병합
+├── fetch_firms_data.py                     # NASA FIRMS 위성 화재 데이터 다운로드 (실시간)
+├── augment_firms_improved.py               # NASA + 화재 데이터 최종 병합 (매칭 최적화)
+├── fetch_historical_fire_data.py           # 과거 산불 데이터 수집 (2024-10-01 ~ 2025-04-01)
+├── add_weather_to_historical_data.py       # 과거 화재 데이터에 기상 정보 추가
+├── fetch_nasa_firms_historical.py          # 과거 NASA FIRMS 데이터 수집
+├── merge_historical_nasa_data.py           # 과거 화재+기상+NASA 데이터 통합
+├── README.md                               # ← 본 문서
 ```
 
 ---
 
-## ⚙️ 전체 자동화 흐름
+## ⚙️ 자동화 시스템 구성
+
+### 🔄 실시간 데이터 파이프라인 (매일 자동 실행)
 
 GitHub Actions에서 `update_fire_data.yml`을 통해 매일 새벽 1시 자동 실행됩니다.
 
-### 실행 순서
+**실행 순서:**
 
 1. `fetch_forest_data.py`  
    → 산림청 사이트에서 최근 7일간 화재 발생지 위경도 수집
@@ -36,13 +42,36 @@ GitHub Actions에서 `update_fire_data.yml`을 통해 매일 새벽 1시 자동 
 4. `augment_firms_improved.py`  
    → 각 화재 지점과 위성 화재 데이터를 거리/날짜 기준으로 매칭하여 병합
 
-5. 결과 저장:  
+5. **결과 저장:**  
    → `/public/data/korea_fire_full.json`
+
+### 📊 과거 데이터 구축 파이프라인 (일회성)
+
+**2024-10-01 ~ 2025-04-01 기간 통합 데이터셋 구축:**
+
+1. `fetch_historical_fire_data.py`  
+   → 산림청 API에서 지정 기간 모든 화재 데이터 수집 (312건)
+   → 출력: `korea_fire_2024_2025.json`
+
+2. `add_weather_to_historical_data.py`  
+   → 각 화재 지점별 발생일 기상 데이터 수집 및 결합
+   → 출력: `korea_fire_2024_2025_with_weather.json`
+
+3. `fetch_nasa_firms_historical.py`  
+   → NASA FIRMS에서 동일 기간 위성 관측 데이터 수집 (223건)
+   → 10일 단위로 나누어 API 제한 회피
+   → 출력: `nasa_firms_korea_2024_2025.json`
+
+4. `merge_historical_nasa_data.py`  
+   → 화재 위치와 NASA 위성 데이터 매칭 (거리 ≤50km, 날짜 차이 ≤3일)
+   → 매칭률: 15.7% (49/312건)
+   → 출력: `korea_fire_full_2024_2025.json`
 
 ---
 
-## 📦 최종 출력
+## 📦 최종 출력 데이터
 
+### 실시간 데이터
 ```json
 [
   {
@@ -57,29 +86,73 @@ GitHub Actions에서 `update_fire_data.yml`을 통해 매일 새벽 1시 자동 
     "frp": 10.1,
     "confidence": "n",
     "nasa_distance_km": 1.82
-  },
-  ...
+  }
 ]
 ```
 
-→ 위 데이터는 `present.html`에서 지도 상 화재 시각화에 활용됩니다.
+### 과거 데이터
+```json
+[
+  {
+    "frfr_info_id": "366044",
+    "occu_dtm": "20250331143000",
+    "addr": "인천광역시 옹진군 영흥면",
+    "frfr_lctn_ycrd": 37.7816,
+    "frfr_lctn_xcrd": 126.8542,
+    "temp": 15.2,
+    "wspd": 4.1,
+    "wdir": 230,
+    "precip": 0.0,
+    "rhum": 45,
+    "brightness": 301.71,
+    "frp": 8.5,
+    "confidence": "n",
+    "satellite": "N",
+    "nasa_distance_km": 37.97,
+    "nasa_match_threshold": 50.0
+  }
+]
+```
+
+---
+
+## 🎯 활용 방안
+
+### 1. **실시간 모니터링 시스템**
+- `present.html`: 최근 7일 화재 현황 지도 시각화
+- 매일 업데이트되는 최신 화재 정보 제공
+
+### 2. **과거 분석 및 예측 모델**
+- **데이터 규모**: 312개 화재 사례 (6개월간)
+- **활용 가능 피처**: 위치, 기상조건, 위성관측데이터
+- **예측 모델**: 화재 위험도, 화재 심각도 예측
+- **매칭 통계**: 
+  - 5km 이내: 2건 (정확한 매칭)
+  - 10km 이내: 5건
+  - 20km 이내: 5건  
+  - 50km 이내: 37건
+
+### 3. **데이터 품질**
+- **NASA 매칭률**: 15.7% (49/312건)
+- **매칭 제한 요인**: NASA 데이터 기간 (2025-03-10 ~ 2025-03-30)
+- **개선 방향**: 더 긴 기간의 NASA 아카이브 데이터 수집 필요
 
 ---
 
 ## 🛠 GitHub Actions 자동화
 
-- 워크플로 파일: `.github/workflows/update_fire_data.yml`
-- Secrets:
-  - `METEOSTAT_KEY`
-  - `WEATHERBIT_KEY`
-  - `FIRMS_KEY`
-- 트리거: `cron` 매일 01:00 (KST)
+- **워크플로 파일**: `.github/workflows/update_fire_data.yml`
+- **환경 변수 (Secrets)**:
+  - `METEOSTAT_KEY`: 기상 데이터 API 키
+  - `WEATHERBIT_KEY`: 기상 데이터 API 키  
+  - `FIRMS_KEY`: NASA FIRMS API 키
+- **트리거**: `cron` 매일 01:00 (KST)
+- **배포**: Vercel 자동 배포 연동
 
 ---
 
 ## 👨‍💻 작성자
 
-- 자동화 설계: `2blackcow`
-- 구현 기술: Python, GitHub Actions, Vercel, CesiumJS
-
----
+- **자동화 설계**: `2blackcow`
+- **구현 기술**: Python, GitHub Actions, Vercel, CesiumJS
+- **데이터 소스**: 산림청, NASA FIRMS, Meteostat, Weatherbit
