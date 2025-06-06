@@ -2,15 +2,12 @@ name: 🔄 Update Korea Fire Data (Daily)
 
 on:
   schedule:
-    - cron: "0 16 * * *"  # 매일 01:00 KST (한국시간은 UTC+9)
-  workflow_dispatch:      # 수동 실행 버튼도 지원
+    - cron: "0 16 * * *"  # 매일 01:00 KST
+  workflow_dispatch:      # 수동 실행 지원
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./wildfire
 
     steps:
       - name: ✅ Checkout repository
