@@ -1,37 +1,37 @@
 name: 🔄 Update Korea Fire Data (Daily)
-
 on:
   schedule:
-    - cron: "0 16 * * *"  # 매일 01:00 KST
-  workflow_dispatch:      # 수동 실행 지원
-
+    - cron: "0 16 * * *"  # ✅ 매일 01:00 KST (5개 필드)
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: ✅ Checkout repository
         uses: actions/checkout@v3
-
+        
       - name: 🐍 Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.11"
-
+          
       - name: 🔧 Install dependencies
-        run: pip install -r requirements.txt
-
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          
       - name: 🧪 Run full fire data pipeline
         env:
           METEOSTAT_KEY: ${{ secrets.METEOSTAT_KEY }}
           WEATHERBIT_KEY: ${{ secrets.WEATHERBIT_KEY }}
           FIRMS_KEY: ${{ secrets.FIRMS_KEY }}
         run: |
-          python crawling/fetch_forest_data.py
-          python crawling/augment_weather.py
-          python crawling/fetch_firms_data.py
-          python crawling/augment_firms_improved.py
-
+          cd crawling
+          python fetch_forest_data.py
+          python augment_weather.py
+          python fetch_firms_data.py
+          python augment_firms_improved.py
+          
       - name: 📤 Commit & Push updated JSON
         run: |
           git config user.name "github-actions"
