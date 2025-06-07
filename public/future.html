@@ -2,57 +2,96 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <title>🔥 미래 화재 예측</title>
+    <title>🔥 미래 화재 예측 시뮬레이션</title>
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Cesium.js"></script>
+    <link href="https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Widgets/widgets.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6.5.0/turf.min.js"></script>
     <style>
-      html,
-      body,
-      #cesiumContainer {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-      }
+      html, body, #cesiumContainer { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+      /* past.html 스타일 그대로 복붙 (중복 생략) */
+      #infoPanel { position: absolute; top: 10px; left: 10px; z-index: 10; background-color: rgba(0, 0, 0, 0.75); color: white; padding: 10px 14px; border-radius: 8px; font-family: sans-serif; font-size: 14px; min-width: 200px; pointer-events: none; }
+      #windArrow { font-size: 32px; text-align: center; transform-origin: center; transition: transform 0.4s ease; margin-bottom: 8px; }
+      #dateLabel { position: absolute; bottom: 180px; left: 10px; background-color: rgba(0, 123, 255, 0.9); color: white; padding: 6px 12px; border-radius: 6px; font-size: 14px; font-family: sans-serif; z-index: 10; font-weight: 500; }
+      #controlsContainer { position: absolute; bottom: 30px; left: 10px; z-index: 10; display: flex; flex-direction: column; align-items: flex-start; font-family: sans-serif; gap: 8px; }
+      .controls-wrapper { background-color: rgba(0, 0, 0, 0.8); padding: 12px; border-radius: 8px; display: flex; flex-direction: column; gap: 8px; min-width: 280px; border: 1px solid rgba(255, 255, 255, 0.1); }
+      .top-row { display: flex; flex-direction: row; align-items: center; gap: 12px; }
+      #toggleButton { padding: 8px 16px; font-size: 14px; font-weight: 500; border: none; border-radius: 6px; background-color: #007bff; color: white; cursor: pointer; transition: all 0.2s; min-width: 80px; white-space: nowrap; }
+      #toggleButton:hover { background-color: #0056b3; transform: translateY(-1px);}
+      #timeSlider { appearance: none; -webkit-appearance: none; width: 140px; height: 8px; background: #444; border-radius: 4px; outline: none; transition: background 0.3s; flex-shrink: 0;}
+      #timeSlider:hover { background: #555;}
+      #timeSlider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 16px; height: 16px; border-radius: 50%; background: #007bff; cursor: pointer; transition: all 0.3s; border: 2px solid white;}
+      #fireDateSelect { padding: 8px 12px; font-size: 14px; border-radius: 6px; border: 1px solid #555; width: 100%; background-color: rgba(255, 255, 255, 0.95); color: #333; font-family: sans-serif;}
+      #fireInfo { color: white; font-size: 13px; text-align: center; background-color: rgba(255, 87, 34, 0.9); border-radius: 6px; padding: 6px 10px; margin-top: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border: 1px solid rgba(255, 87, 34, 0.5); font-weight: 500;}
+      #toggleRegionBtn { padding: 7px 18px; font-size: 14px; font-weight: 600; border: none; border-radius: 8px; background: #222; color: #fff; cursor: pointer; margin-right: 10px;}
     </style>
-    <script src="https://cesium.com/downloads/cesiumjs/releases/1.114/Build/Cesium/Cesium.js"></script>
-    <link
-      href="https://cesium.com/downloads/cesiumjs/releases/1.114/Build/Cesium/Widgets/widgets.css"
-      rel="stylesheet"
-    />
   </head>
   <body>
     <div id="cesiumContainer"></div>
-    <script type="module" src="./js/future.js"></script>
-    <!-- 🔄 하단 중앙 페이지 이동 버튼 -->
-    <div
-      style="
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 999;
-        background: rgba(0, 0, 0, 0.65);
-        padding: 10px 20px;
-        border-radius: 10px;
-        font-family: sans-serif;
-        font-size: 14px;
-      "
-    >
-      <a
-        href="index.html"
-        style="color: white; text-decoration: none; margin: 0 12px"
-        >🏠 메인</a
-      >
-      <a
-        href="past.html"
-        style="color: white; text-decoration: none; margin: 0 12px"
-        >🕰️ 과거</a
-      >
-      <a
-        href="future.html"
-        style="color: white; text-decoration: none; margin: 0 12px"
-        >📡 미래</a
-      >
+    <div id="infoPanel">
+      <div id="windArrow">↑</div>
+      <div id="weatherInfo">🖱️ 지도에서 위치를 클릭하세요</div>
     </div>
+    <div id="dateLabel">🗓️ 2025-01-08</div>
+    <div id="controlsContainer">
+      <div class="controls-wrapper">
+        <div class="top-row">
+          <button id="toggleButton">▶ 재생</button>
+          <input type="range" id="timeSlider" min="0" max="7" value="0" step="1" />
+        </div>
+        <select id="fireDateSelect">
+          <option value="0">20250108m-maxar</option>
+          <option value="1">20250109m-maxar</option>
+          <option value="2">20250110n-maxar</option>
+          <option value="3">20250113m-maxar</option>
+          <option value="4">20250114m-maxar</option>
+          <option value="5">20250116m-maxar</option>
+          <option value="6">20250118m-maxar</option>
+          <option value="7">20250120m-maxar</option>
+        </select>
+        <div id="fireInfo">🔥 산불 데이터 로딩 중...</div>
+      </div>
+    </div>
+    <div style="position: absolute; top: 60px; right: 30px; z-index: 1000">
+      <button id="toggleActualBtn">🔥 관측 화점 OFF</button>
+      <button id="togglePredBtn">🤖 AI 예측 화점 OFF</button>
+    </div>
+    <!-- 범례/페이지 이동 버튼들은 past.html과 동일 -->
+    <div id="fire-legend" style="position: absolute; right: 18px; top: 38%; z-index: 99; background: rgba(30, 30, 30, 0.85); color: #fff; border-radius: 8px; padding: 10px 12px; font-family: sans-serif; font-size: 13px; box-shadow: 1px 2px 6px #0005; pointer-events: none; user-select: none; line-height: 1.5; display: inline-block; max-width: 260px; width: fit-content;">
+      <b style="font-size: 14px">🔥 관측·예측 화점 범례</b>
+      <hr style="border: none; border-top: 1px solid #555; margin: 6px 0 10px 0"/>
+      <div style="font-size: 12px; margin-bottom: 5px">관측 화점 (실제 위성)</div>
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+        <span style="width: 12px; height: 12px; border-radius: 50%; background: #ff0000; display: inline-block;"></span> 높음
+        <span style="width: 12px; height: 12px; border-radius: 50%; background: #ff9800; display: inline-block;"></span> 중간
+        <span style="width: 12px; height: 12px; border-radius: 50%; background: #ffff00; border: 1px solid #888; display: inline-block;"></span> 낮음
+      </div>
+      <div style="margin: 4px 0"><svg width="100%" height="16" style="overflow: visible"><circle cx="12" cy="8" r="4.5" fill="#bbb" stroke="#fff" stroke-width="0.5"/><text x="22" y="12" fill="#fff" font-size="10">FRP↓</text><circle cx="80" cy="8" r="7" fill="#bbb" stroke="#fff" stroke-width="0.5"/><text x="90" y="12" fill="#fff" font-size="10">FRP↑</text></svg></div>
+      <div style="font-size: 11px; color: #ccc; margin-bottom: 10px">* 점 크기: FRP(방사 강도) 비례</div>
+      <div style="font-size: 12px; margin-bottom: 6px">AI 예측 화점</div>
+      <div style="display: flex; align-items: center; gap: 8px">
+        <span style="width: 14px; height: 14px; border-radius: 50%; background: chartreuse; border: 1px solid #888; display: inline-block;"></span>
+        예측 화점
+      </div>
+      <div style="font-size: 11px; color: #ccc; margin-top: 3px">* 확률 높을수록 투명도 감소 (진해짐)</div>
+    </div>
+    <div style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 999; background: rgba(0, 0, 0, 0.65); padding: 10px 20px; border-radius: 10px; font-family: sans-serif; font-size: 14px;">
+      <a href="index.html" style="color: white; text-decoration: none; margin: 0 12px">🏠 메인</a>
+      <a href="past.html" style="color: white; text-decoration: none; margin: 0 12px">🕰️ 과거</a>
+      <a href="future.html" style="color: white; text-decoration: none; margin: 0 12px">📡 미래</a>
+    </div>
+    <!-- 좌측 중앙 region 토글 버튼 -->
+    <div id="toggleRegionBtnWrap" style="
+      position: absolute;
+      top: 50%;
+      left: 28px;
+      transform: translateY(-50%);
+      z-index: 1001;
+      ">
+      <button id="toggleRegionBtn" style="
+        background: #202a38; color: #fff; font-size: 15px; border-radius: 12px;
+        padding: 18px 32px; border: none; box-shadow: 0 2px 10px #0005; font-weight: bold; cursor:pointer;
+      ">🌏 LA 예측 보기</button>
+    </div>
+    <script type="module" src="js/future.js"></script>
   </body>
 </html>
