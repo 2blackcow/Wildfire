@@ -61,7 +61,7 @@ async function loadKoreaFireData() {
   try {
     updateLoadingStatus("🔄 국내 화재 데이터 로딩 중...");
     
-    const res = await fetch("/data/korea_fire_full.json");
+    const res = await fetch("/data/korea_fire_weather.json");
     const fireData = await res.json();
 
     const startInput = document.getElementById("startDate");
@@ -89,8 +89,13 @@ async function loadKoreaFireData() {
       koreaEntities.forEach(entity => viewer.entities.remove(entity));
       koreaEntities = [];
 
+      // 🔧 날짜 범위 설정 수정
       const sDate = new Date(start);
       const eDate = new Date(end);
+      
+      // 🔥 종료일을 23:59:59.999로 설정하여 해당 날짜 전체 포함
+      eDate.setHours(23, 59, 59, 999);
+      
       let count = 0;
 
       fireData.forEach((item) => {
@@ -115,13 +120,23 @@ async function loadKoreaFireData() {
           nasa_distance_km
         } = item;
 
+        // 🔧 날짜 파싱 및 비교 개선
         const date = new Date(frfr_frng_dtm);
         const level = frfr_step_issu_cd;
         const status = frfr_prgrs_stcd_str;
         const lat = parseFloat(frfr_lctn_ycrd);
         const lon = parseFloat(frfr_lctn_xcrd);
 
-        if (!lat || !lon || isNaN(date) || date < sDate || date > eDate) return;
+        // 🔍 디버그용 로그 (개발 중에만 사용)
+        if (count < 3) {
+          console.log(`화재 ${count}: ${frfr_frng_dtm} -> ${date}, 범위: ${sDate} ~ ${eDate}`);
+        }
+
+        // 유효성 검사 및 날짜 필터링
+        if (!lat || !lon || isNaN(date.getTime()) || date < sDate || date > eDate) {
+          return;
+        }
+        
         if (levelFilter !== "전체" && level !== levelFilter) return;
         if (statusFilter !== "전체" && status !== statusFilter) return;
 
@@ -140,7 +155,7 @@ async function loadKoreaFireData() {
           description: `
             📍 <b>주소:</b> ${frfr_sttmn_addr}<br/>
             🧨 <b>발생일시:</b> ${frfr_frng_dtm}<br/>
-            🕒 <b>진화일시:</b> ${potfr_end_dtm}<br/>
+            🕒 <b>진화일시:</b> ${potfr_end_dtm || "진화 중"}<br/>
             🔥 <b>진행상태:</b> ${status}<br/>
             🧯 <b>대응단계:</b> ${level}<br/><br/>
             🌡️ <b>기온:</b> ${temp ?? "-"} ℃<br/>
@@ -162,6 +177,7 @@ async function loadKoreaFireData() {
 
       if (currentView === "korea") {
         updateLoadingStatus(`🔥 국내 화재 ${count.toLocaleString()}개 표시됨`);
+        console.log(`✅ 최종 표시된 화재: ${count}개 (날짜 범위: ${sDate.toISOString()} ~ ${eDate.toISOString()})`);
       }
     }
 
@@ -198,6 +214,9 @@ function renderLAByDateFilter() {
   const endInput = document.getElementById("endDate");
   const startDate = new Date(startInput.value);
   const endDate = new Date(endInput.value);
+  
+  // LA 데이터도 23:59:59까지 포함
+  endDate.setHours(23, 59, 59, 999);
 
   let count = 0;
 

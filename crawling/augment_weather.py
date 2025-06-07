@@ -70,6 +70,35 @@ def get_weatherbit(lat, lon, date_str):
         print(f"❌ Weatherbit API 오류 ({date_str}): {e}")
         return { "precip": None, "rhum": None }
 
+def has_complete_weather_data(fire_data):
+    """기상 데이터가 완전히 있는지 확인"""
+    required_fields = ["temp", "wspd", "wdir", "precip", "rhum"]
+    
+    for field in required_fields:
+        value = fire_data.get(field)
+        # None이거나 빈 문자열이면 불완전한 것으로 판단
+        if value is None or value == "":
+            return False
+    
+    return True
+
+def needs_weather_update(existing_fire, new_fire):
+    """기상 데이터 업데이트가 필요한지 확인"""
+    # 1. 기존 데이터에 기상 정보가 없으면 업데이트 필요
+    if not has_complete_weather_data(existing_fire):
+        return True
+    
+    # 2. 좌표가 변경되었으면 업데이트 필요
+    if (existing_fire.get("frfr_lctn_ycrd") != new_fire.get("frfr_lctn_ycrd") or
+        existing_fire.get("frfr_lctn_xcrd") != new_fire.get("frfr_lctn_xcrd")):
+        return True
+    
+    # 3. 발생일시가 변경되었으면 업데이트 필요
+    if existing_fire.get("frfr_frng_dtm") != new_fire.get("frfr_frng_dtm"):
+        return True
+    
+    return False
+
 def augment_weather():
     root_dir = os.path.abspath(os.path.join(__file__, "..", ".."))
     input_path = os.path.join(root_dir, "public", "data", "korea_fire_live.json")
@@ -97,6 +126,7 @@ def augment_weather():
     enriched = []
     api_calls = 0
     skipped = 0
+    updated = 0
     cache_meteostat = {}
     cache_weatherbit = {}
 
@@ -108,17 +138,36 @@ def augment_weather():
 
         print(f"[{i}/{len(fires)}] {fire_id} - {date}", end=" ")
 
+        # 기존 데이터 확인
         if fire_id in existing_map:
-            print("🛑 기존 항목 있음 → 건너뜀")
-            enriched.append(existing_map[fire_id])
-            skipped += 1
-            continue
+            existing_fire = existing_map[fire_id]
+            
+            # 🔄 기상 데이터 업데이트 필요성 체크
+            if needs_weather_update(existing_fire, fire):
+                print("🔄 기상 데이터 업데이트 필요", end=" ")
+                
+                # 기존 데이터를 새 데이터로 업데이트
+                updated_fire = fire.copy()
+                
+                # 기존에 있던 기상 데이터는 유지 (None이 아닌 경우)
+                for weather_field in ["temp", "wspd", "wdir", "precip", "rhum"]:
+                    if existing_fire.get(weather_field) is not None:
+                        updated_fire[weather_field] = existing_fire[weather_field]
+                
+                fire = updated_fire
+            else:
+                print("✅ 기상 데이터 완료 → 기존 데이터 사용")
+                enriched.append(existing_fire)
+                skipped += 1
+                continue
 
+        # 필수 데이터 검증
         if not (lat and lon and date):
             print("❌ 필수 데이터 누락")
             skipped += 1
             continue
 
+        # 미래 날짜 처리
         if date >= today:
             print("⏭️ 미래 날짜")
             fire.update({"temp": None, "wspd": None, "wdir": None, "precip": None, "rhum": None})
@@ -126,28 +175,46 @@ def augment_weather():
             skipped += 1
             continue
 
+        # 🌤️ 기상 데이터 수집 (누락된 데이터만)
         key = (lat, lon, date)
-        print("🌤️ 수집중...", end="")
+        need_meteostat = any(fire.get(field) is None for field in ["temp", "wspd", "wdir"])
+        need_weatherbit = any(fire.get(field) is None for field in ["precip", "rhum"])
 
-        if key in cache_meteostat:
-            weather1 = cache_meteostat[key]
+        if need_meteostat or need_weatherbit:
+            print("🌤️ 수집중...", end="")
+            
+            if need_meteostat:
+                if key in cache_meteostat:
+                    weather1 = cache_meteostat[key]
+                else:
+                    weather1 = get_meteostat(lat, lon, date)
+                    cache_meteostat[key] = weather1
+                
+                # None인 필드만 업데이트
+                for field in ["temp", "wspd", "wdir"]:
+                    if fire.get(field) is None and weather1.get(field) is not None:
+                        fire[field] = weather1[field]
+
+            if need_weatherbit:
+                if key in cache_weatherbit:
+                    weather2 = cache_weatherbit[key]
+                else:
+                    weather2 = get_weatherbit(lat, lon, date)
+                    cache_weatherbit[key] = weather2
+                
+                # None인 필드만 업데이트
+                for field in ["precip", "rhum"]:
+                    if fire.get(field) is None and weather2.get(field) is not None:
+                        fire[field] = weather2[field]
+
+            api_calls += 1
+            updated += 1
+            print(" ✅ 완료")
+            time.sleep(1)
         else:
-            weather1 = get_meteostat(lat, lon, date)
-            cache_meteostat[key] = weather1
+            print("✅ 기상 데이터 이미 완료")
 
-        if key in cache_weatherbit:
-            weather2 = cache_weatherbit[key]
-        else:
-            weather2 = get_weatherbit(lat, lon, date)
-            cache_weatherbit[key] = weather2
-
-        fire.update(weather1)
-        fire.update(weather2)
         enriched.append(fire)
-
-        api_calls += 1
-        print(" ✅ 완료")
-        time.sleep(1)
 
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(enriched, f, ensure_ascii=False, indent=2)
@@ -156,6 +223,7 @@ def augment_weather():
     print(f"📁 저장 위치: {output_path}")
     print(f"📊 총 {len(enriched)}개 데이터 처리")
     print(f"🌐 {api_calls}개 항목에 기상 데이터 추가")
+    print(f"🔄 {updated}개 항목 업데이트됨")
     print(f"⏭️ {skipped}개 항목 건너뜀")
 
 if __name__ == "__main__":
