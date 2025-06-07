@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🇰🇷 한국 2024-2025 전체기간 화재 분석</title>
+    
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Cesium.js"></script>
+    <link
+      href="https://cesium.com/downloads/cesiumjs/releases/1.116/Build/Cesium/Widgets/widgets.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      html,
+      body,
+      #cesiumContainer {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+      }
+
+      #infoPanel {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, 0.75);
+        color: white;
+        padding: 12px 16px;
+        border-radius: 10px;
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 13px;
+        min-width: 200px;
+        max-width: 280px;
+        pointer-events: none;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        overflow-y: hidden;
+      }
+
+      #dateLabel {
+        position: absolute;
+        bottom: 40px;
+        left: 15px;
+        background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+        color: white;
+        padding: 8px 14px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-family: 'Segoe UI', sans-serif;
+        z-index: 10;
+        font-weight: 600;
+        box-shadow: 0 6px 20px rgba(255, 107, 107, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      #controlsContainer {
+        position: absolute;
+        bottom: 80px;
+        left: 15px;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-family: 'Segoe UI', sans-serif;
+        gap: 12px;
+      }
+
+      .controls-wrapper {
+        background: rgba(0, 0, 0, 0.8);
+        padding: 16px 20px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        min-width: 320px;
+        max-width: 380px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .date-range-selector {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .date-range-row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: white;
+        font-size: 14px;
+      }
+
+      .date-input {
+        padding: 10px 14px;
+        font-size: 13px;
+        border-radius: 8px;
+        border: 1px solid #555;
+        background-color: rgba(255, 255, 255, 0.95);
+        color: #333;
+        font-family: 'Segoe UI', sans-serif;
+        min-width: 150px;
+        transition: all 0.3s ease;
+      }
+
+      .date-input:focus {
+        outline: none;
+        border-color: #ff6b6b;
+        box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.25);
+        transform: scale(1.02);
+      }
+
+      .quick-select-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 8px;
+      }
+
+      .quick-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+        border: none;
+        border-radius: 6px;
+        background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+        color: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: 'Segoe UI', sans-serif;
+        font-weight: 500;
+      }
+
+      .quick-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+      }
+
+      .quick-btn:active {
+        transform: translateY(0);
+      }
+
+      #fireCount {
+        color: #ff6b6b;
+        font-size: 15px;
+        text-align: center;
+        background: rgba(255, 107, 107, 0.15);
+        border-radius: 8px;
+        padding: 10px 14px;
+        margin-top: 8px;
+        border: 1px solid rgba(255, 107, 107, 0.3);
+        font-weight: 600;
+      }
+
+      .stats-summary {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 12px;
+        margin-top: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .stats-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 6px;
+        font-size: 12px;
+        color: #e0e0e0;
+      }
+
+      .stats-row:last-child {
+        margin-bottom: 0;
+      }
+
+      .stats-label {
+        color: #ffd700;
+        font-weight: 500;
+      }
+
+      .legend-box {
+        position: absolute;
+        left: 15px;
+        top: 110px;
+        z-index: 100;
+        background: rgba(30, 30, 30, 0.85);
+        color: #fff;
+        border-radius: 10px;
+        padding: 14px 18px;
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 12px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        user-select: none;
+        line-height: 1.5;
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        max-width: 280px;
+        min-width: 260px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .legend-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 8px;
+        cursor: pointer;
+      }
+
+      .legend-toggle {
+        background: none;
+        border: none;
+        color: #ff6b6b;
+        font-size: 12px;
+        cursor: pointer;
+        padding: 2px 6px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+      }
+
+      .legend-toggle:hover {
+        background: rgba(255, 107, 107, 0.2);
+      }
+
+      .legend-content {
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .legend-content.collapsed {
+        max-height: 0;
+        padding: 0;
+        margin: 0;
+        opacity: 0;
+      }
+
+      .legend-content.expanded {
+        max-height: 400px;
+        opacity: 1;
+      }
+
+      .legend-title {
+        font-size: 15px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        color: #ff6b6b;
+      }
+
+      .legend-divider {
+        border: none;
+        border-top: 1px solid #555;
+        margin: 8px 0 12px 0;
+      }
+
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 8px;
+      }
+
+      .legend-color {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        flex-shrink: 0;
+      }
+
+      .legend-text {
+        font-size: 12px;
+        color: #e0e0e0;
+      }
+
+      /* 페이지 간 이동 버튼 */
+      .navigation-buttons {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 999;
+        background: rgba(0, 0, 0, 0.75);
+        padding: 10px 20px;
+        border-radius: 12px;
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 13px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .nav-link {
+        color: white;
+        text-decoration: none;
+        margin: 0 12px;
+        padding: 6px 12px;
+        border-radius: 6px;
+        transition: all 0.3s ease;
+        display: inline-block;
+        font-size: 12px;
+      }
+
+      .nav-link:hover {
+        background: rgba(255, 107, 107, 0.8);
+        transform: translateY(-2px);
+      }
+
+      /* Cesium 정보 박스 스타일 */
+      .cesium-infoBox {
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        bottom: auto !important;
+        right: 20px !important;
+        left: auto !important;
+        max-height: 70vh !important;
+        max-width: 450px !important;
+        z-index: 1000 !important;
+        border-radius: 12px !important;
+        overflow: hidden !important;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+        backdrop-filter: blur(15px) !important;
+      }
+
+      .cesium-infoBox-title {
+        background: rgba(0, 0, 0, 0.9) !important;
+        color: white !important;
+        border: none !important;
+        padding: 12px 16px !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+      }
+
+      .cesium-infoBox-bodyless .cesium-infoBox-title {
+        background: rgba(0, 0, 0, 0.9) !important;
+      }
+
+      .cesium-infoBox-defaultTable {
+        background: rgba(0, 0, 0, 0.85) !important;
+        color: white !important;
+        border: none !important;
+        font-family: 'Segoe UI', sans-serif !important;
+      }
+
+      .cesium-infoBox-defaultTable tbody {
+        background: rgba(0, 0, 0, 0.85) !important;
+        border: none !important;
+      }
+
+      .cesium-infoBox iframe {
+        background: rgba(0, 0, 0, 0.85) !important;
+        border: none !important;
+      }
+
+      /* 스크롤바 숨기기 */
+      .cesium-infoBox-description::-webkit-scrollbar,
+      .cesium-infoBox iframe::-webkit-scrollbar {
+        display: none !important;
+      }
+
+      .cesium-infoBox-description,
+      .cesium-infoBox iframe {
+        -ms-overflow-style: none !important;
+        scrollbar-width: none !important;
+        overflow-y: hidden !important;
+        max-height: none !important;
+      }
+
+      /* 반응형 디자인 */
+      @media (max-width: 768px) {
+        #infoPanel {
+          min-width: 180px;
+          font-size: 12px;
+          padding: 10px 14px;
+          max-width: 220px;
+        }
+
+        #dateLabel {
+          font-size: 12px;
+          padding: 6px 12px;
+        }
+
+        .legend-box {
+          top: 100px;
+          max-width: 240px;
+          min-width: 220px;
+          padding: 12px 16px;
+          font-size: 11px;
+        }
+
+        .controls-wrapper {
+          min-width: 280px;
+          max-width: 320px;
+          padding: 14px 18px;
+        }
+
+        .date-input {
+          min-width: 130px;
+          padding: 8px 12px;
+        }
+
+        .navigation-buttons {
+          padding: 8px 16px;
+          font-size: 12px;
+        }
+
+        .nav-link {
+          margin: 0 8px;
+          padding: 5px 10px;
+          font-size: 11px;
+        }
+
+        .cesium-infoBox {
+          max-width: 350px !important;
+          right: 10px !important;
+        }
+
+        .quick-select-buttons {
+          gap: 6px;
+        }
+
+        .quick-btn {
+          padding: 5px 10px;
+          font-size: 11px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="cesiumContainer"></div>
+
+    <!-- 정보 패널 -->
+    <div id="infoPanel">
+      <div style="font-weight: bold; margin-bottom: 10px; color: #ff6b6b;">🇰🇷 한국 화재 정보</div>
+      <div id="weatherInfo">📍 지도에서 화재 지점을 클릭하세요</div>
+    </div>
+
+    <!-- 날짜 라벨 -->
+    <div id="dateLabel">📅 2024.10.01 ~ 2025.04.01 전체기간 화재 데이터</div>
+
+    <!-- 컨트롤 패널 -->
+    <div id="controlsContainer">
+      <div class="controls-wrapper">
+        <div class="date-range-selector">
+          <div class="date-range-row">
+            <label style="color: white; min-width: 70px;">📅 시작:</label>
+            <input type="date" id="startDate" class="date-input" value="2024-10-01" min="2024-10-01" max="2025-04-01" />
+          </div>
+          <div class="date-range-row">
+            <label style="color: white; min-width: 70px;">📅 종료:</label>
+            <input type="date" id="endDate" class="date-input" value="2025-04-01" min="2024-10-01" max="2025-04-01" />
+          </div>
+          
+          <!-- 빠른 선택 버튼들 -->
+          <div class="quick-select-buttons">
+            <button class="quick-btn" onclick="setQuickRange('2024-10-01', '2024-10-31')">2024.10</button>
+            <button class="quick-btn" onclick="setQuickRange('2024-11-01', '2024-11-30')">2024.11</button>
+            <button class="quick-btn" onclick="setQuickRange('2024-12-01', '2024-12-31')">2024.12</button>
+            <button class="quick-btn" onclick="setQuickRange('2025-01-01', '2025-01-31')">2025.01</button>
+            <button class="quick-btn" onclick="setQuickRange('2025-02-01', '2025-02-28')">2025.02</button>
+            <button class="quick-btn" onclick="setQuickRange('2025-03-01', '2025-03-31')">2025.03</button>
+            <button class="quick-btn" onclick="setQuickRange('2025-04-01', '2025-04-01')">2025.04</button>
+            <button class="quick-btn" onclick="setQuickRange('2024-10-01', '2025-04-01')" style="background: linear-gradient(135deg, #2196f3, #21cbf3);">전체</button>
+          </div>
+        </div>
+        
+        <div id="fireCount">🔥 화재 지점 로딩 중...</div>
+        
+        <!-- 통계 요약 -->
+        <div class="stats-summary" id="statsSummary" style="display: none;">
+          <div class="stats-row">
+            <span class="stats-label">📊 초기대응:</span>
+            <span id="statsInitial">-</span>
+          </div>
+          <div class="stats-row">
+            <span class="stats-label">🟠 1단계:</span>
+            <span id="statsLevel1">-</span>
+          </div>
+          <div class="stats-row">
+            <span class="stats-label">🔴 2단계:</span>
+            <span id="statsLevel2">-</span>
+          </div>
+          <div class="stats-row">
+            <span class="stats-label">🟣 3단계:</span>
+            <span id="statsLevel3">-</span>
+          </div>
+          <div class="stats-row">
+            <span class="stats-label">📈 총 기간:</span>
+            <span id="statsPeriod">-</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 범례 -->
+    <div class="legend-box" id="legendBox">
+      <div class="legend-header" onclick="toggleLegend()">
+        <div class="legend-title">🔥 화재 대응단계 범례</div>
+        <button class="legend-toggle" id="legendToggleBtn">[접기]</button>
+      </div>
+      
+      <div class="legend-content expanded" id="legendContent">
+        <hr class="legend-divider" />
+        
+        <div class="legend-item">
+          <div class="legend-color" style="background: #ffd700;"></div>
+          <div class="legend-text">초기대응 (노란색)</div>
+        </div>
+        
+        <div class="legend-item">
+          <div class="legend-color" style="background: #ff8c00;"></div>
+          <div class="legend-text">1단계 (주황색)</div>
+        </div>
+        
+        <div class="legend-item">
+          <div class="legend-color" style="background: #ff6666;"></div>
+          <div class="legend-text">2단계 (밝은 빨강)</div>
+        </div>
+        
+        <div class="legend-item">
+          <div class="legend-color" style="background: #800080;"></div>
+          <div class="legend-text">3단계 (보라색)</div>
+        </div>
+        
+        <div style="font-size: 11px; color: #aaa; margin-top: 12px;">
+          * 점 크기: 화재 규모에 비례<br/>
+          * 클릭 시 상세 정보 표시<br/>
+          * 빠른 선택 버튼으로 월별 확인 가능
+        </div>
+      </div>
+    </div>
+
+    <!-- 페이지 간 이동 버튼 -->
+    <div class="navigation-buttons">
+      <a href="../../past_index.html" class="nav-link">🏠 과거 분석 메인</a>
+      <a href="../../index.html" class="nav-link">🏠 전체 메인</a>
+    </div>
+
+    <!-- JavaScript 모듈 로드 -->
+    <script type="module" src="korea_full_period.js"></script>
+    
+    <!-- 범례 토글 및 빠른 선택 스크립트 -->
+    <script>
+      function toggleLegend() {
+        const content = document.getElementById('legendContent');
+        const toggleBtn = document.getElementById('legendToggleBtn');
+        
+        if (content.classList.contains('expanded')) {
+          content.classList.remove('expanded');
+          content.classList.add('collapsed');
+          toggleBtn.textContent = '[펼치기]';
+        } else {
+          content.classList.remove('collapsed');
+          content.classList.add('expanded');
+          toggleBtn.textContent = '[접기]';
+        }
+      }
+
+      function setQuickRange(startDate, endDate) {
+        document.getElementById('startDate').value = startDate;
+        document.getElementById('endDate').value = endDate;
+        
+        // 변경 이벤트 트리거
+        document.getElementById('startDate').dispatchEvent(new Event('change'));
+      }
+    </script>
+  </body>
+</html>
