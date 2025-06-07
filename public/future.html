@@ -27,15 +27,12 @@
   </head>
   <body>
     <div id="cesiumContainer"></div>
-    <div id="infoPanel">
-      <div id="windArrow">↑</div>
-      <div id="weatherInfo">🖱️ 지도에서 위치를 클릭하세요</div>
-    </div>
+    
     <div id="dateLabel">🗓️ 2025-01-08</div>
     <div id="controlsContainer">
       <div class="controls-wrapper">
         <div class="top-row">
-          <button id="toggleButton">▶ 재생</button>
+          <button id="playBtn">▶ 재생</button>
           <input type="range" id="timeSlider" min="0" max="7" value="0" step="1" />
         </div>
         <select id="fireDateSelect">
@@ -48,6 +45,21 @@
           <option value="6">20250118m-maxar</option>
           <option value="7">20250120m-maxar</option>
         </select>
+        <!-- 기존 fireDateSelect 아래쪽, controlsContainer 밖이어도 OK -->
+        <select id="koreaDateSelect" style="
+          position: absolute;
+          top: 100px;
+          left: 30px;
+          z-index: 1010;
+          display: none;
+          background: #fff;
+          color: #222;
+          border-radius: 6px;
+          font-size: 14px;
+          padding: 7px 14px;
+          border: 1px solid #aaa;
+        "></select>
+
         <div id="fireInfo">🔥 산불 데이터 로딩 중...</div>
       </div>
     </div>
