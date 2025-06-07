@@ -359,7 +359,7 @@ function setupToggleView() {
       
       // 페이지 설명 원래대로
       if (pageDescription) {
-        pageDescription.textContent = "현재 페이지는 오늘 기준 최근 7일 간의 국내 산불 발생 정보를 시각화합니다.";
+        pageDescription.textContent = "오늘 기준 최근 7일 간의 국내 산불 발생 정보를 시각화합니다.";
       }
       
       koreaEntities.forEach(e => viewer.entities.add(e));
