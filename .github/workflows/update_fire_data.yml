@@ -1,7 +1,9 @@
 name: 🔄 Update Korea Fire Data (Daily)
 on:
   schedule:
-    - cron: "0 16 * * *"  # ✅ 매일 01:00 KST (5개 필드)
+    - cron: "0 16 * * *"  # ✅ 매일 새벽 1시 KST (5개 필드)
+    - cron: '0 9 * * *'  # ✅ 매일 오전 9시 KST
+    - cron: '0 17 * * *'  # ✅ 매일 오후 5시 KST
   workflow_dispatch:
 jobs:
   build:
