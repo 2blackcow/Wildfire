@@ -37,12 +37,15 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add public/data/korea_fire_*.json
           
           # 현재 시간과 데이터 개수 확인
           FIRE_COUNT=$(jq length public/data/korea_fire_full.json)
           CURRENT_TIME=$(date '+%Y-%m-%d %H:%M KST')
           
-          # 무조건 커밋 (변경사항 없어도 실행)
-          git commit -m "🔥 자동 업데이트: ${FIRE_COUNT}건 (${CURRENT_TIME})" || echo "커밋 실행됨"
+          # 모든 변경사항 추가 및 강제 커밋
+          git add -A
+          git status
+          
+          # 변경사항이 있든 없든 무조건 커밋 (--allow-empty 옵션 사용)
+          git commit --allow-empty -m "🔥 자동 업데이트: ${FIRE_COUNT}건 (${CURRENT_TIME})"
           git push
