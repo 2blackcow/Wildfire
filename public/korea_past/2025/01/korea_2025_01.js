@@ -154,7 +154,7 @@ function renderFireData(fireData, startDate = "2025-01-01", endDate = "2025-01-3
     // JSON 구조에 맞는 필드명 사용
     const fireStartTime = item.frfr_frng_dtm || item.start || item.date;
     const fireEndTime = item.potfr_end_dtm || item.time || item.end_time;
-    const address = item.frfr_sttm_addr || item.address || '정보 없음';
+    const address = item.frfr_sttmn_addr || item.frfr_sttm_addr || item.address || '위치 정보 없음';
     const status = item.frfr_prgrs_stcd_str || item.status || '정보 없음';
     const level = item.frfr_step_issu_cd || item.level || '정보 없음';
     const lat = item.frfr_lctn_ycrd || item.lat || item.latitude;

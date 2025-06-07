@@ -23,19 +23,19 @@
 
       #infoPanel {
         position: absolute;
-        top: 15px;
-        left: 15px;
+        top: 10px;
+        left: 10px;
         z-index: 10;
         background-color: rgba(0, 0, 0, 0.75);
         color: white;
-        padding: 12px 16px;
-        border-radius: 10px;
+        padding: 8px 12px;
+        border-radius: 8px;
         font-family: 'Segoe UI', sans-serif;
-        font-size: 13px;
-        min-width: 200px;
-        max-width: 280px;
+        font-size: 12px;
+        min-width: 160px;
+        max-width: 200px;
         pointer-events: none;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.1);
         overflow-y: hidden;
@@ -43,69 +43,69 @@
 
       #dateLabel {
         position: absolute;
-        bottom: 40px;
-        left: 15px;
+        bottom: 20px;
+        left: 10px;
         background: linear-gradient(135deg, #ff6b6b, #ee5a24);
         color: white;
-        padding: 8px 14px;
-        border-radius: 8px;
-        font-size: 14px;
+        padding: 6px 10px;
+        border-radius: 6px;
+        font-size: 12px;
         font-family: 'Segoe UI', sans-serif;
         z-index: 10;
         font-weight: 600;
-        box-shadow: 0 6px 20px rgba(255, 107, 107, 0.3);
+        box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
         border: 1px solid rgba(255, 255, 255, 0.2);
       }
 
       #controlsContainer {
         position: absolute;
-        bottom: 80px;
-        left: 15px;
+        bottom: 60px;
+        left: 10px;
         z-index: 10;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         font-family: 'Segoe UI', sans-serif;
-        gap: 12px;
+        gap: 8px;
       }
 
       .controls-wrapper {
         background: rgba(0, 0, 0, 0.8);
-        padding: 16px 20px;
-        border-radius: 12px;
+        padding: 10px 14px;
+        border-radius: 8px;
         display: flex;
         flex-direction: column;
-        gap: 12px;
-        min-width: 320px;
-        max-width: 380px;
+        gap: 8px;
+        min-width: 250px;
+        max-width: 280px;
         border: 1px solid rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(15px);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
       }
 
       .date-range-selector {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 6px;
       }
 
       .date-range-row {
         display: flex;
         align-items: center;
-        gap: 12px;
+        gap: 8px;
         color: white;
-        font-size: 14px;
+        font-size: 12px;
       }
 
       .date-input {
-        padding: 10px 14px;
-        font-size: 13px;
-        border-radius: 8px;
+        padding: 6px 10px;
+        font-size: 11px;
+        border-radius: 6px;
         border: 1px solid #555;
         background-color: rgba(255, 255, 255, 0.95);
         color: #333;
         font-family: 'Segoe UI', sans-serif;
-        min-width: 150px;
+        min-width: 110px;
         transition: all 0.3s ease;
       }
 
@@ -119,15 +119,15 @@
       .quick-select-buttons {
         display: flex;
         flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 8px;
+        gap: 4px;
+        margin-top: 4px;
       }
 
       .quick-btn {
-        padding: 6px 12px;
-        font-size: 12px;
+        padding: 4px 8px;
+        font-size: 10px;
         border: none;
-        border-radius: 6px;
+        border-radius: 4px;
         background: linear-gradient(135deg, #ff6b6b, #ee5a24);
         color: white;
         cursor: pointer;
@@ -137,8 +137,8 @@
       }
 
       .quick-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+        transform: translateY(-1px);
+        box-shadow: 0 2px 8px rgba(255, 107, 107, 0.4);
       }
 
       .quick-btn:active {
@@ -147,29 +147,29 @@
 
       #fireCount {
         color: #ff6b6b;
-        font-size: 15px;
+        font-size: 13px;
         text-align: center;
         background: rgba(255, 107, 107, 0.15);
-        border-radius: 8px;
-        padding: 10px 14px;
-        margin-top: 8px;
+        border-radius: 6px;
+        padding: 6px 10px;
+        margin-top: 4px;
         border: 1px solid rgba(255, 107, 107, 0.3);
         font-weight: 600;
       }
 
       .stats-summary {
         background: rgba(255, 255, 255, 0.1);
-        border-radius: 8px;
-        padding: 12px;
-        margin-top: 8px;
+        border-radius: 6px;
+        padding: 8px 10px;
+        margin-top: 4px;
         border: 1px solid rgba(255, 255, 255, 0.2);
       }
 
       .stats-row {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 6px;
-        font-size: 12px;
+        margin-bottom: 3px;
+        font-size: 11px;
         color: #e0e0e0;
       }
 
@@ -184,22 +184,22 @@
 
       .legend-box {
         position: absolute;
-        left: 15px;
-        top: 110px;
+        left: 10px;
+        top: 80px;
         z-index: 100;
         background: rgba(30, 30, 30, 0.85);
         color: #fff;
-        border-radius: 10px;
-        padding: 14px 18px;
+        border-radius: 8px;
+        padding: 8px 12px;
         font-family: 'Segoe UI', sans-serif;
-        font-size: 12px;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        font-size: 11px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         user-select: none;
-        line-height: 1.5;
+        line-height: 1.4;
         backdrop-filter: blur(15px);
         border: 1px solid rgba(255, 255, 255, 0.1);
-        max-width: 280px;
-        min-width: 260px;
+        max-width: 200px;
+        min-width: 180px;
         transition: all 0.3s ease;
         cursor: pointer;
       }
@@ -208,7 +208,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-bottom: 8px;
+        margin-bottom: 6px;
         cursor: pointer;
       }
 
@@ -216,10 +216,10 @@
         background: none;
         border: none;
         color: #ff6b6b;
-        font-size: 12px;
+        font-size: 10px;
         cursor: pointer;
-        padding: 2px 6px;
-        border-radius: 4px;
+        padding: 1px 4px;
+        border-radius: 3px;
         transition: all 0.3s ease;
       }
 
@@ -240,74 +240,74 @@
       }
 
       .legend-content.expanded {
-        max-height: 400px;
+        max-height: 300px;
         opacity: 1;
       }
 
       .legend-title {
-        font-size: 15px;
+        font-size: 12px;
         font-weight: 700;
-        margin-bottom: 12px;
+        margin-bottom: 8px;
         color: #ff6b6b;
       }
 
       .legend-divider {
         border: none;
         border-top: 1px solid #555;
-        margin: 8px 0 12px 0;
+        margin: 4px 0 8px 0;
       }
 
       .legend-item {
         display: flex;
         align-items: center;
-        gap: 12px;
-        margin-bottom: 8px;
+        gap: 8px;
+        margin-bottom: 4px;
       }
 
       .legend-color {
-        width: 16px;
-        height: 16px;
+        width: 12px;
+        height: 12px;
         border-radius: 50%;
         border: 1px solid rgba(255, 255, 255, 0.3);
         flex-shrink: 0;
       }
 
       .legend-text {
-        font-size: 12px;
+        font-size: 11px;
         color: #e0e0e0;
       }
 
       /* 페이지 간 이동 버튼 */
       .navigation-buttons {
         position: absolute;
-        bottom: 15px;
+        bottom: 10px;
         left: 50%;
         transform: translateX(-50%);
         z-index: 999;
         background: rgba(0, 0, 0, 0.75);
-        padding: 10px 20px;
-        border-radius: 12px;
+        padding: 6px 14px;
+        border-radius: 8px;
         font-family: 'Segoe UI', sans-serif;
-        font-size: 13px;
+        font-size: 12px;
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
       }
 
       .nav-link {
         color: white;
         text-decoration: none;
-        margin: 0 12px;
-        padding: 6px 12px;
-        border-radius: 6px;
+        margin: 0 8px;
+        padding: 4px 8px;
+        border-radius: 4px;
         transition: all 0.3s ease;
         display: inline-block;
-        font-size: 12px;
+        font-size: 11px;
       }
 
       .nav-link:hover {
         background: rgba(255, 107, 107, 0.8);
-        transform: translateY(-2px);
+        transform: translateY(-1px);
       }
 
       /* Cesium 정보 박스 스타일 */
@@ -315,14 +315,14 @@
         top: 50% !important;
         transform: translateY(-50%) !important;
         bottom: auto !important;
-        right: 20px !important;
+        right: 15px !important;
         left: auto !important;
-        max-height: 70vh !important;
-        max-width: 450px !important;
+        max-height: 60vh !important;
+        max-width: 350px !important;
         z-index: 1000 !important;
-        border-radius: 12px !important;
+        border-radius: 8px !important;
         overflow: hidden !important;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4) !important;
         backdrop-filter: blur(15px) !important;
       }
 
@@ -330,8 +330,8 @@
         background: rgba(0, 0, 0, 0.9) !important;
         color: white !important;
         border: none !important;
-        padding: 12px 16px !important;
-        font-size: 14px !important;
+        padding: 8px 12px !important;
+        font-size: 12px !important;
         font-weight: 600 !important;
       }
 
@@ -344,6 +344,7 @@
         color: white !important;
         border: none !important;
         font-family: 'Segoe UI', sans-serif !important;
+        font-size: 11px !important;
       }
 
       .cesium-infoBox-defaultTable tbody {
@@ -373,59 +374,92 @@
       /* 반응형 디자인 */
       @media (max-width: 768px) {
         #infoPanel {
-          min-width: 180px;
-          font-size: 12px;
-          padding: 10px 14px;
-          max-width: 220px;
+          min-width: 140px;
+          font-size: 10px;
+          padding: 6px 10px;
+          max-width: 160px;
         }
 
         #dateLabel {
-          font-size: 12px;
-          padding: 6px 12px;
+          font-size: 10px;
+          padding: 4px 8px;
         }
 
         .legend-box {
-          top: 100px;
-          max-width: 240px;
-          min-width: 220px;
-          padding: 12px 16px;
-          font-size: 11px;
+          top: 70px;
+          max-width: 160px;
+          min-width: 140px;
+          padding: 6px 10px;
+          font-size: 9px;
         }
 
         .controls-wrapper {
-          min-width: 280px;
-          max-width: 320px;
-          padding: 14px 18px;
-        }
-
-        .date-input {
-          min-width: 130px;
+          min-width: 200px;
+          max-width: 220px;
           padding: 8px 12px;
         }
 
+        .date-input {
+          min-width: 90px;
+          padding: 4px 8px;
+          font-size: 10px;
+        }
+
         .navigation-buttons {
-          padding: 8px 16px;
-          font-size: 12px;
+          padding: 4px 10px;
+          font-size: 10px;
         }
 
         .nav-link {
-          margin: 0 8px;
-          padding: 5px 10px;
-          font-size: 11px;
+          margin: 0 6px;
+          padding: 3px 6px;
+          font-size: 9px;
         }
 
         .cesium-infoBox {
-          max-width: 350px !important;
-          right: 10px !important;
+          max-width: 280px !important;
+          right: 8px !important;
         }
 
         .quick-select-buttons {
-          gap: 6px;
+          gap: 3px;
         }
 
         .quick-btn {
-          padding: 5px 10px;
+          padding: 3px 6px;
+          font-size: 9px;
+        }
+
+        .date-range-row {
+          font-size: 10px;
+          gap: 6px;
+        }
+
+        #fireCount {
           font-size: 11px;
+          padding: 4px 8px;
+        }
+
+        .stats-row {
+          font-size: 9px;
+        }
+
+        .legend-item {
+          gap: 6px;
+          margin-bottom: 3px;
+        }
+
+        .legend-color {
+          width: 10px;
+          height: 10px;
+        }
+
+        .legend-text {
+          font-size: 9px;
+        }
+
+        .legend-title {
+          font-size: 10px;
         }
       }
     </style>
@@ -436,7 +470,7 @@
 
     <!-- 정보 패널 -->
     <div id="infoPanel">
-      <div style="font-weight: bold; margin-bottom: 10px; color: #ff6b6b;">🇰🇷 한국 화재 정보</div>
+      <div style="font-weight: bold; margin-bottom: 6px; color: #ff6b6b;">🇰🇷 한국 화재 정보</div>
       <div id="weatherInfo">📍 지도에서 화재 지점을 클릭하세요</div>
     </div>
 
@@ -448,11 +482,11 @@
       <div class="controls-wrapper">
         <div class="date-range-selector">
           <div class="date-range-row">
-            <label style="color: white; min-width: 70px;">📅 시작:</label>
+            <label style="color: white; min-width: 40px;">📅 시작:</label>
             <input type="date" id="startDate" class="date-input" value="2024-10-01" min="2024-10-01" max="2025-04-01" />
           </div>
           <div class="date-range-row">
-            <label style="color: white; min-width: 70px;">📅 종료:</label>
+            <label style="color: white; min-width: 40px;">📅 종료:</label>
             <input type="date" id="endDate" class="date-input" value="2025-04-01" min="2024-10-01" max="2025-04-01" />
           </div>
           
@@ -527,7 +561,7 @@
           <div class="legend-text">3단계 (보라색)</div>
         </div>
         
-        <div style="font-size: 11px; color: #aaa; margin-top: 12px;">
+        <div style="font-size: 9px; color: #aaa; margin-top: 8px;">
           * 점 크기: 화재 규모에 비례<br/>
           * 클릭 시 상세 정보 표시<br/>
           * 빠른 선택 버튼으로 월별 확인 가능

@@ -34,17 +34,17 @@ function getVisualStyleByLevel(level) {
     case "1단계":
       return {
         color: Cesium.Color.ORANGE.withAlpha(0.85),
-        size: 18,
+        size: 14,
       };
     case "2단계":
       return {
         color: Cesium.Color.fromCssColorString("#ff6666").withAlpha(0.9),
-        size: 22,
+        size: 18,
       };
     case "3단계":
       return {
         color: Cesium.Color.fromCssColorString("#800080").withAlpha(0.95),
-        size: 26,
+        size: 22,
       };
     default:
       return {
@@ -62,6 +62,11 @@ async function loadKoreaFireData() {
     const fireData = await res.json();
 
     console.log(`📊 전체 화재 데이터 ${fireData.length}개 로드됨`);
+    
+    // 첫 번째 데이터 구조 확인
+    if (fireData.length > 0) {
+      console.log("📋 데이터 구조 샘플:", fireData[0]);
+    }
 
     // 2024/10/01 ~ 2025/04/01 기간 데이터 필터링
     const fullPeriodData = fireData.filter(item => {
@@ -163,12 +168,17 @@ function renderFireData(fireData, startDate = "2024-10-01", endDate = "2025-04-0
   const entities = [];
   
   fireData.forEach((item, index) => {
-    // JSON 구조에 맞는 필드명 사용
+    // 🔥 수정된 부분: JSON 구조에 맞는 정확한 필드명 사용
     const fireStartTime = item.frfr_frng_dtm || item.start || item.date;
     const fireEndTime = item.potfr_end_dtm || item.time || item.end_time;
-    const address = item.frfr_sttm_addr || item.address || '정보 없음';
-    const status = item.frfr_prgrs_stcd_str || item.status || '정보 없음';
-    const level = item.frfr_step_issu_cd || item.level || '정보 없음';
+    
+    // ✅ 주소 정보 - 올바른 필드명 사용
+    const address = item.frfr_sttmn_addr || item.frfr_sttm_addr || item.address || '위치 정보 없음';
+    
+    const status = item.frfr_prgrs_stcd_str || item.status || '진행상태 정보 없음';
+    const level = item.frfr_step_issu_cd || item.level || '대응단계 정보 없음';
+    
+    // 좌표 정보
     const lat = item.frfr_lctn_ycrd || item.lat || item.latitude;
     const lon = item.frfr_lctn_xcrd || item.lon || item.longitude;
     
@@ -191,10 +201,16 @@ function renderFireData(fireData, startDate = "2024-10-01", endDate = "2025-04-0
     const latitude = parseFloat(lat);
     const longitude = parseFloat(lon);
     
-    if (isNaN(latitude) || isNaN(longitude)) return;
+    if (isNaN(latitude) || isNaN(longitude)) {
+      console.warn(`❌ 잘못된 좌표 데이터:`, { lat, lon, index });
+      return;
+    }
     
     // 한국 범위 체크
-    if (latitude < 33 || latitude > 39 || longitude < 124 || longitude > 132) return;
+    if (latitude < 33 || latitude > 39 || longitude < 124 || longitude > 132) {
+      console.warn(`❌ 한국 범위 밖 좌표:`, { latitude, longitude, address });
+      return;
+    }
 
     // 통계 업데이트
     if (stats.hasOwnProperty(level)) {
@@ -221,7 +237,7 @@ function renderFireData(fireData, startDate = "2024-10-01", endDate = "2025-04-0
             <h3 style="margin: 0 0 12px 0; color:rgb(255, 255, 255); font-size: 16px; border-bottom: 1px solid #333; padding-bottom: 8px;">🔥 화재 정보</h3>
             
             <div style="background: rgba(255, 255, 255, 0.1); padding: 12px; border-radius: 6px; margin-bottom: 12px; border: 1px solid rgba(255, 255, 255, 0.2);">
-              <div style="margin-bottom: 6px;"><strong style="color: #ffd700;">📍 위치:</strong> <span style="color: #e0e0e0;">${address}</span></div>
+              <div style="margin-bottom: 8px;"><strong style="color: #ffd700;">📍 위치:</strong> <span style="color: #e0e0e0; font-weight: 500;">${address}</span></div>
               <div style="margin-bottom: 6px;"><strong style="color: #ffd700;">🧨 발생일시:</strong> <span style="color: #e0e0e0;">${fireStartTime || "-"}</span></div>
               <div style="margin-bottom: 6px;"><strong style="color: #ffd700;">🕒 진화일시:</strong> <span style="color: #e0e0e0;">${fireEndTime || "-"}</span></div>
               <div style="margin-bottom: 6px;"><strong style="color: #ffd700;">🔥 진행상태:</strong> <span style="color: #ff6b6b; font-weight: bold;">${status}</span></div>
@@ -229,14 +245,16 @@ function renderFireData(fireData, startDate = "2024-10-01", endDate = "2025-04-0
               <div><strong style="color: #ffd700;">📊 좌표:</strong> <span style="color: #e0e0e0;">${latitude.toFixed(4)}, ${longitude.toFixed(4)}</span></div>
             </div>
             
+            ${temp || wspd || wdir || precip || rhum ? `
             <div style="background: rgba(255, 255, 255, 0.1); padding: 12px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.2);">
               <h4 style="margin: 0 0 8px 0; color:rgb(255, 255, 255); font-size: 14px;">🌤️ 기상 정보</h4>
-              <div style="margin-bottom: 4px;"><strong style="color: #81c784;">🌡️ 기온:</strong> <span style="color: #e0e0e0;">${temp ?? "-"} ℃</span></div>
-              <div style="margin-bottom: 4px;"><strong style="color: #81c784;">💨 풍속:</strong> <span style="color: #e0e0e0;">${wspd ?? "-"} m/s</span></div>
-              <div style="margin-bottom: 4px;"><strong style="color: #81c784;">🧭 풍향:</strong> <span style="color: #e0e0e0;">${wdir ?? "-"}°</span></div>
-              <div style="margin-bottom: 4px;"><strong style="color: #81c784;">☔ 강수량:</strong> <span style="color: #e0e0e0;">${precip ?? "-"} mm</span></div>
-              <div><strong style="color: #81c784;">💧 습도:</strong> <span style="color: #e0e0e0;">${rhum ?? "-"} %</span></div>
+              ${temp ? `<div style="margin-bottom: 4px;"><strong style="color: #81c784;">🌡️ 기온:</strong> <span style="color: #e0e0e0;">${temp} ℃</span></div>` : ''}
+              ${wspd ? `<div style="margin-bottom: 4px;"><strong style="color: #81c784;">💨 풍속:</strong> <span style="color: #e0e0e0;">${wspd} m/s</span></div>` : ''}
+              ${wdir ? `<div style="margin-bottom: 4px;"><strong style="color: #81c784;">🧭 풍향:</strong> <span style="color: #e0e0e0;">${wdir}°</span></div>` : ''}
+              ${precip ? `<div style="margin-bottom: 4px;"><strong style="color: #81c784;">☔ 강수량:</strong> <span style="color: #e0e0e0;">${precip} mm</span></div>` : ''}
+              ${rhum ? `<div><strong style="color: #81c784;">💧 습도:</strong> <span style="color: #e0e0e0;">${rhum} %</span></div>` : ''}
             </div>
+            ` : '<div style="color: #888; font-size: 12px; text-align: center;">기상 정보 없음</div>'}
           </div>
         `,
       };
@@ -245,7 +263,7 @@ function renderFireData(fireData, startDate = "2024-10-01", endDate = "2025-04-0
       count++;
 
     } catch (error) {
-      console.error(`❌ 엔티티 생성 실패:`, error);
+      console.error(`❌ 엔티티 생성 실패 (인덱스: ${index}):`, error);
     }
   });
 
