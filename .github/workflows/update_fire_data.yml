@@ -38,9 +38,9 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           
-          # 현재 시간과 데이터 개수 확인
+          # 현재 시간과 데이터 개수 확인 (한국 시간대 정확히 설정)
           FIRE_COUNT=$(jq length public/data/korea_fire_full.json)
-          CURRENT_TIME=$(date '+%Y-%m-%d %H:%M KST')
+          CURRENT_TIME=$(TZ='Asia/Seoul' date '+%Y-%m-%d %H:%M KST')
           
           # 모든 변경사항 추가 및 강제 커밋
           git add -A
