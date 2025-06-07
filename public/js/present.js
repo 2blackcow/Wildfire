@@ -61,7 +61,7 @@ async function loadKoreaFireData() {
   try {
     updateLoadingStatus("🔄 국내 화재 데이터 로딩 중...");
     
-    const res = await fetch("/data/korea_fire_weather.json");
+    const res = await fetch("/data/korea_fire_full.json");
     const fireData = await res.json();
 
     const startInput = document.getElementById("startDate");
@@ -166,7 +166,7 @@ async function loadKoreaFireData() {
             🛰️ <b>NASA 밝기:</b> ${brightness ?? "-"}<br/>
             🔥 <b>FRP:</b> ${frp ?? "-"}<br/>
             🔒 <b>신뢰도:</b> ${confidence ?? "-"}<br/>
-            📏 <b>위성거리:</b> ${nasa_distance_km ?? "-"} km
+            📏 <b>위성거리:</b> ${nasa_distance_km ?? "-"} km 
           `,
         });
 
