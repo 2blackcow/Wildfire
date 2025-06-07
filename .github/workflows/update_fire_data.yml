@@ -28,42 +28,21 @@ jobs:
           FIRMS_KEY: ${{ secrets.FIRMS_KEY }}
         run: |
           cd crawling
-          
-          # 기존 파일 해시 저장 (변경사항 체크용)
-          if [ -f "../public/data/korea_fire_full.json" ]; then
-            OLD_HASH=$(sha256sum ../public/data/korea_fire_full.json | cut -d' ' -f1)
-          else
-            OLD_HASH="none"
-          fi
-          
-          # 데이터 업데이트 실행
           python fetch_forest_data.py
           python augment_weather.py
           python fetch_firms_data.py
           python augment_firms.py
           
-          # 새 파일 해시 계산
-          NEW_HASH=$(sha256sum ../public/data/korea_fire_full.json | cut -d' ' -f1)
-          
-          # 변경사항 체크 및 플래그 설정
-          if [ "$OLD_HASH" != "$NEW_HASH" ]; then
-            echo "🔥 새로운 데이터 감지 - 업데이트 진행"
-            echo "yes" > /tmp/commit_flag
-          else
-            echo "📝 변경사항 없음 - 스킵"
-            echo "no" > /tmp/commit_flag
-          fi
-          
-      - name: 📤 Commit & Push updated JSON
+      - name: 📤 Commit & Push updated JSON (무조건 실행)
         run: |
-          if [ "$(cat /tmp/commit_flag)" = "yes" ]; then
-            git config user.name "github-actions"
-            git config user.email "actions@github.com"
-            git add public/data/korea_fire_*.json
-            
-            FIRE_COUNT=$(jq length public/data/korea_fire_full.json)
-            git commit -m "🔥 자동 업데이트: ${FIRE_COUNT}건 ($(date '+%Y-%m-%d %H:%M KST'))" || echo "No changes to commit"
-            git push
-          else
-            echo "📝 변경사항 없어서 커밋 스킵"
-          fi
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add public/data/korea_fire_*.json
+          
+          # 현재 시간과 데이터 개수 확인
+          FIRE_COUNT=$(jq length public/data/korea_fire_full.json)
+          CURRENT_TIME=$(date '+%Y-%m-%d %H:%M KST')
+          
+          # 무조건 커밋 (변경사항 없어도 실행)
+          git commit -m "🔥 자동 업데이트: ${FIRE_COUNT}건 (${CURRENT_TIME})" || echo "커밋 실행됨"
+          git push
