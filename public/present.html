@@ -12,6 +12,90 @@
         margin: 0;
         overflow: hidden;
       }
+
+      /* 🔥 화재 리스트 패널 - 기간 패널 위에 위치 */
+      #fireListPanel {
+        position: absolute;
+        bottom: 250px; /* 기간 패널 위로 올림 */
+        left: 20px; /* 왼쪽 정렬 */
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 12px;
+        border-radius: 8px;
+        z-index: 1000;
+        font-family: sans-serif;
+        font-size: 13px;
+        width: 240px;
+        max-height: 200px;
+        overflow-y: auto;
+      }
+
+      #fireListPanel h4 {
+        margin: 0 0 8px 0;
+        color: #ff6b35;
+        font-size: 14px;
+        border-bottom: 1px solid #444;
+        padding-bottom: 4px;
+      }
+
+      .fire-item {
+        padding: 6px 8px;
+        margin: 3px 0;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        border-left: 3px solid;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-size: 12px;
+        line-height: 1.3;
+      }
+
+      .fire-item:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateX(2px);
+      }
+
+      /* 대응단계별 색상 */
+      .fire-item.level-초기대응 { border-left-color: #ffeb3b; }
+      .fire-item.level-1단계 { border-left-color: #ff9800; }
+      .fire-item.level-2단계 { border-left-color: #ff6666; }
+      .fire-item.level-3단계 { border-left-color: #800080; }
+
+      .fire-item-header {
+        font-weight: bold;
+        color: #fff;
+        margin-bottom: 2px;
+      }
+
+      .fire-item-details {
+        color: #ccc;
+        font-size: 11px;
+      }
+
+      /* 스크롤바 스타일 */
+      #fireListPanel::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      #fireListPanel::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 3px;
+      }
+
+      #fireListPanel::-webkit-scrollbar-thumb {
+        background: rgba(255, 107, 53, 0.7);
+        border-radius: 3px;
+      }
+
+      /* 날짜 구분선 */
+      .date-separator {
+        margin: 8px 0 4px 0;
+        padding: 4px 0;
+        border-bottom: 1px solid #555;
+        font-weight: bold;
+        color: #ff6b35;
+        font-size: 12px;
+      }
     </style>
     <script src="https://cesium.com/downloads/cesiumjs/releases/1.114/Build/Cesium/Cesium.js"></script>
     <link
@@ -21,106 +105,81 @@
     <script src="js/present.js" defer></script>
   </head>
   <body>
-    <!-- 🔍 날짜 + 필터 UI (왼쪽 하단 위치) -->
+    <!-- 기존 UI 그대로 유지 -->
+    <!-- 📅 좌측 하단 날짜 범위 선택 -->
     <div
+      id="datePanel"
       style="
         position: absolute;
         bottom: 20px;
         left: 20px;
         background: rgba(0, 0, 0, 0.6);
         color: white;
-        padding: 12px 16px;
+        padding: 10px;
         border-radius: 8px;
         z-index: 1000;
         font-family: sans-serif;
-        font-size: 13px;
-        line-height: 1.6;
+        font-size: 14px;
       "
     >
-      <b>📆 기간:</b><br />
-      <input type="date" id="startDate" />
+      <label>📆 기간:</label><br />
+      <input type="date" id="startDate" min="2024-10-01" max="2025-04-01" />
       ~
-      <input type="date" id="endDate" /><br />
-
-      <div id="levelFilterDiv" style="margin-top: 8px;">
-        <b>🧯 대응단계:</b><br />
-        <select id="levelFilter">
+      <input type="date" id="endDate" min="2024-10-01" max="2025-04-01" />
+      
+      <div style="margin-top: 8px;">
+        <label>🧯 대응단계:</label>
+        <select id="levelFilter" style="width: 100%; margin-top: 4px;" id="levelFilterDiv">
           <option value="전체">전체</option>
           <option value="초기대응">초기대응</option>
           <option value="1단계">1단계</option>
           <option value="2단계">2단계</option>
           <option value="3단계">3단계</option>
-        </select><br />
+        </select>
       </div>
 
-      <div id="statusFilterDiv" style="margin-top: 8px;">
-        <b>🔥 진행상태:</b><br />
-        <select id="statusFilter">
+      <div style="margin-top: 8px;" id="statusFilterDiv">
+        <label>🔥 진행상태:</label>
+        <select id="statusFilter" style="width: 100%; margin-top: 4px;">
           <option value="전체">전체</option>
           <option value="진화완료">진화완료</option>
           <option value="진화중">진화중</option>
-          <option value="조사중">조사중</option>
-        </select><br />
+          <option value="대기">대기</option>
+        </select>
       </div>
 
       <div id="fireCount" style="margin-top: 6px; font-weight: bold"></div>
+      <div id="pageDescription" style="font-size: 11px; color: #aaa; margin-top: 4px;">
+        오늘 기준 최근 7일 간의 국내 산불 발생 정보를 시각화합니다.
+      </div>
     </div>
 
-    <!-- 🔔 안내 메시지 -->
-    <div
-      style="
-        position: absolute;
-        top: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: rgba(255, 255, 255, 0.95);
-        color: #222;
-        padding: 10px 20px;
-        border-radius: 8px;
-        font-family: sans-serif;
-        font-size: 14px;
-        z-index: 1000;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-      "
-    >
-      🔥
-      <b id="pageDescription"
-        >오늘 기준 최근 7일 간의 국내 산불 발생 정보를
-        시각화합니다.</b
-      >
+    <!-- 🔥 NEW: 화재 지역 리스트 패널 -->
+    <div id="fireListPanel">
+      <h4>🔥 화재 발생 지역</h4>
+      <div id="fireList">
+        <div style="color: #999; text-align: center; padding: 20px;">
+          데이터 로딩 중...
+        </div>
+      </div>
     </div>
 
-    <div
-      style="
-        position: absolute;
-        top: 80px;
-        right: 12px;
-        z-index: 9999;
-        background: rgba(0, 0, 0, 0.6);
-        padding: 6px 12px;
-        border-radius: 6px;
-        font-size: 13px;
+    <!-- 🗺️ 뷰 전환 버튼 -->
+    <div style="position: absolute; top: 50px; right: 20px; z-index: 1001;">
+      <button id="toggleViewBtn" style="
+        background: rgba(0, 123, 255, 0.9);
         color: white;
-      "
-    >
-      <button
-        id="toggleViewBtn"
-        style="
-          color: #00e0ff;
-          background: none;
-          border: none;
-          font-weight: bold;
-          cursor: pointer;
-        "
-      >
-        🌏 LA 보기 ON
-      </button>
+        border: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 14px;
+        cursor: pointer;
+      ">🌏 LA 보기 ON</button>
     </div>
 
-    <!-- 🗺️ 지도 -->
     <div id="cesiumContainer"></div>
-
-    <!-- 🔄 페이지 이동 버튼 -->
+    
+    <!-- 🔄 하단 중앙 페이지 이동 버튼 -->
     <div
       style="
         position: absolute;
@@ -141,7 +200,7 @@
         >🏠 메인</a
       >
       <a
-        href="past_index.html"
+        href="past.html"
         style="color: white; text-decoration: none; margin: 0 12px"
         >🕰️ 과거</a
       >
