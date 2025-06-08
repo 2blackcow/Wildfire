@@ -13,6 +13,18 @@
         overflow: hidden;
       }
 
+      /* Cesium InfoBox 위치 조정 */
+      .cesium-infoBox {
+        top: 120px !important;
+        right: 20px !important;
+        max-width: 300px !important;
+        max-height: 400px !important;
+      }
+
+      .cesium-infoBox-iframe {
+        max-width: 300px !important;
+      }
+
       /* 🔥 화재 리스트 패널 - 기간 패널 위에 위치 */
       #fireListPanel {
         position: absolute;
@@ -56,10 +68,18 @@
       }
 
       /* 대응단계별 색상 */
-      .fire-item.level-초기대응 { border-left-color: #ffeb3b; }
-      .fire-item.level-1단계 { border-left-color: #ff9800; }
-      .fire-item.level-2단계 { border-left-color: #ff6666; }
-      .fire-item.level-3단계 { border-left-color: #800080; }
+      .fire-item.level-초기대응 {
+        border-left-color: #ffeb3b;
+      }
+      .fire-item.level-1단계 {
+        border-left-color: #ff9800;
+      }
+      .fire-item.level-2단계 {
+        border-left-color: #ff6666;
+      }
+      .fire-item.level-3단계 {
+        border-left-color: #800080;
+      }
 
       .fire-item-header {
         font-weight: bold;
@@ -126,10 +146,10 @@
       <input type="date" id="startDate" min="2024-10-01" max="2025-04-01" />
       ~
       <input type="date" id="endDate" min="2024-10-01" max="2025-04-01" />
-      
-      <div id="levelFilterDiv" style="margin-top: 8px;">
+
+      <div id="levelFilterDiv" style="margin-top: 8px">
         <label>🧯 대응단계:</label>
-        <select id="levelFilter" style="width: 100%; margin-top: 4px;">
+        <select id="levelFilter" style="width: 100%; margin-top: 4px">
           <option value="전체">전체</option>
           <option value="초기대응">초기대응</option>
           <option value="1단계">1단계</option>
@@ -138,9 +158,9 @@
         </select>
       </div>
 
-      <div id="statusFilterDiv" style="margin-top: 8px;">
+      <div id="statusFilterDiv" style="margin-top: 8px">
         <label>🔥 진행상태:</label>
-        <select id="statusFilter" style="width: 100%; margin-top: 4px;">
+        <select id="statusFilter" style="width: 100%; margin-top: 4px">
           <option value="전체">전체</option>
           <option value="진화완료">진화완료</option>
           <option value="진화중">진화중</option>
@@ -149,7 +169,10 @@
       </div>
 
       <div id="fireCount" style="margin-top: 6px; font-weight: bold"></div>
-      <div id="pageDescription" style="font-size: 11px; color: #aaa; margin-top: 4px;">
+      <div
+        id="pageDescription"
+        style="font-size: 11px; color: #aaa; margin-top: 4px"
+      >
         오늘 기준 최근 7일 간의 국내 산불 발생 정보를 시각화합니다.
       </div>
     </div>
@@ -158,23 +181,28 @@
     <div id="fireListPanel">
       <h4>🔥 화재 발생 지역</h4>
       <div id="fireList">
-        <div style="color: #999; text-align: center; padding: 20px;">
+        <div style="color: #999; text-align: center; padding: 20px">
           데이터 로딩 중...
         </div>
       </div>
     </div>
 
     <!-- 🗺️ 뷰 전환 버튼 -->
-    <div style="position: absolute; top: 50px; right: 20px; z-index: 1001;">
-      <button id="toggleViewBtn" style="
-        background: rgba(0, 123, 255, 0.9);
-        color: white;
-        border: none;
-        padding: 8px 16px;
-        border-radius: 6px;
-        font-size: 14px;
-        cursor: pointer;
-      ">🌏 LA 보기 ON</button>
+    <div style="position: absolute; top: 50px; right: 20px; z-index: 1001">
+      <button
+        id="toggleViewBtn"
+        style="
+          background: rgba(0, 123, 255, 0.9);
+          color: white;
+          border: none;
+          padding: 8px 16px;
+          border-radius: 6px;
+          font-size: 14px;
+          cursor: pointer;
+        "
+      >
+        🌏 LA 보기 ON
+      </button>
     </div>
 
     <!-- 🔔 안내 메시지 -->
@@ -197,13 +225,12 @@
     >
       🔥
       <b id="topPageDescription"
-        >오늘 기준 최근 7일 간의 국내 산불 발생 정보를
-        시각화합니다.</b
+        >오늘 기준 최근 7일 간의 국내 산불 발생 정보를 시각화합니다.</b
       >
     </div>
 
     <div id="cesiumContainer"></div>
-    
+
     <!-- 🔄 하단 중앙 페이지 이동 버튼 -->
     <div
       style="
