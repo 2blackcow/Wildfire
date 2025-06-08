@@ -458,6 +458,7 @@ function setupToggleView() {
   const levelFilterDiv = document.getElementById("levelFilterDiv");
   const statusFilterDiv = document.getElementById("statusFilterDiv");
   const pageDescription = document.getElementById("pageDescription");
+  const topPageDescription = document.getElementById("topPageDescription");
   const fireListTitle = document.querySelector("#fireListPanel h4");
   const datePanel = document.getElementById("datePanel");
   const fireListPanel = document.getElementById("fireListPanel"); // 🔥 추가
@@ -473,6 +474,10 @@ function setupToggleView() {
       
       if (pageDescription) {
         pageDescription.innerHTML = "LA 지역 실시간 FIRMS 위성 화재 감지 <br/>데이터를 시각화합니다.(7일 기준)";
+      }
+      
+      if (topPageDescription) {
+        topPageDescription.textContent = "LA 지역 실시간 FIRMS 위성 화재 감지 데이터를 시각화합니다.(7일 기준)";
       }
       
       if (fireListTitle) {
@@ -527,6 +532,10 @@ function setupToggleView() {
       
       if (pageDescription) {
         pageDescription.textContent = "오늘 기준 최근 7일 간의 국내 산불 발생 정보를 시각화합니다.";
+      }
+      
+      if (topPageDescription) {
+        topPageDescription.textContent = "오늘 기준 최근 7일 간의 국내 산불 발생 정보를 시각화합니다.";
       }
       
       if (fireListTitle) {
