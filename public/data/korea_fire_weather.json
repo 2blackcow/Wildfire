@@ -194,11 +194,11 @@
     "frfr_step_issu_cd": "초기대응",
     "frfr_sttmn_dt": "20250607",
     "frfr_frng_dtm": "2025-06-07 15:09",
-    "temp": null,
-    "wspd": null,
-    "wdir": null,
-    "precip": null,
-    "rhum": null
+    "temp": 23.5,
+    "wspd": 4.4,
+    "wdir": 202.0,
+    "precip": 0.3,
+    "rhum": 64
   },
   {
     "frfr_lctn_xcrd": "126.64504620579831",
@@ -211,11 +211,11 @@
     "frfr_step_issu_cd": "초기대응",
     "frfr_sttmn_dt": "20250607",
     "frfr_frng_dtm": "2025-06-07 12:40",
-    "temp": null,
-    "wspd": null,
-    "wdir": null,
-    "precip": null,
-    "rhum": null
+    "temp": 21.7,
+    "wspd": 4.8,
+    "wdir": 293.0,
+    "precip": 0.5,
+    "rhum": 73
   },
   {
     "frfr_lctn_xcrd": "126.51260754287803",
@@ -228,10 +228,10 @@
     "frfr_step_issu_cd": "초기대응",
     "frfr_sttmn_dt": "20250607",
     "frfr_frng_dtm": "2025-06-07 08:37",
-    "temp": null,
-    "wspd": null,
-    "wdir": null,
-    "precip": null,
-    "rhum": null
+    "temp": 23.5,
+    "wspd": 4.4,
+    "wdir": 202.0,
+    "precip": 0,
+    "rhum": 61
   }
 ]
