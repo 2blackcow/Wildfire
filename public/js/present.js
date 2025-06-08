@@ -277,12 +277,12 @@ function renderKoreaByFilter(start, end, levelFilter, statusFilter) {
         💨 <b>풍속:</b> ${wspd ?? "-"} m/s<br/>
         🧭 <b>풍향:</b> ${wdir ?? "-"}°<br/>
         ☔ <b>강수량:</b> ${precip ?? "-"} mm<br/>
-        💧 <b>습도:</b> ${rhum ?? "-"} %<br/><br/>
-        🛰️ <b>NASA 밝기:</b> ${brightness ?? "-"}<br/>
-        🔥 <b>FRP:</b> ${frp ?? "-"}<br/>
-        🔒 <b>신뢰도:</b> ${confidence ?? "-"}<br/>
-        📏 <b>위성거리:</b> ${nasa_distance_km ?? "-"} km 
+        💧 <b>습도:</b> ${rhum ?? "-"} %<br/>
       `,
+      // 🛰️ <b>NASA 밝기:</b> ${brightness ?? "-"}<br/>
+      // 🔥 <b>FRP:</b> ${frp ?? "-"}<br/>
+      // 🔒 <b>신뢰도:</b> ${confidence ?? "-"}<br/>
+      // 📏 <b>위성거리:</b> ${nasa_distance_km ?? "-"} km 
     });
 
     koreaEntities.push(entity);
@@ -300,7 +300,7 @@ async function loadKoreaFireData() {
   try {
     updateLoadingStatus("🔄 국내 화재 데이터 로딩 중...");
     
-    const res = await fetch("/data/korea_fire_full.json");
+    const res = await fetch("/data/korea_fire_weather.json");
     const fireData = await res.json();
     window.fireData = fireData;
 

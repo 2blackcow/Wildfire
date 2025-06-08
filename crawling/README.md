@@ -40,7 +40,7 @@ GitHub Actions에서 `update_fire_data.yml`을 통해 매일 새벽 1시 자동 
 3. `fetch_firms_data.py`  
    → NASA FIRMS에서 한국 지역 위성 화재 데이터 (CSV) 다운로드
 
-4. `augment_firms_improved.py`  
+4. `augment_firms.py`  
    → 각 화재 지점과 위성 화재 데이터를 거리/날짜 기준으로 매칭하여 병합
 
 5. **결과 저장:**  
