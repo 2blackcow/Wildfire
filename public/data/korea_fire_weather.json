@@ -280,5 +280,29 @@
     "wdir": 91.0,
     "precip": 0,
     "rhum": 72
+  },
+  {
+    "frfr_info_id": "387204",
+    "start": "2025-06-09 14:08",
+    "time": "2025-06-09 15:00",
+    "address": "충청남도 공주시 신풍면",
+    "status": "진화완료",
+    "level": "초기대응",
+    "lat": 36.49154580058126,
+    "lon": 126.91564052106251,
+    "frfr_lctn_xcrd": "126.91564052106251",
+    "frfr_prgrs_stcd_str": "진화완료",
+    "potfr_end_dtm": "2025-06-09 15:00",
+    "frfr_prgrs_stcd": "03",
+    "frfr_lctn_ycrd": "36.49154580058126",
+    "frfr_sttmn_addr": "충청남도 공주시 신풍면",
+    "frfr_step_issu_cd": "초기대응",
+    "frfr_sttmn_dt": "20250609",
+    "frfr_frng_dtm": "2025-06-09 14:08",
+    "temp": null,
+    "wspd": null,
+    "wdir": null,
+    "precip": null,
+    "rhum": null
   }
 ]
