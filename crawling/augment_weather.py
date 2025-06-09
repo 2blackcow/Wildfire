@@ -4,6 +4,7 @@ import time
 import os
 from dotenv import load_dotenv
 from datetime import datetime, timedelta
+import pytz  # 시간대 처리를 위해 추가
 
 # .env 파일 로드
 dotenv_path = os.path.abspath(os.path.join(__file__, "..", "..", ".env"))
@@ -18,17 +19,22 @@ if not METEOSTAT_API_KEY or not WEATHERBIT_API_KEY:
     exit(1)
 
 def parse_datetime(datetime_str):
-    """날짜시간 문자열을 파싱하여 datetime 객체 반환"""
+    """날짜시간 문자열을 파싱하여 한국 시간대 datetime 객체 반환"""
     if not datetime_str:
         return None
     
     try:
+        # 한국 시간대 설정
+        kst = pytz.timezone('Asia/Seoul')
+        
         # "2025-06-07 12:40" 형태
         if len(datetime_str) >= 16:
-            return datetime.strptime(datetime_str[:16], "%Y-%m-%d %H:%M")
+            dt = datetime.strptime(datetime_str[:16], "%Y-%m-%d %H:%M")
+            return kst.localize(dt)  # 한국 시간대로 설정
         # "2025-06-07" 형태
         elif len(datetime_str) >= 10:
-            return datetime.strptime(datetime_str[:10], "%Y-%m-%d")
+            dt = datetime.strptime(datetime_str[:10], "%Y-%m-%d")
+            return kst.localize(dt)  # 한국 시간대로 설정
         else:
             return None
     except ValueError:
@@ -174,10 +180,14 @@ def augment_weather():
     else:
         existing_map = {}
 
-    now = datetime.now()
+    # 한국 시간대로 현재 시간 설정
+    kst = pytz.timezone('Asia/Seoul')
+    now = datetime.now(kst)
     today = now.strftime("%Y-%m-%d")
+    
     print(f"🔥 화재 데이터 {len(fires)}개 처리 시작...")
     print(f"📅 시간별 기상 데이터 수집 (3시간 이전 데이터만)")
+    print(f"⏰ 현재 시간 (KST): {now.strftime('%Y-%m-%d %H:%M:%S')}")
 
     enriched = []
     api_calls = 0
@@ -222,7 +232,7 @@ def augment_weather():
             skipped += 1
             continue
 
-        # 날짜시간 파싱
+        # 날짜시간 파싱 (한국 시간대)
         target_datetime = parse_datetime(datetime_str)
         if not target_datetime:
             print("❌ 날짜시간 파싱 실패")
@@ -231,10 +241,11 @@ def augment_weather():
             skipped += 1
             continue
 
-        # 시간 제한: 현재 시간보다 3시간 이전 데이터만 수집
+        # 시간 제한: 현재 시간(KST)보다 3시간 이전 데이터만 수집
         time_diff = now - target_datetime
         if time_diff.total_seconds() < 3 * 3600:  # 3시간 = 3 * 3600초
-            print("⏭️ 너무 최근 데이터 (3시간 이내)")
+            hours_diff = time_diff.total_seconds() / 3600
+            print(f"⏭️ 너무 최근 데이터 ({hours_diff:.1f}시간 전)")
             fire.update({"temp": None, "wspd": None, "wdir": None, "precip": None, "rhum": None})
             enriched.append(fire)
             skipped += 1
