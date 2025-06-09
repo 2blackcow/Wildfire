@@ -91,22 +91,26 @@ function showUserGuide() {
 function addFilterIcons() {
   // 초기 설정은 updateFilterIcons에서 처리
 }
+
 function updateFilterIcons() {
   if (currentView === "korea") {
     // 국내 뷰 - 모든 필터 표시
     const firstDateLabel = document.querySelector('label[for="startDate"]');
     if (firstDateLabel) {
       firstDateLabel.innerHTML = '🔃 필터 - 기간:';
+      firstDateLabel.classList.add("filter-label"); // 클래스 추가
     }
     
     const levelLabel = document.querySelector('label[for="levelFilter"]');
     if (levelLabel) {
       levelLabel.innerHTML = '🧯 대응단계:';
+      levelLabel.classList.add("filter-label"); // 클래스 추가
     }
     
     const statusLabel = document.querySelector('label[for="statusFilter"]');
     if (statusLabel) {
       statusLabel.innerHTML = '🔥 진행상태:';
+      statusLabel.classList.add("filter-label"); // 클래스 추가
     }
   } else {
     // LA 뷰 - 기간 필터만 표시
@@ -115,7 +119,9 @@ function updateFilterIcons() {
       firstDateLabel.innerHTML = '🔃 필터 - 기간:';
     }
   }
-}let viewer;
+}
+
+let viewer;
 let currentView = "korea";
 let koreaEntities = [];
 let laEntities = [];
@@ -180,6 +186,16 @@ function updateFireList(fireItems) {
         const address = fire.frfr_sttmn_addr || '주소불명';
         const time = fire.frfr_frng_dtm?.split(' ')[1]?.substring(0, 5) || '';
         
+        // 대응단계별 아이콘
+        const levelIcon = level === "초기대응" ? '<span style="color: #FFFF00;">●</span>' :
+                         level === "1단계" ? '<span style="color: #FFA500;">●</span>' :
+                         level === "2단계" ? '<span style="color: #FF6666;">●</span>' :
+                         level === "3단계" ? '<span style="color: #800080;">●</span>' : '●';
+        
+        // 진행상태별 아이콘
+        const statusIcon = status === "진화중" ? '🔥' :
+                          status === "진화완료" ? '🧯' : '🔥';
+        
         // 주소를 간략하게 표시
         const shortAddress = address.length > 20 ? address.substring(0, 20) + '...' : address;
         
@@ -190,7 +206,7 @@ function updateFireList(fireItems) {
                data-entity-id="korea-${fire.frfr_lctn_ycrd}-${fire.frfr_lctn_xcrd}-${fire.frfr_frng_dtm}">
             <div class="fire-item-header">${shortAddress}</div>
             <div class="fire-item-details">
-              🕒 ${time} | 🧯 ${level} | 🔥 ${status}
+              🕒 ${time} | ${levelIcon} ${level} | ${statusIcon} ${status}
             </div>
           </div>
         `;
@@ -297,50 +313,6 @@ function updateLAFireList(fireItems) {
       }
     });
   });
-}
-
-async function init() {
-  viewer = new Cesium.Viewer("cesiumContainer", {
-    geocoder: true,
-    baseLayerPicker: true,
-    sceneModePicker: true,
-    timeline: false,
-    animation: false,
-    terrain: Cesium.Terrain.fromWorldTerrain(),
-  });
-
-  viewer.scene.skyAtmosphere.show = true;
-  viewer.scene.globe.enableLighting = true;
-
-  viewer.camera.flyTo({
-    destination: Cesium.Cartesian3.fromDegrees(127.7669, 35.9078, 500000.0),
-  });
-
-  addLegendBox();
-  addUserGuideModal(); // 사용자 가이드 모달 추가
-  setupToggleView();
-  
-  // 초기 화재 리스트 제목에 정보 아이콘 추가
-  const fireListTitle = document.querySelector("#fireListPanel h4");
-  if (fireListTitle) {
-    fireListTitle.innerHTML = '🖱️ 국내 화재 리스트 <span id="infoIcon" style="cursor: pointer; margin-left: 5px; color: #88ccff; font-size: 14px;">ℹ️가이드</span>';
-    
-    // 정보 아이콘 클릭 이벤트 추가
-    const infoIcon = document.getElementById("infoIcon");
-    if (infoIcon) {
-      infoIcon.addEventListener("click", () => {
-        showUserGuide();
-      });
-    }
-  }
-  
-  // 필터 패널에 아이콘 추가
-  addFilterIcons();
-  updateFilterIcons();
-  
-  updateLoadingStatus("🔄 데이터 준비 중...");
-  await loadKoreaFireData();
-  await loadFirmsFireData();
 }
 
 function renderKoreaByFilter(start, end, levelFilter, statusFilter) {
@@ -606,15 +578,70 @@ async function loadFirmsFireData() {
   }
 }
 
+// 초기 스타일 설정을 한 번만 수행하는 함수
+function initializeUIStyles() {
+  const fireListPanel = document.getElementById("fireListPanel");
+  const datePanel = document.getElementById("datePanel");
+  
+  if (fireListPanel) {
+    // 국내 뷰용 스타일을 기본으로 설정
+    fireListPanel.style.bottom = "280px";
+    fireListPanel.style.maxHeight = "200px";
+    fireListPanel.style.width = "240px";
+  }
+  
+  if (datePanel) {
+    // 공통 스타일 설정
+    datePanel.style.width = "280px";
+    datePanel.style.padding = "10px";
+    datePanel.style.fontSize = "11px";
+    datePanel.style.bottom = "20px";
+    
+    const inputs = datePanel.querySelectorAll('input, select');
+    inputs.forEach(input => {
+      input.style.fontSize = "11px";
+      input.style.padding = "4px";
+    });
+    
+    const labels = datePanel.querySelectorAll('label');
+    labels.forEach(label => {
+      label.style.fontSize = "14px";
+    });
+  }
+}
+
+// 화재 리스트 제목을 업데이트하는 함수 (스타일 일관성 유지)
+function updateFireListTitle(viewType) {
+  const fireListTitle = document.querySelector("#fireListPanel h4");
+  if (fireListTitle) {
+    const titleText = viewType === "LA" ? "LA 화재 리스트" : "국내 화재 리스트";
+    fireListTitle.innerHTML = `
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span>🖱️ ${titleText}</span>
+        <span id="infoIcon" style="cursor: pointer; color: #88ccff; font-size: 12px;">ℹ️ 가이드(클릭)</span>
+      </div>
+    `;
+    
+    // 정보 아이콘 클릭 이벤트 추가
+    const infoIcon = document.getElementById("infoIcon");
+    if (infoIcon) {
+      infoIcon.addEventListener("click", () => {
+        showUserGuide();
+      });
+    }
+  }
+}
+
 function setupToggleView() {
   const btn = document.getElementById("toggleViewBtn");
   const levelFilterDiv = document.getElementById("levelFilterDiv");
   const statusFilterDiv = document.getElementById("statusFilterDiv");
   const pageDescription = document.getElementById("pageDescription");
   const topPageDescription = document.getElementById("topPageDescription");
-  const fireListTitle = document.querySelector("#fireListPanel h4");
-  const datePanel = document.getElementById("datePanel");
   const fireListPanel = document.getElementById("fireListPanel");
+  
+  // 초기 UI 스타일 설정
+  initializeUIStyles();
   
   btn.addEventListener("click", () => {
     viewer.entities.removeAll();
@@ -622,9 +649,11 @@ function setupToggleView() {
     if (currentView === "korea") {
       currentView = "la";
       
+      // 필터 숨기기
       if (levelFilterDiv) levelFilterDiv.style.display = "none";
       if (statusFilterDiv) statusFilterDiv.style.display = "none";
       
+      // 설명 텍스트 변경
       if (pageDescription) {
         pageDescription.innerHTML = "LA 지역 실시간 FIRMS 위성 화재 감지 <br/>데이터를 시각화합니다.(7일 기준)";
       }
@@ -633,51 +662,23 @@ function setupToggleView() {
         topPageDescription.textContent = "LA 지역 실시간 FIRMS 위성 화재 감지 데이터를 시각화합니다.(7일 기준)";
       }
       
-      if (fireListTitle) {
-        fireListTitle.innerHTML = '🖱️ LA 화재 리스트 <span id="infoIcon" style="cursor: pointer; margin-left: 5px; color: #88ccff; font-size: 14px;">ℹ️가이드</span>';
-        
-        // 정보 아이콘 클릭 이벤트 추가
-        const infoIcon = document.getElementById("infoIcon");
-        if (infoIcon) {
-          infoIcon.addEventListener("click", () => {
-            showUserGuide();
-          });
-        }
-      }
+      // 화재 리스트 제목 변경 (스타일은 유지)
+      updateFireListTitle("LA");
       
+      // LA 뷰용 화재 리스트 패널 크기 조정 (기존 스타일 유지하면서 일부만 변경)
       if (fireListPanel) {
         fireListPanel.style.bottom = "250px";
         fireListPanel.style.maxHeight = "180px";
         fireListPanel.style.width = "220px";
       }
       
-      if (datePanel) {
-        datePanel.style.width = "240px";
-        datePanel.style.padding = "8px";
-        datePanel.style.fontSize = "13px";
-        datePanel.style.bottom = "20px";
-        
-        const inputs = datePanel.querySelectorAll('input, select');
-        inputs.forEach(input => {
-          input.style.fontSize = "12px";
-          input.style.padding = "3px";
-        });
-        
-        const labels = datePanel.querySelectorAll('label');
-        labels.forEach(label => {
-          label.style.fontSize = "12px";
-        });
-      }
-      
-      // 🔥 범례 내용 업데이트
+      // 범례 내용 업데이트
       updateLegendContent();
       
       // 필터 아이콘 업데이트
       updateFilterIcons();
       
-      // 필터 아이콘 업데이트
-      updateFilterIcons();
-      
+      // LA 데이터 렌더링
       if (allLAFireData.length > 0) {
         renderLAByDateFilter();
       } else {
@@ -688,6 +689,7 @@ function setupToggleView() {
         }
       }
       
+      // 카메라 이동
       viewer.camera.flyTo({
         destination: Cesium.Cartesian3.fromDegrees(-118.60, 34.1, 150000),
       });
@@ -696,9 +698,11 @@ function setupToggleView() {
     } else {
       currentView = "korea";
       
+      // 필터 보이기
       if (levelFilterDiv) levelFilterDiv.style.display = "block";
       if (statusFilterDiv) statusFilterDiv.style.display = "block";
       
+      // 설명 텍스트 변경
       if (pageDescription) {
         pageDescription.textContent = "오늘 기준 최근 7일 간의 국내 산불 발생 정보를 시각화합니다.";
       }
@@ -707,52 +711,33 @@ function setupToggleView() {
         topPageDescription.textContent = "오늘 기준 최근 7일 간의 국내 산불 발생 정보를 시각화합니다.";
       }
       
-      if (fireListTitle) {
-        fireListTitle.innerHTML = '🖱️ 국내 화재 리스트 <span id="infoIcon" style="cursor: pointer; margin-left: 5px; color: #88ccff; font-size: 14px;">ℹ️가이드</span>';
-        
-        // 정보 아이콘 클릭 이벤트 추가
-        const infoIcon = document.getElementById("infoIcon");
-        if (infoIcon) {
-          infoIcon.addEventListener("click", () => {
-            showUserGuide();
-          });
-        }
-      }
+      // 화재 리스트 제목 변경 (스타일은 유지)
+      updateFireListTitle("국내");
       
+      // 국내 뷰용 화재 리스트 패널 크기 조정 (기존 스타일 유지하면서 일부만 변경)
       if (fireListPanel) {
         fireListPanel.style.bottom = "280px";
         fireListPanel.style.maxHeight = "200px";
         fireListPanel.style.width = "240px";
       }
       
-      if (datePanel) {
-        datePanel.style.width = "auto";
-        datePanel.style.padding = "12px";
-        datePanel.style.fontSize = "14px";
-        datePanel.style.bottom = "20px";
-        
-        const inputs = datePanel.querySelectorAll('input, select');
-        inputs.forEach(input => {
-          input.style.fontSize = "14px";
-          input.style.padding = "6px";
-        });
-        
-        const labels = datePanel.querySelectorAll('label');
-        labels.forEach(label => {
-          label.style.fontSize = "14px";
-        });
-      }
-      
-      // 🔥 범례 내용 업데이트
+      // 범례 내용 업데이트
       updateLegendContent();
       
+      // 필터 아이콘 업데이트
+      updateFilterIcons();
+      
+      // 국내 엔티티 추가
       koreaEntities.forEach(e => viewer.entities.add(e));
+      
+      // 카메라 이동
       viewer.camera.flyTo({
         destination: Cesium.Cartesian3.fromDegrees(127.7669, 35.9078, 500000.0),
       });
       btn.textContent = "🌏 LA 보기 ON";
       updateLoadingStatus(`🔥 국내 화재 ${koreaEntities.length}개 표시됨`);
       
+      // 국내 데이터 필터링 재적용
       const startInput = document.getElementById("startDate");
       const endInput = document.getElementById("endDate");
       const levelSelect = document.getElementById("levelFilter");
@@ -825,6 +810,39 @@ function addLegendBox() {
     content.style.display = shown ? "none" : "block";
     toggleBtn.textContent = shown ? "[펼치기]" : "[접기]";
   });
+}
+
+async function init() {
+  viewer = new Cesium.Viewer("cesiumContainer", {
+    geocoder: true,
+    baseLayerPicker: true,
+    sceneModePicker: true,
+    timeline: false,
+    animation: false,
+    terrain: Cesium.Terrain.fromWorldTerrain(),
+  });
+
+  viewer.scene.skyAtmosphere.show = true;
+  viewer.scene.globe.enableLighting = true;
+
+  viewer.camera.flyTo({
+    destination: Cesium.Cartesian3.fromDegrees(127.7669, 35.9078, 500000.0),
+  });
+
+  addLegendBox();
+  addUserGuideModal();
+  setupToggleView(); // 이미 초기화가 포함됨
+  
+  // 초기 화재 리스트 제목 설정
+  updateFireListTitle("국내");
+  
+  // 필터 패널에 아이콘 추가
+  addFilterIcons();
+  updateFilterIcons();
+  
+  updateLoadingStatus("🔄 데이터 준비 중...");
+  await loadKoreaFireData();
+  await loadFirmsFireData();
 }
 
 fetch("/api/config")
