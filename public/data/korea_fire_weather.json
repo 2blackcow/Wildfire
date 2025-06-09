@@ -17,11 +17,11 @@
     "frfr_step_issu_cd": "초기대응",
     "frfr_sttmn_dt": "20250609",
     "frfr_frng_dtm": "2025-06-09 17:20",
-    "temp": null,
-    "wspd": null,
-    "wdir": null,
-    "precip": null,
-    "rhum": null
+    "temp": 27.2,
+    "wspd": 7.4,
+    "wdir": 276.0,
+    "precip": 0,
+    "rhum": 74
   },
   {
     "frfr_info_id": "387204",
@@ -41,11 +41,11 @@
     "frfr_step_issu_cd": "초기대응",
     "frfr_sttmn_dt": "20250609",
     "frfr_frng_dtm": "2025-06-09 14:08",
-    "temp": null,
-    "wspd": null,
-    "wdir": null,
-    "precip": null,
-    "rhum": null
+    "temp": 29.5,
+    "wspd": 7.4,
+    "wdir": 26.0,
+    "precip": 0.3,
+    "rhum": 73
   },
   {
     "frfr_info_id": "386984",
