@@ -1,5 +1,28 @@
 [
   {
+    "frfr_info_id": "387484",
+    "start": "2025-06-10 19:36",
+    "time": null,
+    "address": "강원특별자치도 양구군 동면",
+    "status": "진화중",
+    "level": "초기대응",
+    "lat": 38.206718520760035,
+    "lon": 128.03035457668628,
+    "frfr_lctn_xcrd": "128.03035457668628",
+    "frfr_prgrs_stcd_str": "진화중",
+    "frfr_prgrs_stcd": "02",
+    "frfr_lctn_ycrd": "38.206718520760035",
+    "frfr_sttmn_addr": "강원특별자치도 양구군 동면",
+    "frfr_step_issu_cd": "초기대응",
+    "frfr_sttmn_dt": "20250610",
+    "frfr_frng_dtm": "2025-06-10 19:36",
+    "temp": null,
+    "wspd": null,
+    "wdir": null,
+    "precip": null,
+    "rhum": null
+  },
+  {
     "frfr_info_id": "387424",
     "start": "2025-06-10 12:50",
     "time": "2025-06-10 13:20",
