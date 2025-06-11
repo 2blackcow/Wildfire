@@ -44,6 +44,52 @@
         color: #f59e0b;
         font-size: 14px;
       }
+
+      /* 범례 스타일 */
+      #fire-legend {
+        position: absolute;
+        left: 20px;
+        top: 120px;
+        z-index: 99;
+        background: rgba(30, 30, 30, 0.85);
+        color: #fff;
+        border-radius: 8px;
+        padding: 10px 12px;
+        font-family: sans-serif;
+        font-size: 13px;
+        box-shadow: 1px 2px 6px #0005;
+        user-select: none;
+        line-height: 1.5;
+        display: inline-block;
+        max-width: 200px;
+        width: fit-content;
+        transition: all 0.3s ease;
+      }
+
+      #legendToggleBtn {
+        background: none;
+        border: none;
+        color: #00e0ff;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 0;
+        margin-bottom: 6px;
+        font-size: 12px;
+        pointer-events: auto;
+      }
+
+      #legendToggleBtn:hover {
+        color: #66f0ff;
+      }
+
+      #legendContent {
+        transition: all 0.3s ease;
+        overflow: hidden;
+      }
+
+      .legend-collapsed #legendContent {
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -55,7 +101,64 @@
       <div class="status-text">🔥 진화 시작</div>
     </div>
 
+    <!-- 🔥 관측·예측 화점 범례 -->
+    <div id="fire-legend">
+      <button id="legendToggleBtn">[접기]</button>
+      <div id="legendContent">
+        <b style="font-size: 14px">🔥 관측 화점 범례</b>
+        <hr style="border: none; border-top: 1px solid #555; margin: 6px 0 10px 0"/>
+
+        <!-- 관측 화점 -->
+        <div style="font-size: 12px; margin-bottom: 5px">
+          관측 화점 (실제 위성)
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+          <span style="width: 12px; height: 12px; border-radius: 50%; background: #ff0000; display: inline-block;"></span>
+          높음
+          <span style="width: 12px; height: 12px; border-radius: 50%; background: #ff9800; display: inline-block;"></span>
+          중간
+          <span style="width: 12px; height: 12px; border-radius: 50%; background: #ffff00; border: 1px solid #888; display: inline-block;"></span>
+          낮음
+        </div>
+
+        <div style="margin: 4px 0">
+          <svg width="100%" height="16" style="overflow: visible">
+            <circle cx="12" cy="8" r="4.5" fill="#bbb" stroke="#fff" stroke-width="0.5"/>
+            <text x="22" y="12" fill="#fff" font-size="10">FRP↓</text>
+            <circle cx="80" cy="8" r="7" fill="#bbb" stroke="#fff" stroke-width="0.5"/>
+            <text x="90" y="12" fill="#fff" font-size="10">FRP↑</text>
+          </svg>
+        </div>
+        <div style="font-size: 11px; color: #ccc; margin-bottom: 10px">
+          * 점 크기: FRP(방사 강도) 비례
+        </div>
+
+        
+      </div>
+    </div>
+
     <script type="module" src="./js/test_0114.js"></script>
+
+    <!-- 범례 접었다 펼쳤다 기능 -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const legendToggleBtn = document.getElementById('legendToggleBtn');
+        const legendContent = document.getElementById('legendContent');
+        const fireLegend = document.getElementById('fire-legend');
+        
+        legendToggleBtn.addEventListener('click', function() {
+          if (legendContent.style.display === 'none') {
+            legendContent.style.display = 'block';
+            legendToggleBtn.textContent = '[접기]';
+            fireLegend.classList.remove('legend-collapsed');
+          } else {
+            legendContent.style.display = 'none';
+            legendToggleBtn.textContent = '[펼치기]';
+            fireLegend.classList.add('legend-collapsed');
+          }
+        });
+      });
+    </script>
 
     <!-- 🔁 날짜 이동 버튼 -->
     <div style="

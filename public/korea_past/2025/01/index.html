@@ -21,24 +21,126 @@
         overflow: hidden;
       }
 
-      #infoPanel {
+      /* Cesium InfoBox 위치 조정 */
+      .cesium-infoBox {
+        top: 120px !important;
+        right: 20px !important;
+        max-width: 300px !important;
+        max-height: 400px !important;
+      }
+
+      .cesium-infoBox-iframe {
+        max-width: 300px !important;
+      }
+
+      /* 🔥 화재 리스트 패널 */
+      #fireListPanel {
         position: absolute;
-        top: 15px;
+        bottom: 280px; /* 컨트롤 패널 위에 위치 */
         left: 15px;
-        z-index: 10;
-        background-color: rgba(0, 0, 0, 0.75);
+        background: rgba(0, 0, 0, 0.8);
         color: white;
-        padding: 12px 16px;
-        border-radius: 10px;
+        padding: 12px;
+        border-radius: 8px;
+        z-index: 1000;
         font-family: 'Segoe UI', sans-serif;
         font-size: 13px;
-        min-width: 200px;
-        max-width: 250px;
-        pointer-events: none;
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-        backdrop-filter: blur(10px);
+        width: 260px;
+        max-height: 200px;
+        overflow-y: auto;
+        backdrop-filter: blur(15px);
         border: 1px solid rgba(255, 255, 255, 0.1);
-        overflow-y: hidden; /* 스크롤 제거 */
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      #fireListPanel h4 {
+        margin: 0 0 8px 0;
+        color: #ff6b35;
+        font-size: 14px;
+        border-bottom: 1px solid #444;
+        padding-bottom: 4px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .fire-item {
+        padding: 6px 8px;
+        margin: 3px 0;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        border-left: 3px solid;
+        cursor: pointer;
+        transition: all 0.2s;
+        font-size: 12px;
+        line-height: 1.3;
+      }
+
+      .fire-item:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateX(2px);
+      }
+
+      /* 대응단계별 색상 */
+      .fire-item.level-초기대응 {
+        border-left-color: #ffd700;
+      }
+      .fire-item.level-1단계 {
+        border-left-color: #ff8c00;
+      }
+      .fire-item.level-2단계 {
+        border-left-color: #ff6666;
+      }
+      .fire-item.level-3단계 {
+        border-left-color: #800080;
+      }
+
+      .fire-item-header {
+        font-weight: bold;
+        color: #fff;
+        margin-bottom: 2px;
+      }
+
+      .fire-item-details {
+        color: #ccc;
+        font-size: 11px;
+      }
+
+      /* 스크롤바 스타일 */
+      #fireListPanel::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      #fireListPanel::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 3px;
+      }
+
+      #fireListPanel::-webkit-scrollbar-thumb {
+        background: rgba(255, 107, 53, 0.7);
+        border-radius: 3px;
+      }
+
+      /* 날짜 구분선 */
+      .date-separator {
+        margin: 8px 0 4px 0;
+        padding: 4px 0;
+        border-bottom: 1px solid #555;
+        font-weight: bold;
+        color: #ff6b35;
+        font-size: 12px;
+      }
+
+      /* 가이드 아이콘 스타일 */
+      #infoIcon {
+        cursor: pointer;
+        color: #88ccff;
+        font-size: 12px;
+        transition: color 0.2s;
+      }
+
+      #infoIcon:hover {
+        color: #66aaff;
       }
 
       #dateLabel {
@@ -129,7 +231,7 @@
       .legend-box {
         position: absolute;
         left: 15px;
-        top: 110px;
+        top: 15px; /* 맨 위로 이동 */
         z-index: 100;
         background: rgba(30, 30, 30, 0.85);
         color: #fff;
@@ -254,50 +356,16 @@
         transform: translateY(-2px);
       }
 
-      /* Cesium 정보 박스 스타일 커스터마이징 */
+      /* Cesium InfoBox 위치 조정 - 현재 페이지와 동일 */
       .cesium-infoBox {
-        top: 50% !important;
-        transform: translateY(-50%) !important;
-        bottom: auto !important;
+        top: 120px !important;
         right: 20px !important;
-        left: auto !important;
-        max-height: 60vh !important;
-        max-width: 400px !important;
-        z-index: 1000 !important;
-        border-radius: 12px !important;
-        overflow: hidden !important;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
-        backdrop-filter: blur(15px) !important;
+        max-width: 300px !important;
+        max-height: 400px !important;
       }
 
-      .cesium-infoBox-title {
-        background: rgba(0, 0, 0, 0.9) !important;
-        color: white !important;
-        border: none !important;
-        padding: 12px 16px !important;
-        font-size: 14px !important;
-        font-weight: 600 !important;
-      }
-
-      .cesium-infoBox-bodyless .cesium-infoBox-title {
-        background: rgba(0, 0, 0, 0.9) !important;
-      }
-
-      .cesium-infoBox-defaultTable {
-        background: rgba(0, 0, 0, 0.85) !important;
-        color: white !important;
-        border: none !important;
-        font-family: 'Segoe UI', sans-serif !important;
-      }
-
-      .cesium-infoBox-defaultTable tbody {
-        background: rgba(0, 0, 0, 0.85) !important;
-        border: none !important;
-      }
-
-      .cesium-infoBox iframe {
-        background: rgba(0, 0, 0, 0.85) !important;
-        border: none !important;
+      .cesium-infoBox-iframe {
+        max-width: 300px !important;
       }
 
       /* 스크롤바 숨기기 */
@@ -323,12 +391,6 @@
 
       /* 반응형 디자인 */
       @media (max-width: 768px) {
-        #infoPanel {
-          min-width: 180px;
-          font-size: 12px;
-          padding: 10px 14px;
-        }
-
         #dateLabel {
           top: 15px;
           right: 10px;
@@ -337,7 +399,7 @@
         }
 
         .legend-box {
-          top: 100px;
+          top: 15px; /* 모바일에서도 맨 위 */
           max-width: 220px;
           min-width: 200px;
           padding: 12px 16px;
@@ -347,6 +409,12 @@
         .controls-wrapper {
           min-width: 260px;
           padding: 12px 16px;
+        }
+
+        #fireListPanel {
+          width: 220px;
+          max-height: 180px;
+          bottom: 280px;
         }
 
         .navigation-buttons {
@@ -361,7 +429,7 @@
         }
 
         .cesium-infoBox {
-          max-width: 320px !important;
+          max-width: 300px !important;
           right: 10px !important;
         }
 
@@ -379,14 +447,21 @@
   <body>
     <div id="cesiumContainer"></div>
 
-    <!-- 정보 패널 -->
-    <div id="infoPanel">
-      <div style="font-weight: bold; margin-bottom: 10px; color: #ff6b6b;">🇰🇷 한국 화재 정보</div>
-      <div id="weatherInfo">📍 지도에서 화재 지점을 클릭하세요</div>
-    </div>
-
     <!-- 날짜 라벨 -->
     <div id="dateLabel">📅 2025년 1월 화재 데이터</div>
+
+    <!-- 🔥 NEW: 화재 지역 리스트 패널 -->
+    <div id="fireListPanel">
+      <h4>
+        <span>🖱️ 화재 발생 지역 리스트</span>
+        <span id="infoIcon">ℹ️ 가이드(클릭)</span>
+      </h4>
+      <div id="fireList">
+        <div style="color: #999; text-align: center; padding: 20px">
+          데이터 로딩 중...
+        </div>
+      </div>
+    </div>
 
     <!-- 컨트롤 패널 -->
     <div id="controlsContainer">
@@ -442,6 +517,66 @@
       </div>
     </div>
 
+    <!-- 사용자 가이드 모달 -->
+    <div id="userGuideModal" style="
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      display: none;
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    ">
+      <div style="
+        background: #2a2a2a;
+        padding: 25px;
+        border-radius: 12px;
+        max-width: 400px;
+        width: 90%;
+        color: white;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        border: 1px solid #444;
+      ">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+          <h3 style="margin: 0; color: #88ccff;">📋 사용자 가이드</h3>
+          <button id="closeGuide" style="
+            background: none;
+            border: none;
+            color: #ccc;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+          ">✕</button>
+        </div>
+        
+        <div style="line-height: 1.6; font-size: 14px;">
+          <p><strong>🖱️ 화재 리스트 사용법:</strong></p>
+          <ul style="margin: 10px 0; padding-left: 20px;">
+            <li>화재 항목을 <strong>클릭</strong>하면 해당 지점으로 카메라가 이동합니다</li>
+            <li>주소, 시간, 대응단계를 확인할 수 있습니다</li>
+            <li>날짜별로 분류되어 표시됩니다</li>
+          </ul>
+          
+          <p><strong>🗺️ 지도 사용법:</strong></p>
+          <ul style="margin: 10px 0; padding-left: 20px;">
+            <li>화재 지점을 <strong>클릭</strong>하면 상세 정보가 표시됩니다</li>
+            <li>마우스로 <strong>드래그</strong>해서 지도를 이동할 수 있습니다</li>
+            <li>스크롤로 <strong>확대/축소</strong>가 가능합니다</li>
+          </ul>
+          
+          <p><strong>📅 날짜 필터 사용법:</strong></p>
+          <ul style="margin: 10px 0; padding-left: 20px;">
+            <li>시작일과 종료일을 조정해서 특정 기간의 화재만 표시</li>
+            <li>범례를 참고해서 화재 대응단계 파악</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <!-- 페이지 간 이동 버튼 -->
     <div class="navigation-buttons">
       <a href="../../../past_index.html?mode=korea" class="nav-link">🏠 과거 분석 메인</a>
@@ -467,6 +602,34 @@
           toggleBtn.textContent = '[접기]';
         }
       }
+
+      // 사용자 가이드 모달 관련 스크립트
+      document.addEventListener('DOMContentLoaded', function() {
+        const infoIcon = document.getElementById('infoIcon');
+        const modal = document.getElementById('userGuideModal');
+        const closeGuide = document.getElementById('closeGuide');
+
+        // 가이드 아이콘 클릭 시 모달 표시
+        if (infoIcon) {
+          infoIcon.addEventListener('click', function() {
+            modal.style.display = 'flex';
+          });
+        }
+
+        // 모달 닫기 버튼
+        if (closeGuide) {
+          closeGuide.addEventListener('click', function() {
+            modal.style.display = 'none';
+          });
+        }
+
+        // 배경 클릭으로 닫기
+        modal.addEventListener('click', function(e) {
+          if (e.target === modal) {
+            modal.style.display = 'none';
+          }
+        });
+      });
     </script>
   </body>
 </html>
