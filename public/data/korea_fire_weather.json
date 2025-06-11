@@ -1,5 +1,28 @@
 [
   {
+    "frfr_info_id": "387045",
+    "start": "2025-06-11 13:18",
+    "time": null,
+    "address": "경상남도 산청군 산청읍",
+    "status": "진화중",
+    "level": "초기대응",
+    "lat": 35.42372626795026,
+    "lon": 127.88897050456788,
+    "frfr_lctn_xcrd": "127.88897050456788",
+    "frfr_prgrs_stcd_str": "진화중",
+    "frfr_prgrs_stcd": "02",
+    "frfr_lctn_ycrd": "35.42372626795026",
+    "frfr_sttmn_addr": "경상남도 산청군 산청읍",
+    "frfr_step_issu_cd": "초기대응",
+    "frfr_sttmn_dt": "20250611",
+    "frfr_frng_dtm": "2025-06-11 13:18",
+    "temp": null,
+    "wspd": null,
+    "wdir": null,
+    "precip": null,
+    "rhum": null
+  },
+  {
     "frfr_info_id": "387484",
     "start": "2025-06-10 19:36",
     "time": "2025-06-10 20:25",
