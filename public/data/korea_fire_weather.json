@@ -1,5 +1,29 @@
 [
   {
+    "frfr_info_id": "387804",
+    "start": "2025-06-11 16:16",
+    "time": "2025-06-11 16:38",
+    "address": "충청남도 서천군 문산면",
+    "status": "진화완료",
+    "level": "초기대응",
+    "lat": 36.179633635964755,
+    "lon": 126.74102606387194,
+    "frfr_lctn_xcrd": "126.74102606387194",
+    "frfr_prgrs_stcd_str": "진화완료",
+    "potfr_end_dtm": "2025-06-11 16:38",
+    "frfr_prgrs_stcd": "03",
+    "frfr_lctn_ycrd": "36.179633635964755",
+    "frfr_sttmn_addr": "충청남도 서천군 문산면",
+    "frfr_step_issu_cd": "초기대응",
+    "frfr_sttmn_dt": "20250611",
+    "frfr_frng_dtm": "2025-06-11 16:16",
+    "temp": null,
+    "wspd": null,
+    "wdir": null,
+    "precip": null,
+    "rhum": null
+  },
+  {
     "frfr_info_id": "387045",
     "start": "2025-06-11 13:18",
     "time": "2025-06-11 15:00",
@@ -17,11 +41,8 @@
     "frfr_step_issu_cd": "초기대응",
     "frfr_sttmn_dt": "20250611",
     "frfr_frng_dtm": "2025-06-11 13:18",
-    "temp": null,
-    "wspd": null,
-    "wdir": null,
-    "precip": null,
-    "rhum": null
+    "precip": 0,
+    "rhum": 53
   },
   {
     "frfr_info_id": "387744",
