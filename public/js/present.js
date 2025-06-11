@@ -1,3 +1,21 @@
+// 한국시간(KST) 기준 날짜 계산 함수
+function getKSTDate(offsetDays = 0) {
+  const now = new Date();
+  // 현재 UTC 시간을 구하고, 한국시간(UTC+9)으로 변환
+  const utc = now.getTime() + now.getTimezoneOffset() * 60000;
+  const kst = new Date(utc + 9 * 60 * 60 * 1000);
+  
+  // 날짜에 오프셋 적용
+  kst.setDate(kst.getDate() + offsetDays);
+  
+  // YYYY-MM-DD 형식으로 반환
+  const year = kst.getFullYear();
+  const month = String(kst.getMonth() + 1).padStart(2, '0');
+  const day = String(kst.getDate()).padStart(2, '0');
+  
+  return `${year}-${month}-${day}`;
+}
+
 // 사용자 가이드 모달 추가 함수
 function addUserGuideModal() {
   const modal = document.createElement("div");
@@ -418,12 +436,9 @@ async function loadKoreaFireData() {
     const levelSelect = document.getElementById("levelFilter");
     const statusSelect = document.getElementById("statusFilter");
 
-    const today = new Date();
-    const sevenDaysAgo = new Date(today);
-    sevenDaysAgo.setDate(today.getDate() - 7);
-
-    const allowedStartStr = sevenDaysAgo.toISOString().split("T")[0];
-    const allowedEndStr = today.toISOString().split("T")[0];
+    // 한국시간 기준으로 날짜 설정
+    const allowedStartStr = getKSTDate(-7);  // 7일 전
+    const allowedEndStr = getKSTDate(0);     // 오늘 날짜
 
     startInput.min = allowedStartStr;
     startInput.max = allowedEndStr;
