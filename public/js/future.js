@@ -216,10 +216,9 @@ function loadPredictedFirePointsForDate(dateStr) {
     fileName = `predicted/korea/predicted_grid_fire_points_korea_${dateStr.replaceAll("-", "")}.json`;
   }
 
-  // [1] 기존 점 마커 제거
+  // 기존 마커/폴리곤 제거
   predictedEntities.forEach(e => viewer.entities.remove(e));
   predictedEntities = [];
-  // [2] 폴리곤 격자 제거
   gridPolygonEntities.forEach(e => viewer.entities.remove(e));
   gridPolygonEntities = [];
 
@@ -227,16 +226,25 @@ function loadPredictedFirePointsForDate(dateStr) {
     .then((res) => { if (!res.ok) throw new Error(`JSON 불러오기 실패: ${fileName}`); return res.json(); })
     .then((data) => {
       if (!data || !Array.isArray(data)) return;
+
+      // ① [중복 방지용] grid_id Set 생성!
+      const gridIdSet = new Set();
+
       data.forEach((pt) => {
         if (!pt.grid_id) return;
+
+        // ② 이미 추가된 grid_id면 패스!
+        if (gridIdSet.has(pt.grid_id)) return;
+        gridIdSet.add(pt.grid_id);
+
         const { lat, lon } = gridIdToLatLon(pt.grid_id, region);
         if (!isLand(lat, lon)) return;
 
         // [옵션] 예측확률에 따라 색상 유도리 (형광+빨강 계열)
         let color;
-        if (pt.probability > 0.8) color = Cesium.Color.RED.withAlpha(0.6);
-        else if (pt.probability > 0.5) color = Cesium.Color.ORANGE.withAlpha(0.5);
-        else color = Cesium.Color.YELLOW.withAlpha(0.3);
+        if (pt.probability > 0.8) color = Cesium.Color.RED.withAlpha(0.4);
+        else if (pt.probability > 0.5) color = Cesium.Color.ORANGE.withAlpha(0.4);
+        else color = Cesium.Color.YELLOW.withAlpha(0.4);
 
         // [폴리곤] - 그리드 셀 면적
         const polyDegrees = gridIdToPolygonDegrees(pt.grid_id, region);
@@ -244,8 +252,8 @@ function loadPredictedFirePointsForDate(dateStr) {
           polygon: {
             hierarchy: Cesium.Cartesian3.fromDegreesArray(polyDegrees),
             material: color,
-            outline: true, // 테두리 가이드
-            outlineColor: Cesium.Color.LIME.withAlpha(0.6), // 테두리 형광 연두
+            outline: true,
+            outlineColor: Cesium.Color.LIME.withAlpha(0.6),
             outlineWidth: 2,
             classificationType: Cesium.ClassificationType.BOTH
           },
@@ -254,8 +262,7 @@ function loadPredictedFirePointsForDate(dateStr) {
         polyEntity.show = isGridVisible;
         gridPolygonEntities.push(polyEntity);
 
-        // [점 마커도 같이](원하면 아래 주석)
-        
+        // [점 마커도 같이]
         const entity = viewer.entities.add({
           position: Cesium.Cartesian3.fromDegrees(lon, lat),
           point: {
@@ -269,7 +276,6 @@ function loadPredictedFirePointsForDate(dateStr) {
         });
         entity.show = isPredVisible;
         predictedEntities.push(entity);
-        
       });
       console.log(`✅ 예측 격자 폴리곤 ${gridPolygonEntities.length}개 시각화`);
     })
@@ -277,6 +283,7 @@ function loadPredictedFirePointsForDate(dateStr) {
       console.error("❌ 예측 데이터 불러오기 실패:", err);
     });
 }
+
 
 // ====== region 전환 ======
 function updateRegionButtonText() {
