@@ -8,7 +8,7 @@ let gridPolygonEntities = []; // [추가] 격자 셀 폴리곤 엔티티 리스�
 let landGeoJson = null;
 let isPlaying = false;
 let playInterval = null;
-let isGridVisible = true; // [추가] 격자 on/off
+let isGridVisible = false; // [수정] 격자 초기값 OFF
 
 const laDates = [
   "2025-01-08", "2025-01-09", "2025-01-10", "2025-01-13",
@@ -44,8 +44,8 @@ fetch("land.geojson")
   .then(data => { landGeoJson = data; });
 
 // ====== 관측/예측 토글 =====
-let isActualVisible = true;
-let isPredVisible = true;
+let isActualVisible = true;  // [유지] 관측 화점 초기값 ON
+let isPredVisible = false;   // [수정] 예측 화점 초기값 OFF
 document.getElementById("toggleActualBtn").addEventListener("click", () => {
   isActualVisible = !isActualVisible;
   fireEntities.forEach(e => e.show = isActualVisible);
