@@ -1,5 +1,23 @@
 [
   {
+    "frfr_info_id": "388224",
+    "start": "2025-06-12 16:17",
+    "time": null,
+    "address": "전북특별자치도 무주군 적상면",
+    "status": "진화중",
+    "level": "초기대응",
+    "lat": 35.95736000050516,
+    "lon": 127.62290000000075,
+    "frfr_lctn_xcrd": "127.62290000000075",
+    "frfr_prgrs_stcd_str": "진화중",
+    "frfr_prgrs_stcd": "02",
+    "frfr_lctn_ycrd": "35.95736000050516",
+    "frfr_sttmn_addr": "전북특별자치도 무주군 적상면",
+    "frfr_step_issu_cd": "초기대응",
+    "frfr_sttmn_dt": "20250612",
+    "frfr_frng_dtm": "2025-06-12 16:17"
+  },
+  {
     "frfr_info_id": "388164",
     "start": "2025-06-12 12:56",
     "time": "2025-06-12 13:40",
