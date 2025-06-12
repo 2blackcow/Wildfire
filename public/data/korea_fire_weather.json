@@ -307,39 +307,5 @@
     "wdir": 222.0,
     "precip": 0,
     "rhum": 45
-  },
-  {
-    "frfr_lctn_xcrd": "127.39564925959894",
-    "frfr_prgrs_stcd_str": "진화완료",
-    "potfr_end_dtm": "2025-06-05 14:25",
-    "frfr_info_id": "386144",
-    "frfr_prgrs_stcd": "03",
-    "frfr_lctn_ycrd": "35.719918706499044",
-    "frfr_sttmn_addr": "전북특별자치도 진안군 백운면",
-    "frfr_step_issu_cd": "초기대응",
-    "frfr_sttmn_dt": "20250605",
-    "frfr_frng_dtm": "2025-06-05 13:26",
-    "temp": 21.1,
-    "wspd": 5.7,
-    "wdir": 212.0,
-    "precip": 0,
-    "rhum": 49
-  },
-  {
-    "frfr_lctn_xcrd": "126.92683121370563",
-    "frfr_prgrs_stcd_str": "진화완료",
-    "potfr_end_dtm": "2025-06-05 13:25",
-    "frfr_info_id": "386084",
-    "frfr_prgrs_stcd": "03",
-    "frfr_lctn_ycrd": "34.572473951633754",
-    "frfr_sttmn_addr": "전라남도 장흥군 관산읍",
-    "frfr_step_issu_cd": "초기대응",
-    "frfr_sttmn_dt": "20250605",
-    "frfr_frng_dtm": "2025-06-05 11:32",
-    "temp": 20.9,
-    "wspd": 5.5,
-    "wdir": 211.0,
-    "precip": 0,
-    "rhum": 51
   }
 ]
