@@ -7,7 +7,7 @@ from datetime import datetime
 from tqdm import tqdm
 
 # === CONFIG ===
-REGION = "korea"  # "la" 또는 "korea"만 바꿔주면 됨
+REGION = "korea"  
 
 if REGION == "la":
     RAW_FILE = "data/fire_archive_J1V-C2_618777.csv"

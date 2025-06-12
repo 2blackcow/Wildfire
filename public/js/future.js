@@ -4,16 +4,17 @@ let fireData_la = [];
 let fireData_korea = [];
 let fireEntities = [];
 let predictedEntities = [];
+let gridPolygonEntities = []; // [추가] 격자 셀 폴리곤 엔티티 리스트
 let landGeoJson = null;
 let isPlaying = false;
-let playInterval = null
+let playInterval = null;
+let isGridVisible = true; // [추가] 격자 on/off
 
 const laDates = [
   "2025-01-08", "2025-01-09", "2025-01-10", "2025-01-13",
   "2025-01-14", "2025-01-16", "2025-01-18", "2025-01-20",
 ];
 
-// [✅ 실제 예측 파일명 있는 날짜만! 아래 자동화 또는 수동 추출]
 const koreaPredictDatesRaw = [
   "20241107", "20241110", "20241111", "20241115", "20241118", "20241119",
   "20241122", "20241124", "20241204", "20241209", "20241210", "20241212",
@@ -53,9 +54,17 @@ document.getElementById("toggleActualBtn").addEventListener("click", () => {
 });
 document.getElementById("togglePredBtn").addEventListener("click", () => {
   isPredVisible = !isPredVisible;
-  predictedEntities.forEach(e => e.show = isPredVisible);
+  predictedEntities.forEach(e => e.show = isPredVisible
+  );
   document.getElementById("togglePredBtn").textContent =
     isPredVisible ? "🤖 AI 예측 화점 OFF" : "🤖 AI 예측 화점 ON";
+});
+// [추가] 격자(폴리곤) on/off 토글
+document.getElementById("toggleGridBtn").addEventListener("click", () => {
+  isGridVisible = !isGridVisible;
+  gridPolygonEntities.forEach(e => e.show = isGridVisible);
+  document.getElementById("toggleGridBtn").textContent =
+    isGridVisible ? "🟨 격자 OFF" : "🟨 격자 ON";
 });
 
 // ====== 날짜 드롭다운 동적 세팅 =====
@@ -151,28 +160,45 @@ function updateFiresForDate(selectedDate) {
   if (fireInfo) fireInfo.textContent = `🔥 ${selectedDate} 화재 지점 ${fireCount}개 시각화됨`;
 }
 
-
-// ====== 예측 격자 마커 =====
-// 🔹 격자 -> 위경도 변환 (region 분기)
+// ====== 예측 격자 폴리곤/마커 =====
 function gridIdToLatLon(grid_id, region) {
   const parts = grid_id.split("_");
   const lat_idx = parseInt(parts[1]);
   const lon_idx = parseInt(parts[2]);
   if (region === "korea") {
-    // 한국 기준
     const min_lat = 34.0, min_lon = 126.0, cell_size = 0.05;
     return {
       lat: min_lat + (lat_idx + 0.5) * cell_size,
       lon: min_lon + (lon_idx + 0.5) * cell_size
     };
   } else {
-    // LA 기준
     const min_lat = 33.5, min_lon = -119.0, cell_size = 0.05;
     return {
       lat: min_lat + (lat_idx + 0.5) * cell_size,
       lon: min_lon + (lon_idx + 0.5) * cell_size
     };
   }
+}
+function gridIdToPolygonDegrees(grid_id, region) {
+  const parts = grid_id.split("_");
+  const lat_idx = parseInt(parts[1]);
+  const lon_idx = parseInt(parts[2]);
+  let min_lat, min_lon, cell_size;
+  if (region === "korea") {
+    min_lat = 34.0;
+    min_lon = 126.0;
+    cell_size = 0.05;
+  } else {
+    min_lat = 33.5;
+    min_lon = -119.0;
+    cell_size = 0.05;
+  }
+  const sw = [min_lon + lon_idx * cell_size, min_lat + lat_idx * cell_size];
+  const nw = [sw[0], sw[1] + cell_size];
+  const ne = [sw[0] + cell_size, sw[1] + cell_size];
+  const se = [sw[0] + cell_size, sw[1]];
+  // [lon, lat] 순
+  return [...sw, ...nw, ...ne, ...se];
 }
 function isLand(lat, lon) {
   if (!landGeoJson) return true;
@@ -190,25 +216,51 @@ function loadPredictedFirePointsForDate(dateStr) {
     fileName = `predicted/korea/predicted_grid_fire_points_korea_${dateStr.replaceAll("-", "")}.json`;
   }
 
+  // [1] 기존 점 마커 제거
+  predictedEntities.forEach(e => viewer.entities.remove(e));
+  predictedEntities = [];
+  // [2] 폴리곤 격자 제거
+  gridPolygonEntities.forEach(e => viewer.entities.remove(e));
+  gridPolygonEntities = [];
+
   fetch(fileName)
     .then((res) => { if (!res.ok) throw new Error(`JSON 불러오기 실패: ${fileName}`); return res.json(); })
     .then((data) => {
-      predictedEntities.forEach(e => viewer.entities.remove(e));
-      predictedEntities = [];
       if (!data || !Array.isArray(data)) return;
       data.forEach((pt) => {
         if (!pt.grid_id) return;
-        // region 넘김!
         const { lat, lon } = gridIdToLatLon(pt.grid_id, region);
-        // 바다 필터
         if (!isLand(lat, lon)) return;
-        const color = Cesium.Color.CHARTREUSE.withAlpha(Math.max(0.4, pt.probability));
-        const size = 5 + 5 * pt.probability;
+
+        // [옵션] 예측확률에 따라 색상 유도리 (형광+빨강 계열)
+        let color;
+        if (pt.probability > 0.8) color = Cesium.Color.RED.withAlpha(0.6);
+        else if (pt.probability > 0.5) color = Cesium.Color.ORANGE.withAlpha(0.5);
+        else color = Cesium.Color.YELLOW.withAlpha(0.3);
+
+        // [폴리곤] - 그리드 셀 면적
+        const polyDegrees = gridIdToPolygonDegrees(pt.grid_id, region);
+        const polyEntity = viewer.entities.add({
+          polygon: {
+            hierarchy: Cesium.Cartesian3.fromDegreesArray(polyDegrees),
+            material: color,
+            outline: true, // 테두리 가이드
+            outlineColor: Cesium.Color.LIME.withAlpha(0.6), // 테두리 형광 연두
+            outlineWidth: 2,
+            classificationType: Cesium.ClassificationType.BOTH
+          },
+          description: `📦 <b>격자번호:</b> ${pt.grid_id}<br/>🎯 <b>예측 확률:</b> ${(pt.probability * 100).toFixed(1)}%`
+        });
+        polyEntity.show = isGridVisible;
+        gridPolygonEntities.push(polyEntity);
+
+        // [점 마커도 같이](원하면 아래 주석)
+        
         const entity = viewer.entities.add({
           position: Cesium.Cartesian3.fromDegrees(lon, lat),
           point: {
-            pixelSize: size,
-            color: color,
+            pixelSize: 5 + 5 * pt.probability,
+            color: Cesium.Color.CHARTREUSE.withAlpha(Math.max(0.4, pt.probability)),
             outlineColor: Cesium.Color.BLACK,
             outlineWidth: 1,
             disableDepthTestDistance: Number.POSITIVE_INFINITY,
@@ -217,20 +269,20 @@ function loadPredictedFirePointsForDate(dateStr) {
         });
         entity.show = isPredVisible;
         predictedEntities.push(entity);
+        
       });
-      console.log(`✅ 예측 확률 마커 ${data.length}개 표시`);
+      console.log(`✅ 예측 격자 폴리곤 ${gridPolygonEntities.length}개 시각화`);
     })
     .catch((err) => {
       console.error("❌ 예측 데이터 불러오기 실패:", err);
     });
 }
+
 // ====== region 전환 ======
 function updateRegionButtonText() {
   const btn = document.getElementById("toggleRegionBtn");
   btn.textContent = (region === "la") ? "🌏 국내 예측 보기" : "🌎 LA 예측 보기";
 }
-
-// ... 기존 toggleRegionBtn 이벤트 핸들러에서 btn.textContent 설정하는 부분을 위 함수로 치환!
 document.getElementById("toggleRegionBtn").addEventListener("click", () => {
   region = region === "la" ? "korea" : "la";
   updateRegionButtonText();
@@ -245,7 +297,6 @@ document.getElementById("toggleRegionBtn").addEventListener("click", () => {
   updateFiresForDate(getActiveDate(0));
   loadPredictedFirePointsForDate(getActiveDate(0));
 });
-
 
 document.getElementById("playBtn").addEventListener("click", () => {
   if (!isPlaying) {
@@ -264,7 +315,7 @@ document.getElementById("playBtn").addEventListener("click", () => {
         isPlaying = false;
         document.getElementById("playBtn").textContent = "▶️ 재생";
       }
-    }, 2000); // 1초마다 넘어감 (원하면 시간 조절)
+    }, 2000);
   } else {
     isPlaying = false;
     document.getElementById("playBtn").textContent = "▶️ 재생";
@@ -272,7 +323,6 @@ document.getElementById("playBtn").addEventListener("click", () => {
   }
 });
 
-// ====== 슬라이더/드롭다운 이벤트 ======
 document.getElementById("fireDateSelect").addEventListener("change", (e) => {
   currentIndex = parseInt(e.target.value);
   document.getElementById("timeSlider").value = currentIndex;
