@@ -17,11 +17,11 @@
     "frfr_step_issu_cd": "초기대응",
     "frfr_sttmn_dt": "20250613",
     "frfr_frng_dtm": "2025-06-13 16:53",
-    "temp": null,
-    "wspd": null,
-    "wdir": null,
-    "precip": null,
-    "rhum": null
+    "temp": 23.4,
+    "wspd": 13.0,
+    "wdir": 37.0,
+    "precip": 6.8,
+    "rhum": 78
   },
   {
     "frfr_info_id": "388464",
