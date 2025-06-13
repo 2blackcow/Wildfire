@@ -264,43 +264,5 @@
     "frfr_step_issu_cd": "초기대응",
     "frfr_sttmn_dt": "20250607",
     "frfr_frng_dtm": "2025-06-07 08:37"
-  },
-  {
-    "frfr_info_id": "386624",
-    "start": "2025-06-06 17:51",
-    "time": "2025-06-06 19:10",
-    "address": "경기도 남양주시 수동면",
-    "status": "진화완료",
-    "level": "초기대응",
-    "lat": 37.748429712563286,
-    "lon": 127.29080324989337,
-    "frfr_lctn_xcrd": "127.29080324989337",
-    "frfr_prgrs_stcd_str": "진화완료",
-    "potfr_end_dtm": "2025-06-06 19:10",
-    "frfr_prgrs_stcd": "03",
-    "frfr_lctn_ycrd": "37.748429712563286",
-    "frfr_sttmn_addr": "경기도 남양주시 수동면",
-    "frfr_step_issu_cd": "초기대응",
-    "frfr_sttmn_dt": "20250606",
-    "frfr_frng_dtm": "2025-06-06 17:51"
-  },
-  {
-    "frfr_info_id": "386564",
-    "start": "2025-06-06 15:32",
-    "time": "2025-06-06 16:37",
-    "address": "경기도 포천시 소흘읍",
-    "status": "진화완료",
-    "level": "초기대응",
-    "lat": 37.801248634518174,
-    "lon": 127.12349215244589,
-    "frfr_lctn_xcrd": "127.12349215244589",
-    "frfr_prgrs_stcd_str": "진화완료",
-    "potfr_end_dtm": "2025-06-06 16:37",
-    "frfr_prgrs_stcd": "03",
-    "frfr_lctn_ycrd": "37.801248634518174",
-    "frfr_sttmn_addr": "경기도 포천시 소흘읍",
-    "frfr_step_issu_cd": "초기대응",
-    "frfr_sttmn_dt": "20250606",
-    "frfr_frng_dtm": "2025-06-06 15:32"
   }
 ]
