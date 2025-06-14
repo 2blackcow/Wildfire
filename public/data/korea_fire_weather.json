@@ -1,5 +1,28 @@
 [
   {
+    "frfr_info_id": "387906",
+    "start": "2025-06-14 17:00",
+    "time": null,
+    "address": "서울특별시 종로구 옥인동",
+    "status": "진화중",
+    "level": "초기대응",
+    "lat": 37.5836983000555,
+    "lon": 126.95899959999956,
+    "frfr_lctn_xcrd": "126.95899959999956",
+    "frfr_prgrs_stcd_str": "진화중",
+    "frfr_prgrs_stcd": "02",
+    "frfr_lctn_ycrd": "37.5836983000555",
+    "frfr_sttmn_addr": "서울특별시 종로구 옥인동",
+    "frfr_step_issu_cd": "초기대응",
+    "frfr_sttmn_dt": "20250614",
+    "frfr_frng_dtm": "2025-06-14 17:00",
+    "temp": null,
+    "wspd": null,
+    "wdir": null,
+    "precip": null,
+    "rhum": null
+  },
+  {
     "frfr_info_id": "388544",
     "start": "2025-06-13 16:53",
     "time": "2025-06-13 18:30",
