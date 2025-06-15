@@ -298,29 +298,5 @@
     "wdir": 26.0,
     "precip": 0.3,
     "rhum": 73
-  },
-  {
-    "frfr_info_id": "386984",
-    "start": "2025-06-08 16:28",
-    "time": "2025-06-08 17:45",
-    "address": "충청남도 태안군 원북면",
-    "status": "진화완료",
-    "level": "초기대응",
-    "lat": 36.8530146980441,
-    "lon": 126.22903702977541,
-    "frfr_lctn_xcrd": "126.22903702977541",
-    "frfr_prgrs_stcd_str": "진화완료",
-    "potfr_end_dtm": "2025-06-08 17:45",
-    "frfr_prgrs_stcd": "03",
-    "frfr_lctn_ycrd": "36.8530146980441",
-    "frfr_sttmn_addr": "충청남도 태안군 원북면",
-    "frfr_step_issu_cd": "초기대응",
-    "frfr_sttmn_dt": "20250608",
-    "frfr_frng_dtm": "2025-06-08 16:28",
-    "temp": 27.7,
-    "wspd": 7.4,
-    "wdir": 267.0,
-    "precip": 2,
-    "rhum": 96
   }
 ]
