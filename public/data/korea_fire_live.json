@@ -207,43 +207,5 @@
     "frfr_step_issu_cd": "초기대응",
     "frfr_sttmn_dt": "20250610",
     "frfr_frng_dtm": "2025-06-10 12:50"
-  },
-  {
-    "frfr_info_id": "387284",
-    "start": "2025-06-09 17:20",
-    "time": "2025-06-09 19:34",
-    "address": "전북특별자치도 장수군 천천면",
-    "status": "진화완료",
-    "level": "초기대응",
-    "lat": 35.782118272843356,
-    "lon": 127.57280712016282,
-    "frfr_lctn_xcrd": "127.57280712016282",
-    "frfr_prgrs_stcd_str": "진화완료",
-    "potfr_end_dtm": "2025-06-09 19:34",
-    "frfr_prgrs_stcd": "03",
-    "frfr_lctn_ycrd": "35.782118272843356",
-    "frfr_sttmn_addr": "전북특별자치도 장수군 천천면",
-    "frfr_step_issu_cd": "초기대응",
-    "frfr_sttmn_dt": "20250609",
-    "frfr_frng_dtm": "2025-06-09 17:20"
-  },
-  {
-    "frfr_info_id": "387204",
-    "start": "2025-06-09 14:08",
-    "time": "2025-06-09 15:00",
-    "address": "충청남도 공주시 신풍면",
-    "status": "진화완료",
-    "level": "초기대응",
-    "lat": 36.49154580058126,
-    "lon": 126.91564052106251,
-    "frfr_lctn_xcrd": "126.91564052106251",
-    "frfr_prgrs_stcd_str": "진화완료",
-    "potfr_end_dtm": "2025-06-09 15:00",
-    "frfr_prgrs_stcd": "03",
-    "frfr_lctn_ycrd": "36.49154580058126",
-    "frfr_sttmn_addr": "충청남도 공주시 신풍면",
-    "frfr_step_issu_cd": "초기대응",
-    "frfr_sttmn_dt": "20250609",
-    "frfr_frng_dtm": "2025-06-09 14:08"
   }
 ]
