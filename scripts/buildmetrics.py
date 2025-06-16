@@ -13,7 +13,7 @@ from sklearn.metrics import (
 )
 
 # 1. 아래만 맞게 조정하면 됨!
-REGION = "korea"   # or "la"
+REGION = "la"   # or "la"
 ENCODED = f"data/grid_encoded_train_data_{REGION}.csv" if REGION == "korea" else "data/grid_encoded_train_data.csv"
 RAW = f"data/train_fire_data_grid_{REGION}.csv" if REGION == "korea" else "data/train_fire_data_grid.csv"
 PREDICT_JSON_DIR = "public/test/korea" if REGION == "korea" else "public/test/la"

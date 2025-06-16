@@ -4,18 +4,11 @@
 
 ## 🔹 주요 코드 설명
 
-### 1️⃣ `build_train_data.py`
+### 1️⃣ `build_and_grid_train_data.py`
 **역할:**
 - FIRMS 화재 관측 데이터 + Meteostat 날씨 데이터 병합
 - 각 화재지점에 대해 해당 날짜의 기상 정보를 API로 가져와 통합
 - `fire_occurred = 1`, 주변 무작위 점 추가로 `fire_occurred = 0` 샘플 생성
-
-**결과 파일:** `data/train_fire_data.csv`
-
----
-
-### 2️⃣ `create_grid_data.py`
-**역할:**
 - 위경도 좌표 → 격자(grid) ID로 변환 (예: `l_30_52`)
 - 각 관측 지점이 속한 셀을 식별할 수 있도록 grid_id 부여
 
@@ -23,7 +16,7 @@
 - 셀 크기(`cell_size`) 기준으로 위경도 → 인덱스 계산
 - `train_fire_data.csv`에 grid_id 컬럼 추가
 
-**결과 파일:** `data/train_fire_data_grid.csv`
+**결과 파일:** `data/train_fire_data_grid_{REGION}.csv`
 
 ---
 
@@ -36,11 +29,11 @@
 - `LabelEncoder`를 이용해 grid_id → 숫자 ID
 - 필요한 특성 선택 및 `fire_occurred` 레이블 포함
 
-**결과 파일:** `data/grid_encoded_train_data.csv`
+**결과 파일:** `data/grid_encoded_train_data_{REGION}.csv`
 
 ---
 
-### 4️⃣ `train_grid_model.py`
+### 4️⃣ `train_predict_grid_{REGION}.py`
 **역할:**
 - RandomForestClassifier로 화재 발생 예측 모델 학습
 - 테스트셋에 대해 예측 확률 추론
@@ -57,17 +50,14 @@
 ## ✅ 전체 흐름 요약
 
 ```bash
-build_train_data.py               # 기초 화재+날씨 데이터 병합
-→ data/train_fire_data.csv
-
-create_grid_data.py              # 위경도 → 격자 ID 변환
-→ data/train_fire_data_grid.csv
+build_and_grid_train_data.py     # 기초 화재+날씨 데이터 병합, 위경도 → 격자 ID 변환
+→ data/train_fire_data_grid_{REGION}.csv
 
 prepare_grid_train_data.py       # grid_id 숫자화 + 특성 정제
-→ data/grid_encoded_train_data.csv
+→ data/grid_encoded_train_data_{REGION}.csv
 
-train_grid_model.py              # 모델 학습 & 예측 저장
-→ public/predicted/predicted_grid_fire_points_YYYYMMDD.json
+train_predict_grid_{REGION}.py              # 모델 학습 & 예측 저장
+→ public/predicted/predicted_grid_fire_points_{region_tag}_{date_tag}.json
 ```
 
 ---
