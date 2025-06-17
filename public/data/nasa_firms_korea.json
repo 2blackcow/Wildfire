@@ -8558,5 +8558,53 @@
     "bright_ti5": "290.07",
     "frp": "1.39",
     "daynight": "N"
+  },
+  {
+    "latitude": "33.26131",
+    "longitude": "131.64871",
+    "bright_ti4": "342.61",
+    "scan": "0.41",
+    "track": "0.45",
+    "acq_date": "2025-06-17",
+    "acq_time": "351",
+    "satellite": "N",
+    "instrument": "VIIRS",
+    "confidence": "n",
+    "version": "2.0NRT",
+    "bright_ti5": "304.54",
+    "frp": "6.9",
+    "daynight": "D"
+  },
+  {
+    "latitude": "33.2622",
+    "longitude": "131.653",
+    "bright_ti4": "341.96",
+    "scan": "0.41",
+    "track": "0.45",
+    "acq_date": "2025-06-17",
+    "acq_time": "351",
+    "satellite": "N",
+    "instrument": "VIIRS",
+    "confidence": "n",
+    "version": "2.0NRT",
+    "bright_ti5": "303.18",
+    "frp": "6.9",
+    "daynight": "D"
+  },
+  {
+    "latitude": "33.26762",
+    "longitude": "131.63757",
+    "bright_ti4": "337.26",
+    "scan": "0.41",
+    "track": "0.45",
+    "acq_date": "2025-06-17",
+    "acq_time": "351",
+    "satellite": "N",
+    "instrument": "VIIRS",
+    "confidence": "n",
+    "version": "2.0NRT",
+    "bright_ti5": "295.72",
+    "frp": "7.38",
+    "daynight": "D"
   }
 ]
