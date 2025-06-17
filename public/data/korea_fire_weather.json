@@ -1,28 +1,5 @@
 [
   {
-    "frfr_info_id": "389124",
-    "start": "2025-06-17 15:09",
-    "time": null,
-    "address": "강원특별자치도 철원군 근동면",
-    "status": "진화중",
-    "level": "초기대응",
-    "lat": 38.315641233200694,
-    "lon": 127.5327750127549,
-    "frfr_lctn_xcrd": "127.5327750127549",
-    "frfr_prgrs_stcd_str": "진화중",
-    "frfr_prgrs_stcd": "02",
-    "frfr_lctn_ycrd": "38.315641233200694",
-    "frfr_sttmn_addr": "강원특별자치도 철원군 근동면",
-    "frfr_step_issu_cd": "초기대응",
-    "frfr_sttmn_dt": "20250617",
-    "frfr_frng_dtm": "2025-06-17 15:09",
-    "temp": 28.6,
-    "wspd": 3.083333333333333,
-    "wdir": 231.0,
-    "precip": 0,
-    "rhum": 80
-  },
-  {
     "frfr_info_id": "387906",
     "start": "2025-06-14 17:00",
     "time": "2025-06-14 17:28",
