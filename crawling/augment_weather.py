@@ -87,7 +87,7 @@ def get_meteostat_hourly(lat, lon, target_datetime):
         if best_match:
             return {
                 "temp": best_match.get("temp"),
-                "wspd": best_match.get("wspd"),  # km/h 단위
+                "wspd": convert_wind_speed_to_ms(best_match.get("wspd")),  # km/h → m/s 변환
                 "wdir": best_match.get("wdir")
             }
         else:
@@ -97,13 +97,50 @@ def get_meteostat_hourly(lat, lon, target_datetime):
         print(f"❌ Meteostat API 오류 ({date_str}): {e}")
         return {"temp": None, "wspd": None, "wdir": None}
 
-def get_weatherbit_hourly(lat, lon, target_datetime):
-    """시간별 Weatherbit 데이터 수집 (일별 데이터에서 추출)"""
+def get_weatherbit_hourly_fallback(lat, lon, target_datetime):
+    """Weatherbit hourly API로 기온, 풍속, 풍향 데이터 수집 (Meteostat fallback용)"""
+    # UTC로 변환
+    utc_datetime = target_datetime.astimezone(pytz.UTC)
+    
+    # 시작일과 종료일 설정 (hourly API는 최대 7일까지 가능)
+    start_date = utc_datetime.strftime("%Y-%m-%d:%H")
+    end_date = (utc_datetime + timedelta(hours=1)).strftime("%Y-%m-%d:%H")
+    
+    url = f"https://api.weatherbit.io/v2.0/history/hourly"
+    params = {
+        "lat": lat,
+        "lon": lon,
+        "start_date": start_date,
+        "end_date": end_date,
+        "key": WEATHERBIT_API_KEY
+    }
+    
+    try:
+        res = requests.get(url, params=params)
+        res.raise_for_status()
+        response_data = res.json()
+        data = response_data.get("data", [])
+        
+        if data:
+            weather_data = data[0]
+            return {
+                "temp": weather_data.get("temp"),
+                "wspd": weather_data.get("wind_spd"),  # 이미 m/s 단위
+                "wdir": weather_data.get("wind_dir")
+            }
+        else:
+            return {"temp": None, "wspd": None, "wdir": None}
+            
+    except Exception as e:
+        print(f"❌ Weatherbit Hourly API 오류: {e}")
+        return {"temp": None, "wspd": None, "wdir": None}
+
+def get_weatherbit_daily(lat, lon, target_datetime):
+    """일별 Weatherbit 데이터 수집 (강수량, 습도)"""
     date_str = target_datetime.strftime("%Y-%m-%d")
     next_date = target_datetime + timedelta(days=1)
     end_date_str = next_date.strftime("%Y-%m-%d")
     
-    # Weatherbit hourly는 유료 플랜에서만 제공되므로 daily 데이터 사용
     url = f"https://api.weatherbit.io/v2.0/history/daily"
     params = {
         "lat": lat,
@@ -129,7 +166,7 @@ def get_weatherbit_hourly(lat, lon, target_datetime):
             return {"precip": None, "rhum": None}
             
     except Exception as e:
-        print(f"❌ Weatherbit API 오류 ({date_str}): {e}")
+        print(f"❌ Weatherbit Daily API 오류 ({target_datetime.strftime('%Y-%m-%d')}): {e}")
         return {"precip": None, "rhum": None}
 
 def has_complete_weather_data(fire_data):
@@ -160,6 +197,12 @@ def needs_weather_update(existing_fire, new_fire):
     
     return False
 
+def convert_wind_speed_to_ms(wspd_kmh):
+    """풍속을 km/h에서 m/s로 변환"""
+    if wspd_kmh is None:
+        return None
+    return wspd_kmh / 3.6
+
 def augment_weather():
     root_dir = os.path.abspath(os.path.join(__file__, "..", ".."))
     input_path = os.path.join(root_dir, "public", "data", "korea_fire_live.json")
@@ -187,14 +230,18 @@ def augment_weather():
     
     print(f"🔥 화재 데이터 {len(fires)}개 처리 시작...")
     print(f"📅 시간별 기상 데이터 수집 (3시간 이전 데이터만)")
+    print(f"🔄 Meteostat → Weatherbit hourly fallback 적용")
     print(f"⏰ 현재 시간 (KST): {now.strftime('%Y-%m-%d %H:%M:%S')}")
 
     enriched = []
     api_calls = 0
     skipped = 0
     updated = 0
+    fallback_used = 0
+    realtime_count = 0  # 실시간 데이터 카운트
     cache_meteostat = {}
-    cache_weatherbit = {}
+    cache_weatherbit_hourly = {}
+    cache_weatherbit_daily = {}
 
     for i, fire in enumerate(fires, 1):
         fire_id = fire.get('frfr_info_id')
@@ -241,24 +288,31 @@ def augment_weather():
             skipped += 1
             continue
 
-        # 시간 제한: 현재 시간(KST)보다 3시간 이전 데이터만 수집
+        # ⚡ 실시간 모니터링: 시간 제한 없이 모든 데이터 수집 시도
         time_diff = now - target_datetime
-        if time_diff.total_seconds() < 3 * 3600:  # 3시간 = 3 * 3600초
-            hours_diff = time_diff.total_seconds() / 3600
-            print(f"⏭️ 너무 최근 데이터 ({hours_diff:.1f}시간 전)")
-            fire.update({"temp": None, "wspd": None, "wdir": None, "precip": None, "rhum": None})
-            enriched.append(fire)
-            skipped += 1
-            continue
+        hours_diff = time_diff.total_seconds() / 3600
+        if hours_diff < 0:
+            print(f"🔮 미래 시간 ({abs(hours_diff):.1f}시간 후) - 현재 기상으로 추정")
+        elif hours_diff < 1:
+            print(f"🚨 실시간 ({hours_diff:.1f}시간 전) - 최신 데이터 수집", end=" ")
+            realtime_count += 1
+        else:
+            print(f"📊 과거 데이터 ({hours_diff:.1f}시간 전)", end=" ")
 
         # 🌤️ 기상 데이터 수집
         cache_key = (lat, lon, target_datetime.strftime("%Y-%m-%d %H"))
+        daily_cache_key = (lat, lon, target_datetime.strftime("%Y-%m-%d"))
+        
         need_meteostat = any(fire.get(field) is None for field in ["temp", "wspd", "wdir"])
-        need_weatherbit = any(fire.get(field) is None for field in ["precip", "rhum"])
+        need_weatherbit_daily = any(fire.get(field) is None for field in ["precip", "rhum"])
 
-        if need_meteostat or need_weatherbit:
-            print("🌤️ 수집중...", end="")
+        if need_meteostat or need_weatherbit_daily:
+            if hours_diff < 1:
+                print("🌤️ 실시간 수집중...", end="")
+            else:
+                print("🌤️ 수집중...", end="")
             
+            # 1. Meteostat으로 기온, 풍속, 풍향 시도
             if need_meteostat:
                 if cache_key in cache_meteostat:
                     weather1 = cache_meteostat[cache_key]
@@ -270,14 +324,35 @@ def augment_weather():
                 for field in ["temp", "wspd", "wdir"]:
                     if fire.get(field) is None and weather1.get(field) is not None:
                         fire[field] = weather1[field]
+                
+                # 2. Meteostat에서 못 가져온 데이터가 있으면 Weatherbit hourly로 fallback
+                missing_fields = [field for field in ["temp", "wspd", "wdir"] 
+                                if fire.get(field) is None]
+                
+                if missing_fields:
+                    print(f"📡 Fallback({','.join(missing_fields)})", end="")
+                    
+                    if cache_key in cache_weatherbit_hourly:
+                        weather_fallback = cache_weatherbit_hourly[cache_key]
+                    else:
+                        weather_fallback = get_weatherbit_hourly_fallback(lat, lon, target_datetime)
+                        cache_weatherbit_hourly[cache_key] = weather_fallback
+                    
+                    # Weatherbit은 이미 m/s 단위이므로 변환 불필요
+                    
+                    # 여전히 None인 필드만 업데이트
+                    for field in missing_fields:
+                        if fire.get(field) is None and weather_fallback.get(field) is not None:
+                            fire[field] = weather_fallback[field]
+                            fallback_used += 1
 
-            if need_weatherbit:
-                daily_cache_key = (lat, lon, target_datetime.strftime("%Y-%m-%d"))
-                if daily_cache_key in cache_weatherbit:
-                    weather2 = cache_weatherbit[daily_cache_key]
+            # 3. Weatherbit daily로 강수량, 습도 수집
+            if need_weatherbit_daily:
+                if daily_cache_key in cache_weatherbit_daily:
+                    weather2 = cache_weatherbit_daily[daily_cache_key]
                 else:
-                    weather2 = get_weatherbit_hourly(lat, lon, target_datetime)
-                    cache_weatherbit[daily_cache_key] = weather2
+                    weather2 = get_weatherbit_daily(lat, lon, target_datetime)
+                    cache_weatherbit_daily[daily_cache_key] = weather2
                 
                 # None인 필드만 업데이트
                 for field in ["precip", "rhum"]:
@@ -287,7 +362,12 @@ def augment_weather():
             api_calls += 1
             updated += 1
             print(" ✅ 완료")
-            time.sleep(1.2)  # 시간별 데이터는 더 많은 요청이므로 대기 시간 증가
+            
+            # 실시간 데이터일수록 더 짧은 대기 시간
+            if hours_diff < 1:
+                time.sleep(1.0)  # 실시간 데이터는 1초 대기
+            else:
+                time.sleep(1.5)  # 과거 데이터는 1.5초 대기
         else:
             print("✅ 기상 데이터 이미 완료")
 
@@ -296,11 +376,13 @@ def augment_weather():
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(enriched, f, ensure_ascii=False, indent=2)
 
-    print(f"\n🎉 처리 완료!")
+    print(f"\n🎉 실시간 화재 모니터링 처리 완료!")
     print(f"📁 저장 위치: {output_path}")
     print(f"📊 총 {len(enriched)}개 데이터 처리")
     print(f"🌐 {api_calls}개 항목에 기상 데이터 추가")
     print(f"🔄 {updated}개 항목 업데이트됨")
+    print(f"📡 {fallback_used}개 필드에 Weatherbit fallback 사용")
+    print(f"🚨 {realtime_count}개 실시간 화재 데이터 처리")
     print(f"⏭️ {skipped}개 항목 건너뜀")
 
 if __name__ == "__main__":

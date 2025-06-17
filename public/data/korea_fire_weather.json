@@ -16,11 +16,11 @@
     "frfr_step_issu_cd": "초기대응",
     "frfr_sttmn_dt": "20250617",
     "frfr_frng_dtm": "2025-06-17 15:09",
-    "temp": null,
-    "wspd": null,
-    "wdir": null,
-    "precip": null,
-    "rhum": null
+    "temp": 28.6,
+    "wspd": 3.083333333333333,
+    "wdir": 231.0,
+    "precip": 0,
+    "rhum": 80
   },
   {
     "frfr_info_id": "387906",
@@ -137,7 +137,10 @@
     "frfr_sttmn_dt": "20250612",
     "frfr_frng_dtm": "2025-06-12 12:56",
     "precip": 0,
-    "rhum": 60
+    "rhum": 60,
+    "temp": 28.6,
+    "wspd": 2.1,
+    "wdir": 20
   },
   {
     "frfr_info_id": "387904",
@@ -182,7 +185,10 @@
     "frfr_sttmn_dt": "20250611",
     "frfr_frng_dtm": "2025-06-11 16:16",
     "precip": 0,
-    "rhum": 69
+    "rhum": 69,
+    "temp": 24.1,
+    "wspd": 5.09,
+    "wdir": 290
   },
   {
     "frfr_info_id": "387045",
@@ -203,7 +209,10 @@
     "frfr_sttmn_dt": "20250611",
     "frfr_frng_dtm": "2025-06-11 13:18",
     "precip": 0,
-    "rhum": 53
+    "rhum": 53,
+    "temp": 26.7,
+    "wspd": 2.8,
+    "wdir": 340
   },
   {
     "frfr_info_id": "387744",
