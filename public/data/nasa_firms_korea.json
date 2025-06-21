@@ -10238,5 +10238,37 @@
     "bright_ti5": "300.05",
     "frp": "1.4",
     "daynight": "D"
+  },
+  {
+    "latitude": "33.92105",
+    "longitude": "130.82809",
+    "bright_ti4": "314.78",
+    "scan": "0.45",
+    "track": "0.47",
+    "acq_date": "2025-06-21",
+    "acq_time": "1637",
+    "satellite": "N",
+    "instrument": "VIIRS",
+    "confidence": "n",
+    "version": "2.0NRT",
+    "bright_ti5": "289.41",
+    "frp": "4.33",
+    "daynight": "N"
+  },
+  {
+    "latitude": "33.94308",
+    "longitude": "130.82634",
+    "bright_ti4": "311.78",
+    "scan": "0.45",
+    "track": "0.47",
+    "acq_date": "2025-06-21",
+    "acq_time": "1637",
+    "satellite": "N",
+    "instrument": "VIIRS",
+    "confidence": "n",
+    "version": "2.0NRT",
+    "bright_ti5": "286.78",
+    "frp": "3.12",
+    "daynight": "N"
   }
 ]
