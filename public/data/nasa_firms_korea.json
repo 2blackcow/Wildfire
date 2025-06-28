@@ -14142,5 +14142,21 @@
     "bright_ti5": "296.79",
     "frp": "6.88",
     "daynight": "D"
+  },
+  {
+    "latitude": "38.93538",
+    "longitude": "125.80145",
+    "bright_ti4": "332.45",
+    "scan": "0.45",
+    "track": "0.63",
+    "acq_date": "2025-06-28",
+    "acq_time": "527",
+    "satellite": "N",
+    "instrument": "VIIRS",
+    "confidence": "n",
+    "version": "2.0NRT",
+    "bright_ti5": "290.64",
+    "frp": "2.08",
+    "daynight": "D"
   }
 ]
