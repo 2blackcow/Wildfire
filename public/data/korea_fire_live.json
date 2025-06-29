@@ -1,21 +1,21 @@
 [
   {
-    "frfr_info_id": "387906",
-    "start": "2025-06-14 17:00",
-    "time": "2025-06-14 17:28",
-    "address": "서울특별시 종로구 옥인동",
+    "frfr_info_id": "390624",
+    "start": "2025-06-29 11:43",
+    "time": "2025-06-29 12:11",
+    "address": "전라남도 장흥군 대덕읍",
     "status": "진화완료",
     "level": "초기대응",
-    "lat": 37.583698300111024,
-    "lon": 126.95899959999912,
-    "frfr_lctn_xcrd": "126.95899959999912",
+    "lat": 34.4589286557034,
+    "lon": 126.85588944773482,
+    "frfr_lctn_xcrd": "126.85588944773482",
     "frfr_prgrs_stcd_str": "진화완료",
-    "potfr_end_dtm": "2025-06-14 17:28",
+    "potfr_end_dtm": "2025-06-29 12:11",
     "frfr_prgrs_stcd": "03",
-    "frfr_lctn_ycrd": "37.583698300111024",
-    "frfr_sttmn_addr": "서울특별시 종로구 옥인동",
+    "frfr_lctn_ycrd": "34.4589286557034",
+    "frfr_sttmn_addr": "전라남도 장흥군 대덕읍",
     "frfr_step_issu_cd": "초기대응",
-    "frfr_sttmn_dt": "20250614",
-    "frfr_frng_dtm": "2025-06-14 17:00"
+    "frfr_sttmn_dt": "20250629",
+    "frfr_frng_dtm": "2025-06-29 11:43"
   }
 ]
