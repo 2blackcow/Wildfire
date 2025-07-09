@@ -1,24 +1,5 @@
 [
   {
-    "frfr_info_id": "392204",
-    "start": "2025-07-09 18:03",
-    "time": "2025-07-09 19:10",
-    "address": "경상북도 안동시 정상동",
-    "status": "진화완료",
-    "level": "초기대응",
-    "lat": 36.550240757868615,
-    "lon": 128.7469710862549,
-    "frfr_lctn_xcrd": "128.7469710862549",
-    "frfr_prgrs_stcd_str": "진화완료",
-    "potfr_end_dtm": "2025-07-09 19:10",
-    "frfr_prgrs_stcd": "03",
-    "frfr_lctn_ycrd": "36.550240757868615",
-    "frfr_sttmn_addr": "경상북도 안동시 정상동",
-    "frfr_step_issu_cd": "초기대응",
-    "frfr_sttmn_dt": "20250709",
-    "frfr_frng_dtm": "2025-07-09 18:03"
-  },
-  {
     "frfr_info_id": "391964",
     "start": "2025-07-08 13:22",
     "time": "2025-07-08 14:56",
