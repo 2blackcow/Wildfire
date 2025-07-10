@@ -1,5 +1,26 @@
 [
   {
+    "frfr_info_id": "392344",
+    "start": "2025-07-10 11:54",
+    "time": null,
+    "address": "충청남도 논산시 양촌면",
+    "status": "진화중",
+    "level": "초기대응",
+    "lat": 36.14244841015596,
+    "lon": 127.2089636014323,
+    "frfr_lctn_xcrd": "127.2089636014323",
+    "frfr_prgrs_stcd_str": "진화중",
+    "frfr_prgrs_stcd": "02",
+    "frfr_lctn_ycrd": "36.14244841015596",
+    "frfr_sttmn_addr": "충청남도 논산시 양촌면",
+    "frfr_step_issu_cd": "초기대응",
+    "frfr_sttmn_dt": "20250710",
+    "frfr_frng_dtm": "2025-07-10 11:54",
+    "temp": 32.4,
+    "wspd": 4.111111111111112,
+    "wdir": 104.0
+  },
+  {
     "frfr_info_id": "391964",
     "start": "2025-07-08 13:22",
     "time": "2025-07-08 14:56",
